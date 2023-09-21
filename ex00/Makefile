@@ -1,28 +1,32 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         ::::::::             #
-#    Mackfile                                           :+:    :+:             #
+#    Makefile                                           :+:    :+:             #
 #                                                      +:+                     #
 #    By: yizhang <yizhang@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/09/21 15:12:20 by yizhang       #+#    #+#                  #
-#    Updated: 2023/09/21 15:52:31 by yizhang       ########   odam.nl          #
+#    Updated: 2023/09/21 16:03:48 by yizhang       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = megaphone
-GCC = g++
+CC = g++
 FLAGS = -Wall -Werror -Wextra
-SRC = megaphone.c
+SRC = megaphone.cpp
 
 all: $(NAME)
 
-$(NAME): $(GCC) $(FLAGS) $(SRC) -c -o $(NAME)
+$(NAME): $(SRC)
+	$(CC) $(FLAGS) $(SRC) -o $(NAME)
 
-clean:	rm $(NAME)
+clean:
+	rm -rf $(NAME)
 
-fclean: $(MAKE) fclean
+fclean:
+	$(MAKE) fclean
 
-re: fclean all
+re:
+	fclean all
 
 .PHONY: all clean fclean re
