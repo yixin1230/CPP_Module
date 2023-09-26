@@ -6,14 +6,14 @@
 #    By: yizhang <yizhang@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/09/26 09:49:40 by yizhang       #+#    #+#                  #
-#    Updated: 2023/09/26 10:28:55 by yizhang       ########   odam.nl          #
+#    Updated: 2023/09/26 14:27:34 by yizhang       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phone_book
 CC = g++
-FLAGS = -Wall -Werror -Wextra
-SRC = phone_book.cpp
+FLAGS = -Wall -Werror -Wextra -std=c++98
+SRC = phonebook.cpp main.cpp
 
 all: $(NAME)
 

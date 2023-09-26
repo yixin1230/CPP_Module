@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   phonebook.cpp                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/09/26 10:02:07 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/09/26 15:01:22 by yizhang       ########   odam.nl         */
+/*   Created: 2023/09/26 13:22:09 by yizhang       #+#    #+#                 */
+/*   Updated: 2023/09/26 14:48:23 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 
-int	main()
+void	Contact::setfirstName(std::string name)
 {
-	std::string		cmd;
-	PhoneBook	book;
+	firstName = name;
+}
 
-	std::cin>>cmd;
-	while (cmd != 'EXIT')
-	{
-		
-		std::cout<<"still there"<<std::endl;
-	}
-	return(0);
+std::string	Contact::getfirstName()
+{
+	return(firstName);
 }

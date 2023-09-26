@@ -1,27 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   phonebook.hpp                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/09/26 10:02:07 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/09/26 15:01:22 by yizhang       ########   odam.nl         */
+/*   Created: 2023/09/26 09:57:10 by yizhang       #+#    #+#                 */
+/*   Updated: 2023/09/26 14:54:02 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#ifndef PHONEBOOK_H
+# define PHONEBOOK_H
+# include <iostream>
 
-int	main()
+using std::string;
+
+class PhoneBook
 {
-	std::string		cmd;
-	PhoneBook	book;
-
-	std::cin>>cmd;
-	while (cmd != 'EXIT')
-	{
+	private:
+		Contact	contact[8];
+	public:
 		
-		std::cout<<"still there"<<std::endl;
-	}
-	return(0);
-}
+};
+
+class Contact
+{
+	private:
+		string	firstName;
+		string	lastName;
+		string	nickName;
+		string	phoneNumber;
+		string	darkestSecret;
+	public:
+		void	setfirstName(string name);
+		string	getfirstName();
+};
+
+#endif
