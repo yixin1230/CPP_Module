@@ -5,20 +5,20 @@
 #                                                      +:+                     #
 #    By: yizhang <yizhang@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
-#    Created: 2023/09/26 09:49:40 by yizhang       #+#    #+#                  #
-#    Updated: 2023/09/26 10:28:55 by yizhang       ########   odam.nl          #
+#    Created: 2023/09/26 10:26:19 by yizhang       #+#    #+#                  #
+#    Updated: 2023/09/26 10:29:02 by yizhang       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phone_book
+NAME = 
 CC = g++
 FLAGS = -Wall -Werror -Wextra
-SRC = phone_book.cpp
+SRC = 
 
 all: $(NAME)
 
-$(NAME): $(SRC)
-		$(CC) $(FLAGS) $(SRC) -o $(NAME)
+$(NAME):
+	$(CC) $(FLAGS) $(SRC) -o $(NAME)
 
 clean:
 	rm -rf $(NAME)
