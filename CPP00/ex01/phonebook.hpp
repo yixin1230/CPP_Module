@@ -6,35 +6,48 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/09/26 09:57:10 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/09/26 14:54:02 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/09/29 11:51:43 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_H
-# define PHONEBOOK_H
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 # include <iostream>
 
-using std::string;
+class Contact
+{
+	private:
+		std::string	firstName;
+		std::string	lastName;
+		std::string	nickName;
+		std::string	phoneNumber;
+		std::string	darkestSecret;
+
+	public:
+		//functions
+		std::string	getfirstName(void);
+		std::string	getlastName(void);
+		std::string	getnickName(void);
+		std::string	getphoneNumber(void);
+		std::string	getdarkestSecret(void);
+		//setters
+		void	setfirstName(std::string name);
+		void	setlastName(std::string name);
+		void	setnickName(std::string name);
+		void	setphoneNumber(int number);
+		void	setdarkestSecret(std::string secret);
+};
 
 class PhoneBook
 {
 	private:
 		Contact	contact[8];
+		int		size;
+		int		index;
 	public:
+		Contact	display();
+		void	setcontact(Contact contact);
 		
-};
-
-class Contact
-{
-	private:
-		string	firstName;
-		string	lastName;
-		string	nickName;
-		string	phoneNumber;
-		string	darkestSecret;
-	public:
-		void	setfirstName(string name);
-		string	getfirstName();
 };
 
 #endif
