@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/09/26 13:22:09 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/09/29 10:11:58 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/09/29 13:56:21 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	Contact::setnickName(std::string name)
 	nickName = name;
 }
 
-void	Contact::setphoneNumber(int number)
+void	Contact::setphoneNumber(std::string number)
 {
 	phoneNumber = number;
 }
