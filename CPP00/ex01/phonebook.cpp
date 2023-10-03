@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/09/26 13:22:09 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/09/29 13:56:21 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/10/03 13:42:35 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,27 +36,27 @@ std::string	Contact::getdarkestSecret(void)
 	return(darkestSecret);
 }
 
-void	Contact::setfirstName(std::string name)
+void	Contact::setfirstName(void)
 {
-	firstName = name;
+	std::getline(std::cin, firstName);
 }
 
-void	Contact::setlastName(std::string name)
+void	Contact::setlastName(void)
 {
-	lastName = name;
+	std::cin>>lastName;
 }
 
-void	Contact::setnickName(std::string name)
+void	Contact::setnickName(void)
 {
-	nickName = name;
+	std::cin>>nickName;
 }
 
-void	Contact::setphoneNumber(std::string number)
+void	Contact::setphoneNumber(void)
 {
-	phoneNumber = number;
+	std::cin>>phoneNumber;
 }
 
-void	Contact::setdarkestSecret(std::string secret)
+void	Contact::setdarkestSecret(void)
 {
-	darkestSecret = secret;
+	std::cin>>darkestSecret;
 }

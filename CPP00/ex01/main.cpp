@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/09/26 10:02:07 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/09/29 14:19:33 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/10/03 11:28:17 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,35 +15,23 @@
 int	main()
 {
 	std::string		cmd;
-	//PhoneBook		book;
-	Contact			contact;
+	PhoneBook		book;
 
-	std::cout<<"\033[1;45mWelcome to the phonebook! :)\033[0m"<<std::endl;
-	std::cout<<"\033[1;45myou can enter here: 'ADD','SERCH','EXIT'\033[0m"<<std::endl;
-	std::cout<<"ADD: save a new contact"<<std::endl;
-	std::cout<<"SERCH: display a specific contact"<<std::endl;
-	std::cout<<"EXIT: exit the program"<<std::endl;
+	std::cout<<"\033[1;42mWelcome to the phonebook! :)\033[0m"<<std::endl;
+	promp();
+	book.initbook();
 	while (1)
 	{
 		std::cin>>cmd;
 		if (cmd == "ADD")
-		{
-			contact.setcontact(contact);
-		}
+			book.setbook();
 		else if (cmd == "SERCH")
-		{
-			contact.display(contact);
-		}
+			book.displaybook();
 		else if (cmd == "EXIT")
 			break ;
 		else
-		{
-			std::cout<<"\n\033[1;43myou can enter here: 'ADD','SERCH','EXIT'\033[0m\n"<<std::endl;
-			std::cout<<"ADD: save a new contact"<<std::endl;
-			std::cout<<"SERCH: display a specific contact"<<std::endl;
-			std::cout<<"EXIT: exit the program"<<std::endl;
-		}
+			promp();
 	}
-	std::cout<<"The program quits and the contacts last forever!"<<std::endl;
+	std::cout<<"\033[1;31mThe program quits and the contacts last forever!\033[0m"<<std::endl;
 	return(0);
 }
