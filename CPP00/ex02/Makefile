@@ -6,14 +6,14 @@
 #    By: yizhang <yizhang@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/09/26 10:26:19 by yizhang       #+#    #+#                  #
-#    Updated: 2023/09/26 13:33:27 by yizhang       ########   odam.nl          #
+#    Updated: 2023/10/03 14:05:59 by yizhang       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = 
 CC = g++
 FLAGS = -Wall -Werror -Wextra -std=c++98
-SRC = 
+SRC = Account.cpp 
 
 all: $(NAME)
 
