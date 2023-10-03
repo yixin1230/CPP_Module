@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/09/26 10:02:07 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/10/03 11:28:17 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/10/03 14:44:59 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main()
 	book.initbook();
 	while (1)
 	{
-		std::cin>>cmd;
+		std::getline(std::cin, cmd);
 		if (cmd == "ADD")
 			book.setbook();
 		else if (cmd == "SERCH")

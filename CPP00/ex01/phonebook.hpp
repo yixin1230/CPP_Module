@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/09/26 09:57:10 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/10/03 13:47:44 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/10/03 13:55:03 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@ class Contact
 		std::string	darkestSecret;
 
 	public:
-		void	setcontact(void);
 		//functions
+		void	setcontact(void);
+		//getters
 		std::string	getfirstName(void);
 		std::string	getlastName(void);
 		std::string	getnickName(void);
@@ -49,7 +50,6 @@ class PhoneBook
 		void	displaybook(void);
 		void	setbook(void);
 		void	initbook(void);
-		
 };
 
 void	promp(void);
