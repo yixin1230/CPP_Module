@@ -1,7 +1,7 @@
 #include "Account.hpp"
 
-void main(void)
+int main(void)
 {
-	Account acc;
+	Account account(3);
 	return 0;
 }

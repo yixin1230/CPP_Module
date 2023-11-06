@@ -13,11 +13,12 @@
 NAME = Dreamjob
 CC = g++
 FLAGS = -Wall -Werror -Wextra -std=c++98
-SRC = Account.cpp main.cpp
+SRC = Account.cpp tests.cpp
+HEADER = Account.hpp
 
 all: $(NAME)
 
-$(NAME):
+$(NAME):$(SRC) $(HEADER)
 	$(CC) $(FLAGS) $(SRC) -o $(NAME)
 
 clean:
