@@ -10,10 +10,10 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = 
+NAME = Dreamjob
 CC = g++
 FLAGS = -Wall -Werror -Wextra -std=c++98
-SRC = Account.cpp 
+SRC = Account.cpp main.cpp
 
 all: $(NAME)
 
