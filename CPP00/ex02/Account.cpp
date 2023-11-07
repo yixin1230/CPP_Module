@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/09/26 10:41:24 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/11/07 10:15:25 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/11/07 10:44:11 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ Account::Account(int initial_deposit )
 	_nbAccounts++;
 	this->_accountIndex = _nbAccounts - 1;
 	this->_amount = initial_deposit;
-	this->_nbDeposits = 1;
+	this->_nbDeposits = 0;
 	this->_nbWithdrawals = 0;
 	this->_totalAmount += initial_deposit;
 	_displayTimestamp();
@@ -70,7 +70,7 @@ Account::~Account(void)
 {
 	_displayTimestamp();
 	std::cout<<"index:"<<_accountIndex<<';';
-	std::cout<<"amount:"<<getTotalAmount()<<';'<<"closed"<<std::endl;
+	std::cout<<"amount:"<<_amount<<';'<<"closed"<<std::endl;
 }
 
 void	Account::_displayTimestamp(void)
@@ -117,19 +117,39 @@ int	Account::checkAmount( void ) const
 void	Account::makeDeposit( int deposit )
 {
 	_displayTimestamp();
-	(void)deposit;
+	std::cout<<"index:"<<_accountIndex<<";";
+	std::cout<<"p_amount:"<<_amount<<";";
+	this->_amount += deposit;
+	this->_nbDeposits++;
+	_totalAmount += deposit;
+	_totalNbDeposits +=1;
+	std::cout<<"deposit:"<<deposit<<";";
+	std::cout<<"amount:"<<_amount<<";";
+	std::cout<<"nb_deposits:"<<_nbDeposits<<std::endl;
 }
 
 
 bool	Account::makeWithdrawal( int withdrawal )
 {
-	(void)withdrawal;
 	_displayTimestamp();
+	std::cout<<"index:"<<_accountIndex<<";";
+	std::cout<<"p_amount:"<<_amount<<";";
+	this->_amount -= withdrawal;
 	if (checkAmount())
 	{
+		this->_amount += withdrawal;
+		std::cout<<"withdrawal:"<<"refused"<<std::endl;
 		return false;
 	}
-	return true;
+	else
+	{
+		_totalAmount -= withdrawal;
+		std::cout<<"withdrawal:"<<withdrawal<<";"
+			<<"amount:"<<_amount<<";";
+			_nbWithdrawals += 1;
+		std::cout<<"nb_withdrawals:"<<_nbWithdrawals<<std::endl;
+		return true;	
+	}
 }
 
 
