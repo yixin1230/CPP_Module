@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/09/29 11:00:20 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/10/03 14:46:19 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/11/07 16:28:45 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,50 @@ void	Contact::setcontact(void)
 	std::cout<<"Enter the darkestSecret:";
 	setdarkestSecret();
 	std::cout<<"\033[1;32mContact saved\033[0m"<<std::endl;
+}
+void	PhoneBook::serch(std::string name)
+{
+	int have = 0;
+	for (int i = 0; i < size; i++)
+	{
+		if (name == contact[i].getfirstName())
+			have = 1;
+	}
+	if (have == 1)
+	{	
+		std::cout<<"|";
+		displayten("Index");
+		std::cout<<"|";
+		displayten("FirstName");
+		std::cout<<"|";
+		displayten("LastName");
+		std::cout<<"|";
+		displayten("NickName");
+		std::cout<<"|"<<std::endl;
+		for (int i = 0; i < size; i++)
+		{
+			if (name == contact[i].getfirstName())
+			{
+				std::cout<<"|";
+				for(int j = 0; j < 9; j++)
+					std::cout<<' ';
+				std::cout<<i;
+				std::cout<<"|";
+				displayten(contact[i].getfirstName());
+				std::cout<<"|";
+				displayten(contact[i].getlastName());
+				std::cout<<"|";
+				displayten(contact[i].getnickName());
+				std::cout<<"|"<<std::endl;
+			}
+		}
+	}
+	else
+	{
+		std::cout<<"\033[1;33mNo contact found\033[0m"<<std::endl;
+		PhoneBook::displaybook();
+	}
+
 }
 
 void	promp(void)
@@ -64,19 +108,25 @@ void	PhoneBook::displaybook(void)
 
 void	PhoneBook::setbook(void)
 {
-	contact[index].setcontact();
-	if(index >= 7)
-		index = 0;
+	if(this->index > 7)
+	{
+		this->index = 0;
+		contact[this->index].setcontact();
+		this->index+=1;
+	}
 	else
-		index++;
-	if (index < 8)
+	{
+		contact[this->index].setcontact();	
+		this->index+=1;
+	}
+	if (this->index < 7)
 		size++;
 }
 
 void	PhoneBook::initbook(void)
 {
-	size = 0;
-	index = 0;
+	this->size = 0;
+	this->index = 0;
 }
 
 void	displayten(std::string str)
