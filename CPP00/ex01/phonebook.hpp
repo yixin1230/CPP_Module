@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/09/26 09:57:10 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/11/07 16:28:56 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/11/07 16:47:44 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,6 @@
 # include <string>
 class Contact
 {
-	private:
-		std::string	firstName;
-		std::string	lastName;
-		std::string	nickName;
-		std::string	phoneNumber;
-		std::string	darkestSecret;
 	public:
 		//functions
 		void	setcontact(void);
@@ -37,6 +31,12 @@ class Contact
 		void	setnickName(void);
 		void	setphoneNumber(void);
 		void	setdarkestSecret(void);
+	private:
+		std::string	firstName;
+		std::string	lastName;
+		std::string	nickName;
+		std::string	phoneNumber;
+		std::string	darkestSecret;
 };
 
 class PhoneBook

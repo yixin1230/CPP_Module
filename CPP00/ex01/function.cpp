@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/09/29 11:00:20 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/11/07 16:28:45 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/11/07 17:10:05 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,10 @@ void	PhoneBook::serch(std::string name)
 	for (int i = 0; i < size; i++)
 	{
 		if (name == contact[i].getfirstName())
+		{
 			have = 1;
+			break ;
+		}
 	}
 	if (have == 1)
 	{	
@@ -108,18 +111,18 @@ void	PhoneBook::displaybook(void)
 
 void	PhoneBook::setbook(void)
 {
-	if(this->index > 7)
+	if (this->index > 7)
 	{
 		this->index = 0;
 		contact[this->index].setcontact();
-		this->index+=1;
+		this->index += 1;
 	}
 	else
 	{
-		contact[this->index].setcontact();	
-		this->index+=1;
+		contact[this->index].setcontact();
+		this->index += 1;
 	}
-	if (this->index < 7)
+	if (this->index < 7 && size < 7)
 		size++;
 }
 
