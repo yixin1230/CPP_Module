@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/09/21 15:12:26 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/09/26 09:24:53 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/11/08 12:34:19 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ int main(int argc, char **argv)
 				std::cout<<(char)(std::toupper(argv[i][j]));
 				j++;
 			}
-			if (i != argc - 1)
-				std::cout<<" ";
 			i++;
 		}
 		std::cout<<std::endl;

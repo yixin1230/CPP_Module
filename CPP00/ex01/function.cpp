@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/09/29 11:00:20 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/11/07 17:10:05 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/11/08 12:36:32 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	Contact::setcontact(void)
 	setdarkestSecret();
 	std::cout<<"\033[1;32mContact saved\033[0m"<<std::endl;
 }
-void	PhoneBook::serch(std::string name)
+void	PhoneBook::search(std::string name)
 {
 	int have = 0;
 	for (int i = 0; i < size; i++)
@@ -78,7 +78,7 @@ void	promp(void)
 {
 	std::cout<<"\033[1;33myou can enter here:\033[0m"<<std::endl;
 	std::cout<<"\033[1;33mADD\033[0m: save a new contact"<<std::endl;
-	std::cout<<"\033[1;33mSERCH\033[0m: display a specific contact"<<std::endl;
+	std::cout<<"\033[1;33mSEARCH\033[0m: display a specific contact"<<std::endl;
 	std::cout<<"\033[1;33mEXIT\033[0m: exit the program"<<std::endl;
 }
 

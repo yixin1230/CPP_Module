@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/09/26 10:02:07 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/11/07 16:45:39 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/11/08 12:35:28 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ int	main()
 		std::getline(std::cin, cmd);
 		if (cmd == "ADD")
 			book.setbook();
-		else if (cmd == "SERCH")
+		else if (cmd == "SEARCH")
 		{
 			std::cout<<"\033[1;33myou can enter here your contact first name:\033[0m"<<std::endl;
 			std::getline(std::cin, name);				
-			book.serch(name);
+			book.search(name);
 			promp();
 		}
 		else if (cmd == "EXIT")

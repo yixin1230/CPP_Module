@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/09/26 09:57:10 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/11/07 16:47:44 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/11/08 12:36:14 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ class PhoneBook
 		void	displaybook(void);
 		void	setbook(void);
 		void	initbook(void);
-		void	serch(std::string name);
+		void	search(std::string name);
 };
 
 void	promp(void);

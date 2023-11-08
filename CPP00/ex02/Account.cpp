@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/09/26 10:41:24 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/11/07 10:44:11 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/11/08 12:35:02 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ void	Account::displayAccountsInfos(void)
 {
 	_displayTimestamp();
 	std::cout<<"accounts:"<<getNbAccounts()<<";";
-	std::cout<<"total:"<<getTotalAmount()<<";";
+	std::cout<<"amount:"<<getTotalAmount()<<";";
 	std::cout<<"deposits:"<<getNbDeposits()<<";";
 	std::cout<<"withdrawals:"<<getNbWithdrawals()<<std::endl;
 }
