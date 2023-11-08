@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/07 17:31:50 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/11/07 18:01:57 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/11/08 10:28:15 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ class Zombie
 		//Constructor && Destructor
 		Zombie(std::string name);
 		~Zombie(void);
-	
 	private:
 		std::string	_name;
 };
