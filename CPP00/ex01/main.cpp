@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/09/26 10:02:07 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/11/13 11:08:38 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/11/13 12:32:58 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,11 @@ int	main()
 		if (cmd == "ADD")
 			book.setbook();
 		else if (cmd == "SEARCH")
-		{
 			book.search();
-			promp();
-		}
 		else if (cmd == "EXIT")
 			break ;
+		else if(std::cin.eof())
+			std::cout<<"\033[1;31mThe program quits and the contacts last forever!\033[0m"<<std::endl;
 		else
 			promp();
 	}

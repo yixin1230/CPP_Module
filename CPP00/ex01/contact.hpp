@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/13 10:03:54 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/11/13 11:04:10 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/11/13 12:16:47 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define CONTACT_HPP
 # include <iostream>
 # include <string>
-# include "phonebook.hpp"
+
 
 class Contact
 {

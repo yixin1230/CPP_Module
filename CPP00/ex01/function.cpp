@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/09/29 11:00:20 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/11/13 11:14:30 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/11/13 12:31:13 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,18 @@ void	Contact::setcontact(int index)
 
 void	PhoneBook::search(void)
 {
-	int				index;
+	std::string				input;
+	int						index;
 	
 	PhoneBook::displaybook();
 	std::cout<<"\033[1;33myou can enter here your contact index:\033[0m"<<std::endl;
-	std::cin>>index;
+	std::cin>>input;
+	if(std::cin.eof())
+	{
+		std::cout<<"\033[1;31mThe program quits and the contacts last forever!\033[0m"<<std::endl;
+		exit (0);
+	}
+	index = stoeight(input);
 	if (index < _size)
 	{
 		Contact	show = getcontact(index);
@@ -46,7 +53,7 @@ void	PhoneBook::search(void)
 		std::cout<<"Darkest secret:"<<show.getdarkestSecret()<<std::endl;
 	}
 	else
-		std::cout<<"No contact found"<<std::endl;
+		std::cout<<"\033[1;31mNo contact found\033[0m"<<std::endl;
 }
 
 void	promp(void)
@@ -86,7 +93,7 @@ void	PhoneBook::displaybook(void)
 
 void	PhoneBook::setbook(void)
 {
-	if (_size < 7)
+	if (_size < 8)
 		_size++;
 	if (this->_index > 7)
 		this->_index = 0;
@@ -129,4 +136,15 @@ void	displayten(std::string str)
 		}
 		std::cout<<'.';
 	}
+}
+
+int	stoeight(std::string str)
+{
+	int	i;
+	i = 100;
+	if (str[1] != '\0' || str[0] < 48 || str[0] > 56)
+		return i;
+	else
+		i = (str[0] - '\0') - 48;
+	return i;
 }
