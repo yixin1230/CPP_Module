@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   phonebook.cpp                                      :+:    :+:            */
+/*   PhoneBook.cpp                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/09/26 13:22:09 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/11/13 12:31:49 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/11/13 13:32:20 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
 
 std::string	Contact::getfirstName(void)
 {

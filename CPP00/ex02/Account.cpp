@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/09/26 10:41:24 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/11/13 13:13:02 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/11/13 16:56:50 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ Account::~Account(void)
 void	Account::_displayTimestamp(void)
 {
 	std::time_t	ret = std::time(NULL);
-	std::cout<<'['<<std::localtime(&ret)->tm_year + 1900;
+	std::cout<<"["<<std::localtime(&ret)->tm_year + 1900;
 	if (localtime(&ret)->tm_mon + 1 < 10)
 		std::cout<<"0";
 	std::cout<<std::localtime(&ret)->tm_mon + 1;
@@ -92,7 +92,7 @@ void	Account::_displayTimestamp(void)
 	if (localtime(&ret)->tm_sec + 1 < 10)
 		std::cout<<"0";
 	std::cout<<std::localtime(&ret)->tm_sec;
-	std::cout<<']';
+	std::cout<<"] ";
 
 }
 
