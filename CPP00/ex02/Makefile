@@ -6,14 +6,14 @@
 #    By: yizhang <yizhang@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/09/26 10:26:19 by yizhang       #+#    #+#                  #
-#    Updated: 2023/11/13 12:37:09 by yizhang       ########   odam.nl          #
+#    Updated: 2023/11/13 12:40:25 by yizhang       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Dreamjob
 CC = c++
 FLAGS = -Wall -Werror -Wextra -std=c++98
-SRC = Account.cpp main.cpp
+SRC = Account.cpp tests.cpp
 HEADER = Account.hpp
 
 all: $(NAME)

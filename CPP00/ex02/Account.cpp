@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/09/26 10:41:24 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/11/08 12:35:02 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/11/13 13:08:53 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ void	Account::displayAccountsInfos(void)
 {
 	_displayTimestamp();
 	std::cout<<"accounts:"<<getNbAccounts()<<";";
-	std::cout<<"amount:"<<getTotalAmount()<<";";
+	std::cout<<"total:"<<getTotalAmount()<<";";
 	std::cout<<"deposits:"<<getNbDeposits()<<";";
 	std::cout<<"withdrawals:"<<getNbWithdrawals()<<std::endl;
 }
@@ -111,8 +111,6 @@ int	Account::checkAmount( void ) const
 		return 1;
 	return 0;
 }
-
-
 
 void	Account::makeDeposit( int deposit )
 {
@@ -147,6 +145,7 @@ bool	Account::makeWithdrawal( int withdrawal )
 		std::cout<<"withdrawal:"<<withdrawal<<";"
 			<<"amount:"<<_amount<<";";
 			_nbWithdrawals += 1;
+			_totalNbWithdrawals += 1;
 		std::cout<<"nb_withdrawals:"<<_nbWithdrawals<<std::endl;
 		return true;	
 	}
@@ -157,7 +156,7 @@ void	Account::displayStatus( void ) const
 {
 	_displayTimestamp();
 	std::cout<<"index:"<<_accountIndex<<";";
-	std::cout<<"total:"<<_amount<<";";
+	std::cout<<"amount:"<<_amount<<";";
 	std::cout<<"deposits:"<<_nbDeposits<<";";
 	std::cout<<"withdrawals:"<<_nbWithdrawals<<std::endl;
 }
