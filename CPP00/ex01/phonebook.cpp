@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/09/26 13:22:09 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/11/07 13:45:56 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/11/13 11:06:58 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,54 +14,59 @@
 
 std::string	Contact::getfirstName(void)
 {
-	return(firstName);
+	return(_firstName);
 }
 std::string	Contact::getlastName(void)
 {
-	return(lastName);
+	return(_lastName);
 }
 
 std::string	Contact::getnickName(void)
 {
-	return(nickName);
+	return(_nickName);
 }
 
 std::string	Contact::getphoneNumber(void)
 {
-	return(phoneNumber);
+	return(_phoneNumber);
 }
 
 std::string	Contact::getdarkestSecret(void)
 {
-	return(darkestSecret);
+	return(_darkestSecret);
 }
 
 Contact	PhoneBook::getcontact(int index)
 {
-	return (contact[index]);
+	return (_contact[index]);
+}
+
+int	Contact::getindex(void)
+{
+	return (_index);
 }
 
 void	Contact::setfirstName(void)
 {
-	std::getline(std::cin, firstName);
+	std::getline(std::cin, _firstName);
 }
 
 void	Contact::setlastName(void)
 {
-	std::getline(std::cin, lastName);
+	std::getline(std::cin, _lastName);
 }
 
 void	Contact::setnickName(void)
 {
-	std::getline(std::cin, nickName);
+	std::getline(std::cin, _nickName);
 }
 
 void	Contact::setphoneNumber(void)
 {
-	std::cin>>phoneNumber;
+	std::getline(std::cin, _phoneNumber);
 }
 
 void	Contact::setdarkestSecret(void)
 {
-	std::cin>>darkestSecret;
+	std::getline(std::cin, _darkestSecret);
 }

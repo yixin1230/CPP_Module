@@ -6,14 +6,15 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/09/29 11:00:20 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/11/08 12:36:32 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/11/13 11:14:30 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 
-void	Contact::setcontact(void)
+void	Contact::setcontact(int index)
 {
+	_index = index;
 	std::cout<<"Enter the firstname:";
 	setfirstName();
 	std::cout<<"Enter the lastname:";
@@ -26,52 +27,26 @@ void	Contact::setcontact(void)
 	setdarkestSecret();
 	std::cout<<"\033[1;32mContact saved\033[0m"<<std::endl;
 }
-void	PhoneBook::search(std::string name)
+
+void	PhoneBook::search(void)
 {
-	int have = 0;
-	for (int i = 0; i < size; i++)
+	int				index;
+	
+	PhoneBook::displaybook();
+	std::cout<<"\033[1;33myou can enter here your contact index:\033[0m"<<std::endl;
+	std::cin>>index;
+	if (index < _size)
 	{
-		if (name == contact[i].getfirstName())
-		{
-			have = 1;
-			break ;
-		}
-	}
-	if (have == 1)
-	{	
-		std::cout<<"|";
-		displayten("Index");
-		std::cout<<"|";
-		displayten("FirstName");
-		std::cout<<"|";
-		displayten("LastName");
-		std::cout<<"|";
-		displayten("NickName");
-		std::cout<<"|"<<std::endl;
-		for (int i = 0; i < size; i++)
-		{
-			if (name == contact[i].getfirstName())
-			{
-				std::cout<<"|";
-				for(int j = 0; j < 9; j++)
-					std::cout<<' ';
-				std::cout<<i;
-				std::cout<<"|";
-				displayten(contact[i].getfirstName());
-				std::cout<<"|";
-				displayten(contact[i].getlastName());
-				std::cout<<"|";
-				displayten(contact[i].getnickName());
-				std::cout<<"|"<<std::endl;
-			}
-		}
+		Contact	show = getcontact(index);
+		std::cout<<"Index:"<<show.getindex()<<std::endl;
+		std::cout<<"First name:"<<show.getfirstName()<<std::endl;
+		std::cout<<"Last name:"<<show.getlastName()<<std::endl;
+		std::cout<<"Nick name:"<<show.getnickName()<<std::endl;
+		std::cout<<"Phone number:"<<show.getphoneNumber()<<std::endl;
+		std::cout<<"Darkest secret:"<<show.getdarkestSecret()<<std::endl;
 	}
 	else
-	{
-		std::cout<<"\033[1;33mNo contact found\033[0m"<<std::endl;
-		PhoneBook::displaybook();
-	}
-
+		std::cout<<"No contact found"<<std::endl;
 }
 
 void	promp(void)
@@ -93,43 +68,36 @@ void	PhoneBook::displaybook(void)
 	std::cout<<"|";
 	displayten("NickName");
 	std::cout<<"|"<<std::endl;
-	for (int i = 0; i < size; i++)
+	for (int i = 0; i < _size; i++)
 	{
 		std::cout<<"|";
 		for(int j = 0; j < 9; j++)
 			std::cout<<' ';
 		std::cout<<i;
 		std::cout<<"|";
-		displayten(contact[i].getfirstName());
+		displayten(_contact[i].getfirstName());
 		std::cout<<"|";
-		displayten(contact[i].getlastName());
+		displayten(_contact[i].getlastName());
 		std::cout<<"|";
-		displayten(contact[i].getnickName());
+		displayten(_contact[i].getnickName());
 		std::cout<<"|"<<std::endl;
 	}
 }
 
 void	PhoneBook::setbook(void)
 {
-	if (this->index > 7)
-	{
-		this->index = 0;
-		contact[this->index].setcontact();
-		this->index += 1;
-	}
-	else
-	{
-		contact[this->index].setcontact();
-		this->index += 1;
-	}
-	if (this->index < 7 && size < 7)
-		size++;
+	if (_size < 7)
+		_size++;
+	if (this->_index > 7)
+		this->_index = 0;
+	_contact[this->_index].setcontact(_index);
+	this->_index += 1;
 }
 
 void	PhoneBook::initbook(void)
 {
-	this->size = 0;
-	this->index = 0;
+	this->_size = 0;
+	this->_index = 0;
 }
 
 void	displayten(std::string str)

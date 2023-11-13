@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/09/26 10:02:07 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/11/08 12:35:28 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/11/13 11:08:38 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int	main()
 {
 	std::string		cmd;
-	std::string		name;
 	PhoneBook		book;
 
 	std::cout<<"\033[1;42mWelcome to the phonebook! :)\033[0m"<<std::endl;
@@ -28,9 +27,7 @@ int	main()
 			book.setbook();
 		else if (cmd == "SEARCH")
 		{
-			std::cout<<"\033[1;33myou can enter here your contact first name:\033[0m"<<std::endl;
-			std::getline(std::cin, name);				
-			book.search(name);
+			book.search();
 			promp();
 		}
 		else if (cmd == "EXIT")
