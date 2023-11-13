@@ -6,7 +6,7 @@
 #    By: yizhang <yizhang@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/09/26 10:26:19 by yizhang       #+#    #+#                  #
-#    Updated: 2023/11/08 12:34:04 by yizhang       ########   odam.nl          #
+#    Updated: 2023/11/13 12:37:09 by yizhang       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,5 +23,7 @@ $(NAME):$(SRC) $(HEADER)
 
 clean:
 	rm -rf $(NAME)
+
+re: clean all
 
 .PHONY: all clean
