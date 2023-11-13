@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/08 11:06:00 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/11/08 11:11:23 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/11/13 17:24:54 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 Zombie *zombieHorde(int N, std::string name)
 {
-	for(int i = 0; i < N, i++)
+	Zombie	*Z_arr[N];
+	
+	for(int i = 0; i < N; i++)
 	{
-		Zombie z(name);
+		Z_arr[i].Zombie(name);
 	}
-	return z;
+	return (Z_arr);
 }
