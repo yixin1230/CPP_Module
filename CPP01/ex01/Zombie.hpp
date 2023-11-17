@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/08 11:02:08 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/11/08 11:13:31 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/11/17 10:38:04 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,12 @@ class Zombie
 {
 	public:
 		void	announce(void);
-		Zombie(std::string name);
+		void	setname(std::string name);
+		Zombie(void);
 		~Zombie(void);
 	private:
 		std::string _name;
 };
+Zombie *zombieHorde(int N, std::string name);
 
-	Zombie *zombieHorde(int N, std::string name);
 #endif

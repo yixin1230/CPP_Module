@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Zombie.cpp                                         :+:    :+:            */
+/*   main.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/11/07 17:30:43 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/11/17 10:48:40 by yizhang       ########   odam.nl         */
+/*   Created: 2023/11/17 10:49:39 by yizhang       #+#    #+#                 */
+/*   Updated: 2023/11/17 14:42:43 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
 
-Zombie::Zombie(std::string name)
+int main()
 {
-    _name = name;
-    std::cout<<"Zombie "<<getname()<<" created"<<std::endl;
-}
+	std::string brain;
+	std::string *stringPTR;
+	std::string &stringREF;
 
-Zombie::~Zombie(void)
-{
-    std::cout<<"Zombie "<<getname()<<" destroyed"<<std::endl;
-}
+	brain = "HI THIS IS BRAIN";
+	stringPTR = &brain;
+	stringREF = brain;
 
-std::string	Zombie::getname(void)
-{
-    return _name;
-}
-
-void Zombie::announce(void)
-{
-    std::cout<<getname()<<": BraiiiiiiinnnzzzZ..."<<std::endl;
+	std::cout<<&brain<<std::endl;
+	return 0;
 }
