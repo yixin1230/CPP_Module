@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/17 15:08:26 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/11/17 15:35:46 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/11/17 17:41:52 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,11 @@ class HumanB
 {
 	public:
 		void	attack(void);
+		void	setWeapon(Weapon &weapon);
+		HumanB(std::string name);
+		~HumanB();
 	private:
 		std::string	_name;
-		Weapon	_Weapon;
+		Weapon	*_Weapon;
 };
 #endif
