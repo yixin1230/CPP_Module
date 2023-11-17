@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/17 15:18:42 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/11/17 17:37:14 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/11/17 18:03:53 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ Weapon::Weapon()
 
 Weapon::~Weapon()
 {
-	std::cout<<_type<<" : weapon cleaned"<<std::endl;
+	std::cout<<"\033[1;31m"<<_type<<" : weapon cleaned"<<"\033[0m"<<std::endl;
 }
