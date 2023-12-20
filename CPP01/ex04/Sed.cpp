@@ -6,7 +6,7 @@
 /*   By: yixinzhang <yixinzhang@student.codam.nl      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/20 23:05:23 by yixinzhang    #+#    #+#                 */
-/*   Updated: 2023/12/20 23:45:35 by yixinzhang    ########   odam.nl         */
+/*   Updated: 2023/12/21 00:13:29 by yixinzhang    ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,27 @@ void Sed::close_allfile()
 
 void Sed::read_file()
 {
-	while (getline(this->file, s1))
+	std::string tmp;
+	std::string word;
+	std::size_t index;
+	std::size_t	i = 0;
+	while (getline(this->file, tmp))
 	{
-		re_file<<s1<<std::endl;
+		index = tmp.find(s1);
+		if (index == std::string::npos)
+			re_file<<tmp<<std::endl;
+		else
+		{
+			while (tmp[i])//don't know how to replace the words
+			{
+				re_file<<tmp[i];
+				if (i == index)
+				{
+					re_file<<s2;
+					i = i + s1.length() - 1;
+				}
+				i++;
+			}
+		}
 	}
 }
