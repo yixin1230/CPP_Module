@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/21 20:06:05 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/12/21 20:12:25 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/12/22 00:53:01 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ class Harl
 {
 	public:
 		void	complain(std::string level);
+		Harl();
+		~Harl();
 	private:
 		void	debug(void);
 		void	info(void);
