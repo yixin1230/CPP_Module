@@ -6,7 +6,7 @@
 /*   By: yixinzhang <yixinzhang@student.codam.nl      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/20 23:05:23 by yixinzhang    #+#    #+#                 */
-/*   Updated: 2023/12/21 00:13:29 by yixinzhang    ########   odam.nl         */
+/*   Updated: 2023/12/21 00:14:38 by yixinzhang    ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Sed::~Sed()
 void Sed::open_file()
 {
 	this->file.open(this->file_name, std::ios::in);
-	this->re_file.open(this->re_file_name, std::ios::app);
+	this->re_file.open(this->re_file_name, std::ios::out);
 	if (!file.is_open() || !re_file.is_open())
 	{
 		std::cout<<"file can not open"<<std::endl;
