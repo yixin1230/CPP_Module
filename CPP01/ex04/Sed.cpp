@@ -3,12 +3,13 @@
 /*                                                        ::::::::            */
 /*   Sed.cpp                                            :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: yixinzhang <yixinzhang@student.codam.nl      +#+                     */
+/*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/12/20 23:05:23 by yixinzhang    #+#    #+#                 */
-/*   Updated: 2023/12/21 00:14:38 by yixinzhang    ########   odam.nl         */
+/*   Created: 2023/12/21 18:44:22 by yizhang       #+#    #+#                 */
+/*   Updated: 2023/12/21 19:58:40 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "Sed.hpp"
 
@@ -49,24 +50,18 @@ void Sed::read_file()
 	std::string tmp;
 	std::string word;
 	std::size_t index;
-	std::size_t	i = 0;
 	while (getline(this->file, tmp))
 	{
 		index = tmp.find(s1);
-		if (index == std::string::npos)
-			re_file<<tmp<<std::endl;
-		else
+		if (index != std::string::npos)
 		{
-			while (tmp[i])//don't know how to replace the words
-			{
-				re_file<<tmp[i];
-				if (i == index)
-				{
-					re_file<<s2;
-					i = i + s1.length() - 1;
-				}
-				i++;
+			while (index != std::string::npos)
+			{	
+				tmp.erase(index, s1.length());
+				tmp.insert(index, s2);
+				index = tmp.find(s1);
 			}
 		}
+		re_file<<tmp<<std::endl;
 	}
 }

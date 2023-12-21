@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Sed.hpp                                            :+:    :+:            */
+/*   Harl.hpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/12/21 18:44:43 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/12/21 18:44:46 by yizhang       ########   odam.nl         */
+/*   Created: 2023/12/21 20:06:05 by yizhang       #+#    #+#                 */
+/*   Updated: 2023/12/21 20:12:25 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SED_HPP
-#define SED_HPP
-#include <fstream>
+#ifndef HARL_HPP
+#define HARL_HPP
+
 #include <iostream>
 
-class Sed
+class Harl
 {
 	public:
-		Sed(std::string file_name, std::string s1, std::string s2);
-		~Sed();
-		void	open_file();
-		void	close_allfile();
-		void	read_file();
-		
+		void	complain(std::string level);
 	private:
-		std::string		s1;
-		std::string		s2;
-		std::string		file_name;
-		std::string		re_file_name;
-
-		std::fstream	file;
-		std::fstream	re_file;
+		void	debug(void);
+		void	info(void);
+		void	warning(void);
+		void	error(void);
 };
+
 #endif
