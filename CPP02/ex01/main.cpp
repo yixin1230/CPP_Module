@@ -6,11 +6,14 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/22 23:24:54 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/12/22 23:27:24 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/12/23 00:42:33 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+//what is float point number
+//how to convert
 
 int main(void)
 {

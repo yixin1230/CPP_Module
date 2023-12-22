@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/22 17:45:50 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/12/22 23:24:07 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/12/23 00:39:58 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,18 @@ Fixed::Fixed(Fixed &a)
 {
 	std::cout<<"Copy constructor called"<<std::endl;
 	this->setRawBits(a.getRawBits()); //
+}
+
+Fixed::Fixed(const int i)
+{
+	std::cout<<"Int constructor called"<<std::endl;
+	
+}
+
+Fixed::Fixed(const float f)
+{
+	std::cout<<"Float constructor called"<<std::endl;
+	
 }
 
 Fixed::~Fixed()
@@ -45,4 +57,14 @@ Fixed &Fixed::operator=(Fixed const &a)//should return a refer otherwise will cr
 	std::cout<<"Copy assignment operator called"<<std::endl;
 	this->_val = a.getRawBits();
 	return *this;
+}
+
+float	toFloat(void)const
+{
+	
+}
+
+int		toInt(void)const
+{
+	
 }
