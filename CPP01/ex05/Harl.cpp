@@ -6,18 +6,18 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/21 20:38:45 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/12/22 00:55:07 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/12/22 12:30:18 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-Harl::Harl()
+Harl::Harl(void)
 {
 	std::cout<<"Harl is born"<<std::endl;
 }
 
-Harl::~Harl()
+Harl::~Harl(void)
 {
 	std::cout<<"Harl is gone"<<std::endl;
 }
@@ -45,15 +45,13 @@ void	Harl::error(void)
 
 void	Harl::complain(std::string level)
 {
+	int	i = 0;
 	std::string func[] = {"debug", "info", "warning", "error"};
-	void(*funcP)();
-	if (level == "debug")
-		funcP = &Harl::debug;
-	else if (level == "info")
-		funcP = &Harl::info;
-	else if (level == "waring")
-		funcP = &Harl::warning;
-	else if (level == "error")
-		funcP = &Harl::error;
-	funcP;
+	void(Harl::*funcP[])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	while (i < 4)
+	{
+		if (level == func[i])
+			(this->*funcP[i])();
+		i++;
+	}
 }
