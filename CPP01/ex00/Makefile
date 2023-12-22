@@ -6,12 +6,12 @@
 #    By: yizhang <yizhang@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/11/07 17:27:06 by yizhang       #+#    #+#                  #
-#    Updated: 2023/11/13 17:10:42 by yizhang       ########   odam.nl          #
+#    Updated: 2023/12/22 17:25:35 by yizhang       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = zombieHorde
-FLAG = -Wall -Wextra -Werror -std=c++98
+FLAG = -Wall -Wextra -Werror -std=c++98 #-fsanitize=address
 CC = c++
 SRC = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
 
