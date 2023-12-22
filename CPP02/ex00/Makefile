@@ -5,15 +5,15 @@
 #                                                      +:+                     #
 #    By: yizhang <yizhang@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
-#    Created: 2023/11/08 10:57:03 by yizhang       #+#    #+#                  #
-#    Updated: 2023/12/22 17:44:42 by yizhang       ########   odam.nl          #
+#    Created: 2023/12/22 17:42:39 by yizhang       #+#    #+#                  #
+#    Updated: 2023/12/22 17:42:51 by yizhang       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Harl_filter
 CC = c++
-FLAG = -Wall -Werror -Wextra -std=c++98 -fsanitize=address
-SRC = main.cpp
+FLAG = -Wall -Werror -Wextra -std=c++98 #-fsanitize=address
+SRC = main.cpp 
 
 all:$(NAME)
 
