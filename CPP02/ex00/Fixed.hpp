@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/22 17:45:53 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/12/22 18:02:35 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/12/22 23:20:58 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,14 @@ class Fixed
 {
 	public:
 		Fixed();
+		Fixed(Fixed &a);//copy constructor
 		~Fixed();
-		
-		
+		Fixed	&operator=(Fixed const &a);
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
 	private:
-		int	fix_val;
-		static const int fractional_bits;
+		int	_val;
+		static const int _bits;
 };
 
 #endif

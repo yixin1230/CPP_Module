@@ -5,15 +5,15 @@
 #                                                      +:+                     #
 #    By: yizhang <yizhang@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
-#    Created: 2023/12/22 17:42:39 by yizhang       #+#    #+#                  #
-#    Updated: 2023/12/22 21:21:45 by yizhang       ########   odam.nl          #
+#    Created: 2023/12/22 18:22:52 by yizhang       #+#    #+#                  #
+#    Updated: 2023/12/22 18:23:05 by yizhang       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Orthodox_Canonical
+NAME = Harl_filter
 CC = c++
 FLAG = -Wall -Werror -Wextra -std=c++98 #-fsanitize=address
-SRC = main.cpp Fixed.cpp
+SRC = main.cpp 
 
 all:$(NAME)
 
