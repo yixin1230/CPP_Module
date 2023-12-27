@@ -10,7 +10,6 @@ public:
 void Const_No(); // nonconst member function
 void Const_Yes() const; // const member function
 };
-//-----------
 
 A obj_nonconst; // nonconst object
 obj_nonconst.Const_No(); // works fine
