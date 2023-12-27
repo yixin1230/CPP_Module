@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/22 17:45:50 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/12/27 14:32:06 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/12/27 16:24:32 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,30 +59,13 @@ Fixed &Fixed::operator=(Fixed const &a)//should return a refer otherwise will cr
 	return *this;
 }
 
-float	toFloat(void)const
+float	Fixed::toFloat(void) const
 {
-	
+	this->val /
 }
 
-//f() const makes the function itself const, this only really has meaning for member functions.
-//making a member function const means that it cannot call any non-const member funcitons, nor can it change any member variables.
-//It also means that the function can be called via a const object if the class
-
-class A
+int		Fixed::toInt(void)const
 {
-public:
-void Const_No(); // nonconst member function
-void Const_Yes() const; // const member function
-};
-//-----------
-
-A obj_nonconst; // nonconst object
-obj_nonconst.Const_No(); // works fine
-obj_nonconst.Const_Yes(); // works fine
-
-const A obj_const = A(); // const object
-obj_const.Const_Yes(); // works fine (const object can call const function) obj_const.Const_No(); // ERROR (const object cannot call nonconst function)
-int		toInt(void)const
-{
-	return (this->_val);
+	this->_val >> this->_bits;
+	return (this->_bits);
 }
