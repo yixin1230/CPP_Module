@@ -1,6 +1,6 @@
 ### void f() const 
-makes the function itself const, this only really has meaning for member functions.
-making a member function const means that it cannot call any non-const member funcitons, nor can it change any member variables.
+Makes the function itself const, this only really has meaning for member functions.
+Making a member function const means that it cannot call any non-const member funcitons, nor can it change any member variables.
 It also means that the function can be called via a const object if the class
 
 ```
