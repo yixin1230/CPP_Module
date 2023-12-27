@@ -19,7 +19,7 @@ const A obj_const = A(); // const object
 obj_const.Const_Yes(); // works fine (const object can call const function) obj_const.Const_No(); // ERROR (const object cannot call nonconst function)
 ```
 
-### Bitwise left shift
+#### Bitwise left shift
 The bitwise left shift operator shifts the bits left by the bits specified by the right operand. The positions vacated by the left shift operator are filled with 0.
 ```
 //Example: Let's perform the bitwise left shift operation on the integer 6. Each bit will be shifted left by 1.
@@ -28,7 +28,7 @@ The bitwise left shift operator shifts the bits left by the bits specified by th
 
 6<<1; //= 1100 (binary) = 12 (decimal)
 ```
-## Bitwise right shift
+#### Bitwise right shift
 Like the left shift operator, the bitwise right shift operator shifts the bits right by the bits specified by the right operand. The positions vacated by the right shift operator are filled with 0.
 
 ```
@@ -38,6 +38,6 @@ Like the left shift operator, the bitwise right shift operator shifts the bits r
 
 8>>2 //= 0010 (binary) = 2 (decimal)
 ```
-##Resources
+## Resources
 * [Converting Fixed point to floating point format and vice versa](https://medium.com/incredible-coder/converting-fixed-point-to-floating-point-format-and-vice-versa-6cbc0e32544e)
 * [bitwise](https://www.techtarget.com/whatis/definition/bitwise)
