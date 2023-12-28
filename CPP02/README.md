@@ -77,7 +77,7 @@ int main()
 ```
 #### Convert Float to Fixed-point UQ4.12
 * Example: Convert ```f = -3.1415923 to UQ4.12```
-* Calucte ```f * 12^12 = -12867.964928```
+* Calucte ```f * 2^12 = -12867.964928```
 * Round the result to the nearest, ```round(-12867.964928) = -12867```(in the assignment ex01 we only work till here)
 * Organize into ```UQ4.12:0011.0010_0100_0100 2```
 * Final result in Hex: 0xCDBC

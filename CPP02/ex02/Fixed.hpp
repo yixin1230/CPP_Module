@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/22 17:45:53 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/12/28 12:58:08 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/12/28 14:35:51 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,33 @@ class Fixed
 		~Fixed();
 		
 		//6 comparison operators:
-
+		bool	operator>(Fixed const &a);
+		bool	operator<(Fixed const &a);
+		bool	operator>=(Fixed const &a);
+		bool	operator<=(Fixed const &a);
+		bool	operator==(Fixed const &a);
+		bool	operator!=(Fixed const &a);
+		
 		//4 arthmetic operators:
-		Fixed	&operator=(Fixed const &a);
+		//the first parameter is implicitly the calling object , so only need one function
+		Fixed	operator+(Fixed const &a);
+		Fixed	operator-(Fixed const &a);
+		Fixed	operator*(Fixed const &a);
+		Fixed	operator/(Fixed const &a);
 		
 		//4 increment/decrement operators
-
+		Fixed	operator++(int);
+		Fixed	operator--();
+		Fixed	operator++();
+		Fixed	operator--();
+		
 		//four public overloaded member functions:
 		Fixed &min(Fixed &a, Fixed &b);
 		Fixed &min(Fixed const &a, Fixed const &b);
-
 		Fixed &max(Fixed &a, Fixed &b);
 		Fixed &max(Fixed const &a, Fixed const &b);
 
-		
+		Fixed	&operator=(Fixed const &a);
 		//Getter && Setter
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
