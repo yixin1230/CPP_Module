@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/22 17:45:53 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/12/28 07:06:41 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/12/28 07:40:08 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ class Fixed
 		static const int _bits = 8;
 };
 
-std::ostream &operator<<(std::ostream &nb, Fixed fix);
+std::ostream & operator<<(std::ostream &o, Fixed const &fix);
 
 #endif

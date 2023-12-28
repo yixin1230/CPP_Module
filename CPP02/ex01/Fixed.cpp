@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/22 17:45:50 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/12/28 07:06:53 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/12/28 07:43:12 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,12 @@ Fixed::Fixed(const Fixed &a)
 
 Fixed::Fixed(const int i):_val(i << 8)
 {
-	_val = i << 8;
 	std::cout<<"Int constructor called"<<std::endl;
 }
 
 Fixed::Fixed(const float f):_val((int)f << 8)
 {
 	std::cout<<"Float constructor called"<<std::endl;
-	_val = f;
 }
 
 Fixed::~Fixed()
@@ -70,8 +68,8 @@ int		Fixed::toInt(void)const
 	return (this->_val >> this->_bits);
 }
 
-std::ostream &operator<<(std::ostream & nb, Fixed const &fix)
+std::ostream &operator<<(std::ostream & o, Fixed const &fix)
 {
-	nb << fix.toInt();
-	return nb;
+	o << fix.toFloat();
+	return o;
 } 
