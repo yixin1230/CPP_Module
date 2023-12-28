@@ -1,4 +1,5 @@
-### void f() const 
+# Notes for this project
+#### void f() const 
 Makes the function itself const, this only really has meaning for member functions.
 Making a member function const means that it cannot call any non-const member funcitons, nor can it change any member variables.
 It also means that the function can be called via a const object if the class
@@ -74,6 +75,7 @@ int main()
     return 0;
 }
 ```
+
 ## Resources
 * [Converting Fixed point to floating point format and vice versa](https://medium.com/incredible-coder/converting-fixed-point-to-floating-point-format-and-vice-versa-6cbc0e32544e)
 * [bitwise](https://www.techtarget.com/whatis/definition/bitwise)
