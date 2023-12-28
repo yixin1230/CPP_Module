@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/22 17:45:50 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/12/28 14:37:34 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/12/28 18:16:48 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,28 @@
 
 Fixed::Fixed(void)
 {
-	std::cout<<"Default constructor called"<<std::endl;
 	this->_val = 0;
 }
 
 Fixed::Fixed(const Fixed &a)
 {
-	std::cout<<"Copy constructor called"<<std::endl;
 	*this = a;
 }
 
 Fixed::Fixed(const int i):_val(i << _bits)
 {
-	std::cout<<"Int constructor called"<<std::endl;
 }
 
 Fixed::Fixed(const float f):_val(roundf(f * (1 << _bits)))
 {
-	std::cout<<"Float constructor called"<<std::endl;
 }
 
 Fixed::~Fixed()
 {
-	std::cout<<"Destructor called"<<std::endl;
 }
 
 int	Fixed::getRawBits(void) const
 {
-	std::cout<<"getRawBits member function called"<<std::endl;
 	return (_val);
 }
 
@@ -52,7 +46,6 @@ void	Fixed::setRawBits(int const raw)
 
 Fixed &Fixed::operator=(Fixed const &a)
 {
-	std::cout<<"Copy assignment operator called"<<std::endl;
 	this->_val = a.getRawBits();
 	return *this;
 }
@@ -73,71 +66,60 @@ std::ostream &operator<<(std::ostream & o, Fixed const &fix)
 	return o;
 } 
 
+
 //6 comparison operators:
-bool	Fixed::operator>(Fixed const &a)
+bool	Fixed::operator>(Fixed const &a) const
 {
-	if (_val > a._val)
-		return (true);
-	return (false);
+	return (_val > a._val);
 }
 
-bool	Fixed::operator<(Fixed const &a)
+bool	Fixed::operator<(Fixed const &a) const
 {
-	if (_val < a._val)
-		return (true);
-	return (false);
+	return (_val < a._val);
 }
 
-bool	Fixed::operator>=(Fixed const &a)
+bool	Fixed::operator>=(Fixed const &a) const
 {
-	if (_val >= a._val)
-		return (true);
-	return (false);
+	return (_val >= a._val);
 }
 
-bool	Fixed::operator<=(Fixed const &a)
+bool	Fixed::operator<=(Fixed const &a) const
 {
-	if (_val <= a._val)
-		return (true);
-	return (false);
+	return (_val <= a._val);
 }
 
-bool	Fixed::operator==(Fixed const &a)
+bool	Fixed::operator==(Fixed const &a) const
 {
-	if (_val == a._val)
-		return (true);
-	return (false);
+	return (_val == a._val);
 }
 
-bool	Fixed::operator!=(Fixed const &a)
+bool	Fixed::operator!=(Fixed const &a) const
 {
-	if (_val != a._val)
-		return (true);
-	return (false);
+	return (_val != a._val);
 }
 
 
 //4 arthmetic operators:
 //the first parameter is implicitly the calling object , so only need one function
-Fixed	Fixed::operator+(Fixed const &a)
+Fixed	Fixed::operator+(Fixed const &a) const
 {
 	Fixed	ret(this->toFloat() + a.toFloat());
 	return ret;
 }
 
-Fixed	Fixed::operator-(Fixed const &a)
+Fixed	Fixed::operator-(Fixed const &a) const
 {
 	Fixed	ret(this->toFloat() - a.toFloat());
 	return ret;
 }
 
-Fixed	Fixed::operator*(Fixed const &a)
+Fixed	Fixed::operator*(Fixed const &a) const
 {
 	Fixed	ret(this->toFloat() * a.toFloat());
 	return ret;
 }
 
-Fixed	Fixed::operator/(Fixed const &a)
+Fixed	Fixed::operator/(Fixed const &a) const
 {
 	Fixed	ret(this->toFloat() / a.toFloat());
 	return ret;
@@ -145,47 +127,57 @@ Fixed	Fixed::operator/(Fixed const &a)
 
 
 //4 increment/decrement operators
-Fixed	Fixed::operator++(int)
+Fixed	Fixed::operator++(int) //post increment
 {
-	Fixed	ret(this->toInt() + 1);
-	return ret;
+	Fixed tmp(*this);
+	tmp._val = this->_val++;
+	return (tmp);
 }
 
-Fixed	Fixed::operator--()
+Fixed	Fixed::operator--(int) //post decrement
 {
-	Fixed	ret(this->toInt()+ 1);
-	return ret;
+	Fixed tmp(*this);
+	tmp._val = this->_val--;
+	return (tmp);
 }
 
-Fixed	Fixed::operator++()
+Fixed	&Fixed::operator++() //pre increment
 {
-	
+	++(this->_val);
+	return (*this);
 }
 
-Fixed	Fixed::operator--()
+Fixed	&Fixed::operator--() //pre decrement
 {
-	
+	--(this->_val);
+	return (*this);
 }
-
 
 //four public overloaded member functions:
 Fixed &Fixed::min(Fixed &a, Fixed &b)
 {
-	
+	if (a <= b)
+		return a;
+	return b;
 }
 
-Fixed &Fixed::min(Fixed const &a, Fixed const &b)
+const Fixed &Fixed::min(Fixed const &a, Fixed const &b)
 {
-	
+	if (a <= b)
+		return a;
+	return b;
 }
 
 Fixed &Fixed::max(Fixed &a, Fixed &b)
 {
-	
+	if (a >= b)
+		return a;
+	return b;
 }
 
-Fixed &Fixed::max(Fixed const &a, Fixed const &b)
+Fixed const &Fixed::max(Fixed const &a, Fixed const &b)
 {
-	
+	if (a >= b)
+		return a;
+	return b;
 }
-
