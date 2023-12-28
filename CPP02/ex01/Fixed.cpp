@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/22 17:45:50 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/12/28 07:43:12 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/12/28 12:25:09 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,14 @@ Fixed::Fixed(const Fixed &a)
 	*this = a;
 }
 
-Fixed::Fixed(const int i):_val(i << 8)
+Fixed::Fixed(const int i):_val(i << _bits)
 {
 	std::cout<<"Int constructor called"<<std::endl;
 }
 
-Fixed::Fixed(const float f):_val((int)f << 8)
+Fixed::Fixed(const float f):_val(roundf(f * (1 << _bits)))
 {
+	//round the result to the nearest.
 	std::cout<<"Float constructor called"<<std::endl;
 }
 
@@ -42,12 +43,12 @@ Fixed::~Fixed()
 int	Fixed::getRawBits(void) const
 {
 	std::cout<<"getRawBits member function called"<<std::endl;
-	return (this->_val);
+	return (_val);
 }
 
 void	Fixed::setRawBits(int const raw)
 {
-	this->_val = raw;
+	_val = raw;
 }
 
 Fixed &Fixed::operator=(Fixed const &a)//should return a refer otherwise will creat a new obj
@@ -59,13 +60,12 @@ Fixed &Fixed::operator=(Fixed const &a)//should return a refer otherwise will cr
 
 float	Fixed::toFloat(void) const
 {
-	return (this->_val / (1 << this->_bits));
+	return ((float)_val / (1 << _bits));
 }
 
 int		Fixed::toInt(void)const
 {
-	
-	return (this->_val >> this->_bits);
+	return (_val >> _bits);
 }
 
 std::ostream &operator<<(std::ostream & o, Fixed const &fix)

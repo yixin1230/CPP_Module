@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/22 17:45:53 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/12/28 07:40:08 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/12/28 09:13:33 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define FIXED_HPP
 
 #include <iostream>
+#include <cmath>
 
 class Fixed
 {

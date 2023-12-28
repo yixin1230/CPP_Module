@@ -75,6 +75,21 @@ int main()
     return 0;
 }
 ```
+#### Convert Float to Fixed-point UQ4.12
+* Example: Convert ```f = -3.1415923 to UQ4.12```
+* Calucte ```f * 12^12 = -12867.964928```
+* Round the result to the nearest, ```round(-12867.964928) = -12867```(in the assignment ex01 we only work till here)
+* Organize into ```UQ4.12:0011.0010_0100_0100 2```
+* Final result in Hex: 0xCDBC
+
+#### Float-Point VS Fixed-Point 
+##### Float-Point:
+* Percision: difference between two neighbor numbers
+* Precision decreases as the magnitude increases
+
+##### Fix-Point:
+* Numbers are evenly distributed among the representable range
+* Precision is fixed
 
 ## Resources
 * [Converting Fixed point to floating point format and vice versa](https://medium.com/incredible-coder/converting-fixed-point-to-floating-point-format-and-vice-versa-6cbc0e32544e)
