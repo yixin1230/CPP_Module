@@ -6,34 +6,34 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/22 17:45:50 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/12/27 16:24:32 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/12/28 07:06:53 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed()
+Fixed::Fixed(void)
 {
 	std::cout<<"Default constructor called"<<std::endl;
 	this->_val = 0;
 }
 
-Fixed::Fixed(Fixed &a)
+Fixed::Fixed(const Fixed &a)
 {
 	std::cout<<"Copy constructor called"<<std::endl;
-	this->setRawBits(a.getRawBits()); //
+	*this = a;
 }
 
-Fixed::Fixed(const int i)
+Fixed::Fixed(const int i):_val(i << 8)
 {
+	_val = i << 8;
 	std::cout<<"Int constructor called"<<std::endl;
-	
 }
 
-Fixed::Fixed(const float f)
+Fixed::Fixed(const float f):_val((int)f << 8)
 {
 	std::cout<<"Float constructor called"<<std::endl;
-	
+	_val = f;
 }
 
 Fixed::~Fixed()
@@ -61,11 +61,17 @@ Fixed &Fixed::operator=(Fixed const &a)//should return a refer otherwise will cr
 
 float	Fixed::toFloat(void) const
 {
-	this->val /
+	return (this->_val / (1 << this->_bits));
 }
 
 int		Fixed::toInt(void)const
 {
-	this->_val >> this->_bits;
-	return (this->_bits);
+	
+	return (this->_val >> this->_bits);
 }
+
+std::ostream &operator<<(std::ostream & nb, Fixed const &fix)
+{
+	nb << fix.toInt();
+	return nb;
+} 

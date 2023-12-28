@@ -6,14 +6,14 @@
 #    By: yizhang <yizhang@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/12/22 18:22:52 by yizhang       #+#    #+#                  #
-#    Updated: 2023/12/22 18:23:05 by yizhang       ########   odam.nl          #
+#    Updated: 2023/12/27 20:30:37 by yizhang       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Harl_filter
+NAME = Fixed_point
 CC = c++
 FLAG = -Wall -Werror -Wextra -std=c++98 #-fsanitize=address
-SRC = main.cpp 
+SRC = main.cpp 	Fixed.cpp
 
 all:$(NAME)
 

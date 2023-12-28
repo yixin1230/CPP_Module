@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/22 17:45:53 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/12/23 00:36:11 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/12/28 07:06:41 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Fixed
 {
 	public:
 		Fixed();
-		Fixed(Fixed &a);//copy constructor
+		Fixed(const Fixed &a);//copy constructor
 		Fixed(const int);
 		Fixed(const float);
 		~Fixed();
@@ -32,9 +32,9 @@ class Fixed
 		int		toInt(void)const;
 	private:
 		int	_val;
-		static const int _bits;
+		static const int _bits = 8;
 };
 
-std::ostream operator<<(std::ostream &o, Fixed fix);
+std::ostream &operator<<(std::ostream &nb, Fixed fix);
 
 #endif
