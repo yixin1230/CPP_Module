@@ -75,6 +75,13 @@ int main()
     return 0;
 }
 ```
+
+#### Fixed point numbers
+The use of fixed point data type is used widely in digital signal processing (DSP) and game applications, where performance is sometimes more important than precision. 
+
+* Why is fixed point arithmetic faster than floating point
+This is because fixed-point arithmetic uses integers to represent fractional numbers, which can be more efficient in terms of memory usage and processing speed compared to floating-point arithmetic, which involves more complex operations.
+
 #### Convert Float to Fixed-point UQ4.12
 * Example: Convert ```f = -3.1415923 to UQ4.12```
 * Calucte ```f * 2^12 = -12867.964928```
@@ -87,7 +94,7 @@ int main()
 * Percision: difference between two neighbor numbers
 * Precision decreases as the magnitude increases
 
-##### Fix-Point:
+##### Fixed-Point:
 * Numbers are evenly distributed among the representable range
 * Precision is fixed
 
