@@ -77,9 +77,9 @@ int main()
 ```
 
 #### Fixed point numbers
-The use of fixed point data type is used widely in digital signal processing (DSP) and game applications, where performance is sometimes more important than precision. 
+* The use of fixed point data type is used widely in digital signal processing (DSP) and game applications, where performance is sometimes more important than precision. 
 <br>
-Why is fixed point arithmetic faster than floating point?<br>
+* Why is fixed point arithmetic faster than floating point?<br>
 This is because fixed-point arithmetic uses integers to represent fractional numbers, which can be more efficient in terms of memory usage and processing speed compared to floating-point arithmetic, which involves more complex operations.
 
 #### Convert Float to Fixed-point UQ4.12
