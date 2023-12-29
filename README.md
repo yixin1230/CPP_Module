@@ -7,7 +7,7 @@ C++ modules for learn the language
 * [CPP01](https://github.com/yixin1230/CPP_Module/blob/main/CPP01/README.md)
 * [CPP02](https://github.com/yixin1230/CPP_Module/blob/main/CPP02/README.md)
 * [CPP03](https://github.com/yixin1230/CPP_Module/blob/main/CPP03/README.md)
-* [CPP04]()
+* [CPP04](https://github.com/yixin1230/CPP_Module/blob/main/CPP04/README.md)
 * [CPP05]()
 * [CPP06]()
 * [CPP07]()
