@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/28 19:46:23 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/12/29 10:18:09 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/12/29 11:33:42 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class ClapTrap
 	private:
 	std::string		_name;
 	unsigned int	_hitPoints;
-	unsigned int	_EnergyPoints;
+	unsigned int	_energyPoints;
 	unsigned int	_attackDamage;
 };
 
