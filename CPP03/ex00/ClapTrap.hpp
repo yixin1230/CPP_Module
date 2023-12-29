@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/28 19:46:23 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/12/29 11:33:42 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/12/29 13:45:47 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 #define CLAPTRAP_HPP
 
 #include <iostream>
+
+#define RESET "\033[0m"
+#define RED "\033[1;31m"
+#define GREEN "\033[1;32m"
+#define YELLOW "\033[1;33m"
+#define BLUE "\033[1;34m"
+#define MAG "\033[1;35m"
 
 class ClapTrap
 {
