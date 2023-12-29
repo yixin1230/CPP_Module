@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/28 19:46:23 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/12/28 19:55:24 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/12/29 10:18:09 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,19 @@ class ClapTrap
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
 	
-	ClapTrap();
-	ClapTrap(std::string);
+	ClapTrap();//Default constructor
+	ClapTrap(ClapTrap &a);//Copy constructor
+	ClapTrap(std::string name);
 	~ClapTrap();
+
+	//Copy assignment operator
+	ClapTrap &operator=(ClapTrap const &a);
+	
 	private:
-	std::string _name;
-	int			_hitPoints;
-	int			_EnergyPoints;
-	int			_attackDamage;
+	std::string		_name;
+	unsigned int	_hitPoints;
+	unsigned int	_EnergyPoints;
+	unsigned int	_attackDamage;
 };
 
 #endif
