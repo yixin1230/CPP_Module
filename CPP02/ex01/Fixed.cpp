@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/22 17:45:50 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/12/28 12:25:09 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/12/29 09:06:10 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ Fixed::~Fixed()
 
 int	Fixed::getRawBits(void) const
 {
-	std::cout<<"getRawBits member function called"<<std::endl;
+	//std::cout<<"getRawBits member function called"<<std::endl;
 	return (_val);
 }
 

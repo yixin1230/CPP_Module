@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/22 17:45:50 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/12/22 23:24:07 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/12/29 08:54:17 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Fixed::Fixed()
 Fixed::Fixed(Fixed &a)
 {
 	std::cout<<"Copy constructor called"<<std::endl;
-	this->setRawBits(a.getRawBits()); //
+	this->setRawBits(a.getRawBits());
 }
 
 Fixed::~Fixed()
