@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/28 19:46:23 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/12/29 13:45:47 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/12/29 17:31:01 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class ClapTrap
 	void	attack(const std::string& target);
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
+	void	dead();
 	
 	ClapTrap();//Default constructor
 	ClapTrap(ClapTrap &a);//Copy constructor
@@ -37,7 +38,7 @@ class ClapTrap
 	//Copy assignment operator
 	ClapTrap &operator=(ClapTrap const &a);
 	
-	private:
+	protected:
 	std::string		_name;
 	unsigned int	_hitPoints;
 	unsigned int	_energyPoints;

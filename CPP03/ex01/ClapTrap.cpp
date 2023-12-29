@@ -6,23 +6,27 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/28 19:46:17 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/12/29 13:57:05 by yizhang       ########   odam.nl         */
+/*   Updated: 2023/12/29 17:32:21 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
+void	ClapTrap::dead()
+{
+	std::cout<<RED <<_name<<" DEAD! Can't do anything. No hit points or energy points" RESET<<std::endl;
+	_energyPoints = 0;
+	_hitPoints = 0;
+}
+
 void	ClapTrap::attack(const std::string& target)
 {
 	if (_hitPoints <= 0 || _energyPoints <= 1)
 	{
-		std::cout<<RED <<_name<<" DEAD! Can't do anything. No hit points or energy points" RESET<<std::endl;
+		dead();
 		return ;
 	}
-	std::cout<<"ClapTrap "<<
-	_name<< " attacks "<<
-	target<<" causing "<<
-	_attackDamage<<" points of damage!"<<std::endl;
+	std::cout<<_name<< " attacks "<<target<<" causing "<<_attackDamage<<" points of damage!"<<std::endl;
 	_energyPoints -= 1;
 }
 
@@ -30,9 +34,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (_hitPoints <= 0 || _energyPoints <= 1)
 	{
-		std::cout<<RED <<_name<<" DEAD! Can't do anything. No hit points or energy points" RESET<<std::endl;
-		_energyPoints = 0;
-		_hitPoints = 0;
+		dead();
 		return ;
 	}
 	std::cout<<_name<<" be repaired "<<amount<<" points"<<std::endl;
@@ -44,9 +46,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 {
 	if (_hitPoints <= amount || _energyPoints == 0)
 	{
-		std::cout<<RED<< _name<<" DEAD! Can't do anything. No hit points or energy points" RESET<<std::endl;
-		_energyPoints = 0;
-		_hitPoints = 0;
+		dead();
 		return ;
 	}
 	_hitPoints -= amount;
