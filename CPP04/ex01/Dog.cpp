@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   Dog.cpp                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/12/28 18:20:28 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/02 19:57:06 by yizhang       ########   odam.nl         */
+/*   Created: 2024/01/02 16:18:01 by yizhang       #+#    #+#                 */
+/*   Updated: 2024/01/02 17:06:46 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
-#include "Cat.hpp"
-#include "Brain.hpp"
 
-int main()
+Dog::Dog()
 {
-const Animal* j = new Dog();
-const Animal* i = new Cat();
-delete j;//should not create a leak
-delete i;
+	_type = "Dog";
+	std::cout<<YELLOW<<_type<<" constructor called "<<RESET<<std::endl;
+}
 
-return 0;
+Dog::~Dog()
+{
+	std::cout<<YELLOW<<_type<<" destructor called "<<RESET<<std::endl;
+	
+}
+
+void Dog::makeSound()const
+{
+	std::cout<<_type<<": Woof Woof!"<<std::endl;
 }
