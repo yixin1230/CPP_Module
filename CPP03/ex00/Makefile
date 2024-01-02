@@ -6,13 +6,13 @@
 #    By: yizhang <yizhang@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/12/22 18:22:52 by yizhang       #+#    #+#                  #
-#    Updated: 2023/12/29 17:02:24 by yizhang       ########   odam.nl          #
+#    Updated: 2024/01/02 15:56:57 by yizhang       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ClapTrap
 CC = c++
-FLAG = -Wall -Werror -Wextra -std=c++98 -fsanitize=address
+FLAG = -Wall -Werror -Wextra -std=c++98 #-fsanitize=address
 SRC = main.cpp ClapTrap.cpp
 
 all:$(NAME)
