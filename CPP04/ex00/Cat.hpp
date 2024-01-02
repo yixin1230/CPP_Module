@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   Cat.hpp                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/12/28 18:20:28 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/02 16:20:18 by yizhang       ########   odam.nl         */
+/*   Created: 2024/01/02 16:08:39 by yizhang       #+#    #+#                 */
+/*   Updated: 2024/01/02 16:15:49 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-#include "Dog.hpp"
+#ifndef CAT_HPP
+#define CAT_HPP
 
-int main()
+#include "Animal.hpp"
+
+class Cat : public Animal
 {
-	return 0;
-}
+	public:
+		Cat();
+		~Cat();
+		void makeSound(void);
+};
+#endif

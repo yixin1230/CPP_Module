@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   Cat.cpp                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/12/28 18:20:28 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/02 16:20:18 by yizhang       ########   odam.nl         */
+/*   Created: 2024/01/02 16:17:36 by yizhang       #+#    #+#                 */
+/*   Updated: 2024/01/02 16:19:44 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
-#include "Dog.hpp"
 
-int main()
+Cat::Cat()
 {
-	return 0;
+
+}
+
+Cat::~Cat()
+{
+
+}
+
+void Cat::makeSound(void)
+{
+
 }

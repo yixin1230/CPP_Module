@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   Dog.hpp                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/12/28 18:20:28 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/02 16:20:18 by yizhang       ########   odam.nl         */
+/*   Created: 2024/01/02 16:06:56 by yizhang       #+#    #+#                 */
+/*   Updated: 2024/01/02 16:17:24 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-#include "Dog.hpp"
+#ifndef DOG_HPP
+#define DOG_HPP
 
-int main()
+#include "Animal.hpp"
+
+class Dog : public Animal
 {
-	return 0;
-}
+	public:
+		Dog();
+		~Dog();
+		void makeSound();
+		
+};
+#endif
