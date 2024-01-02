@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/02 16:00:04 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/02 16:13:08 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/02 18:47:57 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,20 @@
 
 #include <iostream>
 
+#define RESET "\033[0m"
+#define RED "\033[1;31m"
+#define GREEN "\033[1;32m"
+#define YELLOW "\033[1;33m"
+#define BLUE "\033[1;34m"
+#define MAG "\033[1;35m"
+
 class Animal
 {
 	public:
 		Animal();
-		~Animal();
-		void makeSound(void);
+		virtual ~Animal();
+		virtual void makeSound(void) const;
+		std::string getType(void) const;
 	protected:
 		std::string _type;
 };

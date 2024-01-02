@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/02 16:08:39 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/02 16:15:49 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/02 17:06:09 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ class Cat : public Animal
 	public:
 		Cat();
 		~Cat();
-		void makeSound(void);
+		void makeSound(void)const;
 };
 #endif

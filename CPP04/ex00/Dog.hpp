@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/02 16:06:56 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/02 16:17:24 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/02 17:07:33 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ class Dog : public Animal
 	public:
 		Dog();
 		~Dog();
-		void makeSound();
-		
+		void makeSound()const;
 };
 #endif

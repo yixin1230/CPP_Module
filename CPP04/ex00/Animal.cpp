@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/02 16:00:08 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/02 16:14:20 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/02 18:00:17 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,20 @@
 Animal::Animal()
 {
 	_type = "TYPE";
-	std::cout<<" Animal constructor called"<<std::endl;
+	std::cout<<GREEN<<"Animal constructor called"<<RESET<<std::endl;
 }
 
 Animal::~Animal()
 {
-	std::cout<<" Animal destructor called"<<std::endl;
+	std::cout<<GREEN<<"Animal destructor called"<<RESET<<std::endl;
 }
 
-void Animal::makeSound(void)
+void Animal::makeSound(void) const
 {
 	std::cout<<"Some sound"<<std::endl;
+}
+
+std::string Animal::getType(void) const
+{
+	return (_type);
 }
