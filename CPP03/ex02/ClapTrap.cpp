@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/28 19:46:17 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/02 15:24:30 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/02 15:55:01 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ ClapTrap::ClapTrap()
 	_hitPoints = 10;
 	_energyPoints = 10;
 	_attackDamage = 0;
-	std::cout <<  GREEN <<_name <<": default constructor called" RESET<<std::endl;
+	std::cout <<  GREEN <<_name <<": default ClapTrap constructor called" RESET<<std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name)

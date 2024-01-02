@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/28 18:20:28 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/02 15:25:10 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/02 15:54:07 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 int main()
 {
-	FragTrap bob;
+	FragTrap bob("Bob");
+	ClapTrap jim("Jim");
 	
 	bob.takeDamage(99);
 	bob.highFiveGuys();
