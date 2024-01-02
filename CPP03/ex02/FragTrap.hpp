@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   FragTrap.hpp                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/12/28 18:20:28 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/02 15:25:10 by yizhang       ########   odam.nl         */
+/*   Created: 2024/01/02 14:39:54 by yizhang       #+#    #+#                 */
+/*   Updated: 2024/01/02 15:09:32 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
-int main()
+#include <iostream>
+#include "ClapTrap.hpp"
+
+class FragTrap: public ClapTrap
 {
-	FragTrap bob;
-	
-	bob.takeDamage(99);
-	bob.highFiveGuys();
-	bob.attack("wall");
-	bob.takeDamage(1);//dead
+	public:
+		~FragTrap();
+		FragTrap();
+		FragTrap(std::string name);
+		//ClapTrap();
+		void highFiveGuys(void);
+};
 
-	return 0;
-}
+#endif
