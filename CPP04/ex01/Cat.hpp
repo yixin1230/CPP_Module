@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/02 16:08:39 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/02 17:06:09 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/02 20:27:31 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define CAT_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Cat : public Animal
 {
@@ -21,5 +22,7 @@ class Cat : public Animal
 		Cat();
 		~Cat();
 		void makeSound(void)const;
+	private:
+		Brain * _brain;
 };
 #endif

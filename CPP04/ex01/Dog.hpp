@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/02 16:06:56 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/02 17:07:33 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/02 20:27:24 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define DOG_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Dog : public Animal
 {
@@ -21,5 +22,7 @@ class Dog : public Animal
 		Dog();
 		~Dog();
 		void makeSound()const;
+	private:
+		Brain * _brain;
 };
 #endif

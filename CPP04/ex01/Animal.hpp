@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/02 16:00:04 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/02 18:47:57 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/02 20:42:07 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class Animal
 		virtual ~Animal();
 		virtual void makeSound(void) const;
 		std::string getType(void) const;
+		Animal &operator=(Animal const &a)const;
 	protected:
 		std::string _type;
 };
