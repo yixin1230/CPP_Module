@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/29 14:05:57 by yizhang       #+#    #+#                 */
-/*   Updated: 2023/12/29 17:32:39 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/03 15:16:51 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,3 +44,15 @@ void  ScavTrap::guardGate()
 	}
 	std::cout<<_name<<":  ScavTrap is now in Gatekeeper mode"<<std::endl;
 }
+
+void ScavTrap::attack( const std::string&target)
+{
+	if (_hitPoints <= 0 || _energyPoints <= 1)
+	{
+		dead();
+		return ;
+	}
+	std::cout<<_name<< " ATTACKS "<<target<<" causing "<<_attackDamage<<" points of damage!"<<std::endl;
+	_energyPoints -= 1;
+}
+
