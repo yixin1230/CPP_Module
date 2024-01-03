@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/28 18:20:28 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/02 18:02:19 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/03 16:10:27 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ int main()
 	j->makeSound();
 	meta->makeSound();
 
+	delete j;
+	delete i;
+	delete meta;
 	return 0;
 }
 

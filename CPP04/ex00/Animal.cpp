@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/02 16:00:08 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/02 18:00:17 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/03 16:06:20 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,10 @@ void Animal::makeSound(void) const
 std::string Animal::getType(void) const
 {
 	return (_type);
+}
+
+Animal &Animal::operator=(Animal const &a)
+{
+	this->_type = a.getType();
+	return (*this);
 }

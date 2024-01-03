@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/02 16:00:08 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/02 20:41:57 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/03 15:59:15 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ std::string Animal::getType(void) const
 	return (_type);
 }
 
-Animal &Animal::operator=(Animal const &a)const
+Animal &Animal::operator=(Animal const &a)
 {
-	this->_type = a._type;
+	this->_type = a.getType();
 	return (*this);
 }
 
