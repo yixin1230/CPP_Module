@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/02 16:17:36 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/04 10:13:08 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/04 15:40:37 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@ Cat::Cat()
 	_type = "Cat";
 	_brain = new Brain();
 	std::cout<<BLUE<<_type<<" constructor called"<<RESET<<std::endl;
+}
+
+Cat::Cat(Cat const &a):Animal(a)
+{
+	
+	_brain = new Brain(*a._brain);
 }
 
 Cat::~Cat()
@@ -33,7 +39,17 @@ void Cat::makeSound(void)const
 Cat &Cat::operator=(Cat const &a)
 {
 	_type = a._type;
-	_brain = a._brain;
+	*_brain = *(a._brain);
 	std::cout<<"Cat copy assigment operator called"<<std::endl;
 	return (*this);
+}
+
+Brain &Cat::getBrain(void)
+{
+	return (*_brain);
+}
+
+void Cat::setBrain(Brain const &a)
+{
+	*_brain = a;
 }

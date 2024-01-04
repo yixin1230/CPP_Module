@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/02 19:50:29 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/04 10:26:06 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/04 15:19:40 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,16 @@ class Brain
 {
 	public:
 		Brain();
+		Brain(Brain const &a);
 		~Brain();
-		Brain operator=(Brain const &a);
-		void setIdeas(std::string idea);
-		void getIdeas(int i);
+		Brain &operator=(Brain const &a);
+
+		
+		void setIdeas(std::string const idea, int i);
+		std::string getIdeas(unsigned int i);
+		
 	protected:
-		std::string ideas[100];
-		int	index;
+		std::string	*_ideas;
 };
 
 #endif
