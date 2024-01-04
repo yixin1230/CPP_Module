@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/02 16:00:08 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/03 16:06:20 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/04 09:54:59 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Animal::Animal()
 {
-	_type = "TYPE";
+	_type = "Animal";
 	std::cout<<GREEN<<"Animal constructor called"<<RESET<<std::endl;
 }
 
@@ -25,7 +25,7 @@ Animal::~Animal()
 
 void Animal::makeSound(void) const
 {
-	std::cout<<"Some sound"<<std::endl;
+	std::cout<<_type<<": Some sound"<<std::endl;
 }
 
 std::string Animal::getType(void) const
@@ -37,4 +37,10 @@ Animal &Animal::operator=(Animal const &a)
 {
 	this->_type = a.getType();
 	return (*this);
+}
+
+Animal::Animal(Animal const &a)
+{
+	*this = a;
+	std::cout<<"Animal copy constructor"<<std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/03 21:43:10 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/04 09:15:53 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/04 09:43:47 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,16 @@
 
 WrongCat::WrongCat()
 {
-	_type = "Cat";
-	std::cout<<BLUE<<_type<<" constructor "<<RESET<<std::endl;
+	_type = "WrongCat";
+	std::cout<<RED<<_type<<" constructor called"<<RESET<<std::endl;
 }
 
 WrongCat::~WrongCat()
 {
-	std::cout<<BLUE<<_type<<" detructor "<<RESET<<std::endl;
+	std::cout<<RED<<_type<<" detructor called"<<RESET<<std::endl;
 }
 
 void WrongCat::makeSound(void)
 {
 	std::cout<<_type<<": I'm wrong cat, wrong wrong!"<<std::endl;
-	
 }

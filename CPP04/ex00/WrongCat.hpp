@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/03 21:42:55 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/04 09:16:14 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/04 09:43:27 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 class WrongCat: public WrongAnimal
 {
 	public:
-        WrongCat();
-        ~WrongCat();
-        void makeSound(void);
+		WrongCat();
+		~WrongCat();
+		void makeSound(void) ;
 };
 #endif

@@ -6,12 +6,13 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/28 18:20:28 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/04 09:16:37 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/04 09:49:09 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Dog.hpp"
+#include "WrongCat.hpp"
 
 int main()
 {
@@ -27,5 +28,17 @@ int main()
 	delete j;
 	delete i;
 	delete meta;
+
+	const WrongAnimal* wrong = new WrongAnimal();
+	const WrongAnimal* wrongCat = new WrongCat();
+	std::cout << wrong->getType() << " " << std::endl;
+	wrong->makeSound();
+	wrongCat->makeSound();
+
+	//To call the destructor of the dynamic type of the pointer,
+	//need to declare the destructor as virtual 
+	//Othwise it will not print out WrongCat destructor
+	delete wrongCat;
+	delete wrong;
 	return 0;
 }

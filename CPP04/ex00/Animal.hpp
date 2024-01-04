@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/02 16:00:04 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/03 16:06:08 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/04 09:54:54 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Animal
 {
 	public:
 		Animal();
+		Animal(Animal const &a);
 		virtual ~Animal();
 		virtual void makeSound(void) const;
 		std::string getType(void) const;
