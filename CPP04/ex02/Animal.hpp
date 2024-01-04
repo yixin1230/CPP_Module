@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/02 16:00:04 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/04 17:19:50 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/04 17:38:46 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Animal
 		Animal(Animal const &a);
 		
 		virtual ~Animal();
-		virtual void makeSound(void) const;
+		virtual void makeSound(void) const = 0;
 		std::string getType(void) const;
 		virtual Animal &operator=(Animal const &a);
 		virtual Brain &getBrain(void) = 0;

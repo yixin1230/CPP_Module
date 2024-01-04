@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/28 18:20:28 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/04 17:08:46 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/04 17:53:05 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 
 int main()
 {
+	//Test Animal class not sound
+	//Animal *thing = new Animal();
+
 	// Test in subject
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
@@ -25,7 +28,6 @@ int main()
 	//Test array of animals
 	std::cout<<std::endl<<std::endl;
 	Animal *ani[6] = {new Dog(), new Dog(), new Dog(), new Cat(), new Cat(), new Cat()};
-	
 
 	//Test Brain
 	ani[0]->getBrain().setIdeas("lol",0);
@@ -54,6 +56,13 @@ int main()
 	std::cout<<ani[0]->getBrain().getIdeas(1)<<std::endl;
 	std::cout<<std::endl<<std::endl;
 
+	//Sound test
+	ani[0]->makeSound();
+	ani[1]->makeSound();
+	ani[2]->makeSound();
+	ani[3]->makeSound();
+	ani[4]->makeSound();
+	ani[5]->makeSound();
 	
 	for (int i = 0; i < 6; i++)
 		delete ani[i];

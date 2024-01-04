@@ -36,3 +36,12 @@
 
 #### Deep Copy
 - In Deep copy, an object is created by copying data of all variables, and it also allocates similar memory resources with the same value to the object. In order to perform Deep copy, we need to explicitly define the copy constructor and assign dynamic memory as well, if required. Also, it is required to dynamically allocate memory to the variables in the other constructors, as well.
+
+#### abstract classes
+* An abstract class means some behaviours are abstract and some are not. The abstract class itself cannot be instantiated
+
+* An abstract class is a class that cannot be instantiated and is usually implemented as a class that has one or more pure virtual (abstract) functions
+
+* A pure virtual function is one which must be overridden by any concrete derived class. This is indicated in the declaration with the syntax ```"=0"``` in the member function's declaration. It is a way of forcing a contract between the class designer and the users of that class
+
+* If a class only has pure virtual functions (and no data), it is called an interface
