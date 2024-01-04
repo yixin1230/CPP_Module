@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/02 19:50:19 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/02 20:22:25 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/04 10:26:33 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,3 +21,21 @@ Brain::~Brain()
 {
 	std::cout<<"Brain destructor called"<<std::endl;
 }
+
+Brain Brain::operator=(Brain const &a)
+{
+	*this = a;
+	std::cout<<"Brain copy assigment operator called"<<std::endl;
+	return (*this);
+}
+
+void Brain::setIdeas(std::string idea)
+{
+	
+}
+
+void Brain::getIdeas(int i)
+{
+	
+}
+

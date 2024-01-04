@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/02 16:00:08 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/03 15:59:15 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/04 10:08:17 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,12 @@ std::string Animal::getType(void) const
 Animal &Animal::operator=(Animal const &a)
 {
 	this->_type = a.getType();
+	std::cout<<"Animal copy assigment operator called"<<std::endl;
 	return (*this);
 }
 
+Animal::Animal(Animal const &a)
+{
+	*this = a;
+	std::cout<<"Animal copy constructor"<<std::endl;
+}
