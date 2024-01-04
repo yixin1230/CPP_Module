@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/28 18:20:28 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/04 17:53:05 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/04 18:01:41 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@ int main()
 {
 	//Test Animal class not sound
 	//Animal *thing = new Animal();
+	Animal *notWork = new Dog();
+	std::cout<<notWork->getType()<<std::endl;
+	notWork->makeSound();
+	delete notWork;
+	std::cout<<std::endl<<std::endl;
+
 
 	// Test in subject
 	const Animal* j = new Dog();

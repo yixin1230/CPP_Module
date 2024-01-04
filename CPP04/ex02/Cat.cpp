@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/02 16:17:36 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/04 17:18:22 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/04 18:12:40 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,3 +53,14 @@ void Cat::setBrain(Brain const &a)
 {
 	*_brain = a;
 }
+
+//not allow inheritance
+/* std::string Cat::getType(void) const
+{
+	return (_type);
+} */
+
+/* std::string Cat::hi(void)
+{
+	std::cout<<"Hi"<<std::endl;
+} */

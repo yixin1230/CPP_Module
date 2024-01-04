@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/02 16:00:08 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/04 16:50:14 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/04 18:14:00 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,9 @@ Animal::Animal(Animal const &a)
 {
 	*this = a;
 	std::cout<<"Animal copy constructor"<<std::endl;
+}
+
+void Animal::hi(void)
+{
+	std::cout<<"Hi"<<std::endl;
 }
