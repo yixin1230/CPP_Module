@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/28 18:20:28 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/03 16:10:27 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/04 09:16:37 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main()
 	const Animal* i = new Cat();
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
+	i->makeSound();
 	j->makeSound();
 	meta->makeSound();
 
@@ -29,17 +29,3 @@ int main()
 	delete meta;
 	return 0;
 }
-
-
-
-/* int main()
-{
-	Animal animal;
-	Dog dog;
-	Cat cat;
-
-	animal.makeSound();
-	cat.makeSound();
-	dog.makeSound();
-	return 0;
-} */

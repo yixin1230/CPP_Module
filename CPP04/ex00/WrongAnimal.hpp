@@ -6,24 +6,31 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/03 21:43:31 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/04 08:39:31 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/04 09:12:43 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WRONGANIMAL_HPP
 #define WRONGANIMAL_HPP
 
-#include <iostream>
+#define RESET "\033[0m"
+#define RED "\033[1;31m"
+#define GREEN "\033[1;32m"
+#define YELLOW "\033[1;33m"
+#define BLUE "\033[1;34m"
+#define MAG "\033[1;35m"
 
+#include <iostream>
 class WrongAnimal
 {
 	public:
 		WrongAnimal();
 		WrongAnimal(std::string name);
 		~WrongAnimal();
-		void makeSond();
-		
+		void makeSound(void);
+		std::string getType(void) const;
+		WrongAnimal &operator=(WrongAnimal const &a);
 	protected:
-		std::string type;
+		std::string _type;
 };
 #endif
