@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/02 16:18:01 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/04 15:40:51 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/04 16:36:58 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void Dog::makeSound()const
 Dog &Dog::operator=(Dog const &a)
 {
 	_type = a._type;
-	*_brain = *(a._brain);
+	_brain = new Brain(*a._brain);
 	std::cout<<"Dog copy assigment operator called"<<std::endl;
 	return (*this);
 }

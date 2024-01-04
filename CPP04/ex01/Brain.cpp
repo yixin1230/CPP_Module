@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/02 19:50:19 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/04 15:26:54 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/04 16:18:41 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 Brain::Brain()
 {
-	_ideas = new std::string[100];
 	std::cout<<"Brain constructor called"<<std::endl;
 }
 
@@ -25,7 +24,6 @@ Brain::Brain(Brain const &a)
 
 Brain::~Brain()
 {
-	delete []_ideas;
 	std::cout<<"Brain destructor called"<<std::endl;
 }
 
@@ -39,7 +37,7 @@ Brain &Brain::operator=(Brain const &a)
 	return (*this);
 }
 
-void Brain::setIdeas(std::string const idea, int i)
+void Brain::setIdeas(std::string const &idea, int i)
 {
 	_ideas[i] = idea;
 }

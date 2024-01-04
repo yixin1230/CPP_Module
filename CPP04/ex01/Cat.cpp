@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/02 16:17:36 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/04 15:40:37 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/04 16:45:40 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ Cat::Cat()
 
 Cat::Cat(Cat const &a):Animal(a)
 {
-	
-	_brain = new Brain(*a._brain);
+	*this = a;
 }
 
 Cat::~Cat()
@@ -39,7 +38,7 @@ void Cat::makeSound(void)const
 Cat &Cat::operator=(Cat const &a)
 {
 	_type = a._type;
-	*_brain = *(a._brain);
+	_brain = new Brain(*a._brain);
 	std::cout<<"Cat copy assigment operator called"<<std::endl;
 	return (*this);
 }
