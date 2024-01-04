@@ -6,14 +6,14 @@
 #    By: yizhang <yizhang@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/12/22 18:22:52 by yizhang       #+#    #+#                  #
-#    Updated: 2024/01/04 10:23:28 by yizhang       ########   odam.nl          #
+#    Updated: 2024/01/02 20:28:24 by yizhang       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Abstract
+NAME = Fire
 CC = c++
-FLAG = -Wall -Werror -Wextra -std=c++98 #-fsanitize=address
-SRC = main.cpp 
+FLAG = -Wall -Werror -Wextra -std=c++98 -fsanitize=address
+SRC = main.cpp Dog.cpp Animal.cpp Cat.cpp Brain.cpp
 
 all:$(NAME)
 
