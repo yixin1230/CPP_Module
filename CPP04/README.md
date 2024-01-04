@@ -27,3 +27,12 @@
 * Slower: The function call takes slightly longer due to the virtual mechanism and makes it more difficult for the compiler to optimize because it dose not know exactly which function is going to be called at compile time.
 * Difficult to Debug: In a complex system, virtual function can make it a little more difficult to figure our where a function is being called from.
 
+### Shallow Copy and Deep Copy
+- In general, if the variable of an object have been dynamically allocated, then it is required to do a ```Deep Copy``` in order to create a copy of the object.
+
+#### Shallow Copy
+- In shallow copy, an object is created by simply copying the data of all variables of the original object. This works well if none of the variables of the object are defined in the ```heap section of memory```. If some variables are dynamically allocated memory from heap section, then the copied object variable will also reference the same memory location.<br>
+- This will create ambiguity and run-time errors, dangling pointer. Since both objects will reference to the same memory location, then change made by one will reflect those change in another object as well. 
+
+#### Deep Copy
+- In Deep copy, an object is created by copying data of all variables, and it also allocates similar memory resources with the same value to the object. In order to perform Deep copy, we need to explicitly define the copy constructor and assign dynamic memory as well, if required. Also, it is required to dynamically allocate memory to the variables in the other constructors, as well.
