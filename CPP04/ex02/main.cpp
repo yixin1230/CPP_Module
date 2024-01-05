@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/28 18:20:28 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/04 18:01:41 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/05 14:22:40 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,17 +49,18 @@ int main()
 	
 
 	//Deep copy
-	Animal *deep = ani[0];
+	Dog origin;
+	Dog deep = origin;
 	std::cout<<"deep: "<<std::endl;
-	std::cout<<deep->getBrain().getIdeas(0)<<std::endl;
-	std::cout<<deep->getBrain().getIdeas(1)<<std::endl;
+	deep.getBrain().setIdeas("Food!",0);
+	deep.getBrain().setIdeas("Ball!",1);
+	std::cout<<deep.getBrain().getIdeas(0)<<std::endl;
+	std::cout<<deep.getBrain().getIdeas(1)<<std::endl;
 	std::cout<<std::endl<<std::endl;
-	deep->getBrain().setIdeas("Food!",0);
-	deep->getBrain().setIdeas("Ball!",1);
 	
-	std::cout<<"ani[0]: "<<std::endl;
-	std::cout<<ani[0]->getBrain().getIdeas(0)<<std::endl;
-	std::cout<<ani[0]->getBrain().getIdeas(1)<<std::endl;
+	std::cout<<"origin: "<<std::endl;
+	std::cout<<origin.getBrain().getIdeas(0)<<std::endl;
+	std::cout<<origin.getBrain().getIdeas(1)<<std::endl;
 	std::cout<<std::endl<<std::endl;
 
 	//Sound test

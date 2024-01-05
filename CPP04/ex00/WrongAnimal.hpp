@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/03 21:43:31 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/04 09:53:44 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/05 14:15:29 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class WrongAnimal
 	public:
 		WrongAnimal();
 		WrongAnimal(WrongAnimal const &a);
-		virtual ~WrongAnimal();
+		~WrongAnimal();
 		void makeSound(void) const;
 		std::string getType(void) const;
 		WrongAnimal &operator=(WrongAnimal const &a);
