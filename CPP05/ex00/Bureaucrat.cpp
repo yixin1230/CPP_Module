@@ -1,33 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Bureaucrat.hpp                                     :+:    :+:            */
+/*   Bureaucrat.cpp                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/01/18 13:15:18 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/18 13:26:02 by yizhang       ########   odam.nl         */
+/*   Created: 2024/01/18 13:26:29 by yizhang       #+#    #+#                 */
+/*   Updated: 2024/01/18 13:27:43 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef BUREAUCRAT_HPP
-# define BUREAUCRAT_HPP
+#include "Bureaucrat.hpp"
 
-#include <iostream>
-
-class Bureaucrat
+Bureaucrat::Bureaucrat()
 {
-    public:
-		Bureaucrat();
-		Bureaucrat(const Bureaucrat &a);
-		~Bureaucrat();
+    
+}
 
-		Bureaucrat &operator=(const Bureaucrat &a);
-        std::string	getName(void);
-		int	getGrade(void);
-    private:
-    	std::string const	_name;
-    	int					_grade;
-};
+Bureaucrat::Bureaucrat(const Bureaucrat &a)
+{
+    
+}
 
-# endif
+Bureaucrat::~Bureaucrat()
+{
+    
+}
+
+
+Bureaucrat &Bureaucrat::operator=(const Bureaucrat &a)
+{
+    
+}
+
+std::string	Bureaucrat::getName(void)
+{
+    
+}
+
+int	Bureaucrat::getGrade(void)
+{
+    
+}
