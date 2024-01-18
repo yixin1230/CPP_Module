@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/18 13:26:29 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/18 14:04:39 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/18 15:01:34 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ Bureaucrat::Bureaucrat()
 
 Bureaucrat::Bureaucrat(const Bureaucrat &a)
 {
-    
+    this->_grade = a._grade;
+    std::cout<<"Bureaucrat copy constructor called"<<std::endl;
 }
 
 Bureaucrat::~Bureaucrat()
@@ -31,7 +32,6 @@ Bureaucrat::~Bureaucrat()
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &a)
 {
     this->_grade = a._grade;
-    this->_name = a.getName();
     return (*this);
 }
 
