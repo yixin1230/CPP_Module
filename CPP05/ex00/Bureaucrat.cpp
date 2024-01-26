@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/18 13:26:29 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/18 15:01:34 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/26 09:17:07 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ Bureaucrat::~Bureaucrat()
     std::cout<<"Bureaucrat destructor called"<<std::endl;
 }
 
-
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &a)
 {
     this->_grade = a._grade;
@@ -43,4 +42,14 @@ std::string	Bureaucrat::getName(void)
 int	Bureaucrat::getGrade(void)
 {
     return (_grade);
+}
+
+void Bureaucrat::increment(int grade)
+{
+    _grade -= grade;
+}
+
+void Bureaucrat::decrement(int grade)
+{
+    _grade += grade;
 }
