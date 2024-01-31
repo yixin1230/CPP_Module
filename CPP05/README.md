@@ -1,4 +1,4 @@
-# Note for this project
+# Notes for this project
 
 #### C++ Throw Exception Example
 ```
