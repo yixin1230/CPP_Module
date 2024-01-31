@@ -6,14 +6,18 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/18 13:26:29 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/26 09:17:07 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/01/31 09:22:18 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat(const std::string &name, const int &grade): _name(name), _grade(grade)
 {
+    if (grade > 150)
+        throw Bureaucrat::GradeTooLowException();
+    if (grade < 1)
+        throw Bureaucrat::GradeTooHighException();
     std::cout<<"Bureaucrat constructor called"<<std::endl;
 }
 
@@ -34,22 +38,32 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &a)
     return (*this);
 }
 
-std::string	Bureaucrat::getName(void)
+std::string	Bureaucrat::getName(void) const
 {
     return (_name);
 }
 
-int	Bureaucrat::getGrade(void)
+int	Bureaucrat::getGrade(void) const
 {
     return (_grade);
 }
 
-void Bureaucrat::increment(int grade)
+void Bureaucrat::increment(void)
 {
-    _grade -= grade;
+    if (_grade < 2)
+        throw Bureaucrat::GradeTooHighException();
+    _grade -= 1;
 }
 
-void Bureaucrat::decrement(int grade)
+void Bureaucrat::decrement(void)
 {
-    _grade += grade;
+    if (_grade > 149)
+        throw Bureaucrat::GradeTooLowException();
+    _grade += 1;
+}
+
+std::ostream &operator<<(std::ostream &o, const Bureaucrat &src)
+{
+    o<<src.getName()<<", Bureaucrat grade "<<src.getGrade();
+    return o;
 }

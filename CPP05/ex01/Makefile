@@ -6,14 +6,14 @@
 #    By: yizhang <yizhang@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2024/01/18 13:13:37 by yizhang       #+#    #+#                  #
-#    Updated: 2024/01/31 09:24:05 by yizhang       ########   odam.nl          #
+#    Updated: 2024/01/31 09:34:04 by yizhang       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex00
+NAME = ex01
 CC = c++
 FLAG = -Wall -Werror -Wextra #-fsanitize=address
-SRC = main.cpp Bureaucrat.cpp
+SRC = main.cpp
 
 all: $(NAME)
 
