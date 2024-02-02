@@ -6,33 +6,49 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/31 09:41:45 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/01/31 22:37:18 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/02 17:58:23 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FROM_HPP
 #define FROM_HPP
-#include <iostream>
 
-class FROM
+#include <iostream>
+#include "Bureaucrat.hpp"
+class From
 {
 		public:
-			FROM(void);
-			FROM(std::string const &name, bool const &sign, int grade1, int grade2);
-			~FROM(void);
-			FROM(const FROM &src);
-			FROM &operator=(const FROM &src);
+			From(void);
+			From(std::string const &name, bool const &sign, int grade1, int grade2);
+			~From(void);
+			From(const From &src);
+			From &operator=(const From &src);
 
-			std::string	getName(void);
-			bool		getSigned(void);
-			int			getGradeSign(void);
-			int			getGradeExecute(void);
+			std::string	getName(void)const;
+			bool		getSigned(void)const;
+			int			getGradeSign(void)const;
+			int			getGradeExecute(void)const;
+
+			void		beSigned(Bureaucrat a);
+			void		signFrom(From a);
+			
+			class	GradeTooLowexception:public std::exception
+			{
+				public:
+					const char*what() const throw(){return ("Grade too low");}
+			};
+			class	GradeTooHighexception:public std::exception
+			{
+				public:
+					const char*what() const throw(){return ("Grade too high");}
+			};
+			
 		private:
-			std::string const	_name;
+			const std::string	_name;
 			bool				_signed;
 			int const			_gradeSign;
 			int const			_gradeExecute;
 };
 
-std::ostream operator<<(std::ostream o, FROM const &src);
+std::ostream operator<<(std::ostream o, From const &src);
 #endif
