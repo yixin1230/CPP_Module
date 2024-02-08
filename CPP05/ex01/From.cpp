@@ -6,14 +6,13 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/31 09:41:34 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/08 09:12:40 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/08 09:30:37 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "From.hpp"
 
-
-From::From(std::string const &name, bool const &sign, int grade1, int grade2):_name(name),_signed(sign),_gradeSign(grade1),_gradeExecute(grade2)
+From::From(std::string const &name, bool const &sign, int const gradeSign, int const gradeEx):_name(name),_signed(sign),_gradeSign(gradeSign),_gradeExecute(gradeEx)
 {
     if (_gradeExecute < 1 || _gradeSign < 1)
         throw From::GradeTooHighException();

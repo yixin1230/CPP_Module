@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/18 13:26:29 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/08 09:14:42 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/08 09:35:04 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,12 +79,12 @@ void		Bureaucrat::signFrom(From &a)
 		std::cout<<_name<<" signed "<< a.getName()<<std::endl;
 	else
     {
-		std::cout<<_name<<" <couldn't sign "<<a.getName()<<" beacuse ";
+		std::cout<<_name<<" couldn't sign "<<a.getName()<<" beacuse ";
         if (_grade > 150)
             throw Bureaucrat::GradeTooLowException();
         else if (_grade < 1)
             throw Bureaucrat::GradeTooHighException();
         else
-            std::cout<<"the grate is not high enough"<<std::endl;
+            std::cout<<_name<<" grate is not high enough"<<std::endl;
     }
 }

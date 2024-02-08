@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/31 09:41:45 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/08 09:07:17 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/08 09:30:07 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class From
 {
 		public:
 			From(void);
-			From(std::string const &name, bool const &sign, int grade1, int grade2);
+			From(std::string const &name, bool const &sign, int const gradeSign, int const gradeEx);
 			~From(void);
 			From(const From &src);
 			From &operator=(const From &src);
