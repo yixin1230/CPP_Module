@@ -6,11 +6,12 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/31 09:41:34 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/06 10:18:52 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/08 09:12:40 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FROM.hpp"
+#include "From.hpp"
+
 
 From::From(std::string const &name, bool const &sign, int grade1, int grade2):_name(name),_signed(sign),_gradeSign(grade1),_gradeExecute(grade2)
 {
@@ -18,26 +19,26 @@ From::From(std::string const &name, bool const &sign, int grade1, int grade2):_n
         throw From::GradeTooHighException();
     else if (_gradeExecute > 150 || _gradeSign > 150)
         throw (From::GradeTooLowException());
-    std::cout<<"constructor called"<<std::endl;
+    std::cout<<MAG<<"From constructor called"<<RESET<<std::endl;
 }
 
 From::From(void):_name("name"),_signed(false),_gradeSign(150),_gradeExecute(150)
 {
-    std::cout<<"constructor called"<<std::endl;
+    std::cout<<MAG<<"From constructor called"<<RESET<<std::endl;
 }
 
 From::~From(void)
 {
-    std::cout<<"descructor called"<<std::endl;
+    std::cout<<MAG<<"From descructor called"<<RESET<<std::endl;
 }
 
-From::From(const From &src):_name(src._name),_signed(_signed),_gradeSign(src._gradeSign),_gradeExecute(src._gradeExecute)
+From::From(const From &src):_name(src._name),_gradeSign(src._gradeSign),_gradeExecute(src._gradeExecute)
 {
     if (src._gradeExecute < 1 || src._gradeSign < 1)
         throw From::GradeTooHighException();
     else if (src._gradeExecute > 150 || src._gradeSign > 150)
         throw (From::GradeTooLowException());
-    std::cout<<"copy conscructor called"<<std::endl;
+    std::cout<<MAG<<"Form copy conscructor called"<<RESET<<std::endl;
 }
 
 From &From::operator=(const From &src)

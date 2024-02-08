@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/18 13:26:29 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/06 10:11:03 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/08 09:14:42 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,23 @@ Bureaucrat::Bureaucrat(const std::string &name, const int &grade): _name(name), 
         throw Bureaucrat::GradeTooLowException();
     if (grade < 1)
         throw Bureaucrat::GradeTooHighException();
-    std::cout<<"Bureaucrat constructor called"<<std::endl;
+    std::cout<<YELLOW<<"Bureaucrat constructor called"<<RESET<<std::endl;
+}
+
+Bureaucrat::Bureaucrat(void): _name("name"), _grade(150)
+{
+    std::cout<<YELLOW<<"Bureaucrat constructor called"<<RESET<<std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &a)
 {
     this->_grade = a._grade;
-    std::cout<<"Bureaucrat copy constructor called"<<std::endl;
+    std::cout<<YELLOW<<"Bureaucrat copy constructor called"<<RESET<<std::endl;
 }
 
 Bureaucrat::~Bureaucrat()
 {
-    std::cout<<"Bureaucrat destructor called"<<std::endl;
+    std::cout<<YELLOW<<"Bureaucrat destructor called"<<RESET<<std::endl;
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &a)

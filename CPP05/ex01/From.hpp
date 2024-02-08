@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/31 09:41:45 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/06 10:15:42 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/08 09:07:17 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include "Bureaucrat.hpp"
+
+class Bureaucrat;
 class From
 {
 		public:
@@ -30,6 +32,8 @@ class From
 			int			getGradeExecute(void)const;
 
 			void		beSigned(Bureaucrat &a);
+
+			
 			class	GradeTooLowException:public std::exception
 			{
 				public:
