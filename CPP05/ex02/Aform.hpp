@@ -30,6 +30,8 @@ class Aform
 			int			getGradeExecute(void)const;
 
 			void		beSigned(Bureaucrat &a);
+			void		excute(Bureaucrat const &executor);
+
 			class	GradeTooLowException:public std::exception
 			{
 				public:

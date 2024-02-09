@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   RobotomyRequestFrom.hpp                            :+:    :+:            */
+/*   ShrubberyCreationFrom.hpp                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/02/09 17:35:55 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/09 17:48:13 by yizhang       ########   odam.nl         */
+/*   Created: 2024/02/09 17:32:30 by yizhang       #+#    #+#                 */
+/*   Updated: 2024/02/09 17:56:43 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBOTOMYREQUESTform_HPP
-#define ROBOTOMYREQUESTform_HPP
+#ifndef SHRUBBERYCREATIONform_HPP
+#define SHRUBBERYCREATIONform_HPP
 
 #include "Aform.hpp"
-class RobotomyRequestform:Aform
+class ShrubberyCreationform:Aform
 {
+    public:
     
+    private:
 };
-
 #endif
