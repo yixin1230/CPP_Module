@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   From.hpp                                           :+:    :+:            */
+/*   Form.hpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/31 09:41:45 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/08 09:30:07 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/09 17:50:05 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FROM_HPP
-#define FROM_HPP
+#ifndef FORM_HPP
+#define FORM_HPP
 
 #include <iostream>
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
-class From
+class form
 {
 		public:
-			From(void);
-			From(std::string const &name, bool const &sign, int const gradeSign, int const gradeEx);
-			~From(void);
-			From(const From &src);
-			From &operator=(const From &src);
+			form(void);
+			form(std::string const &name, bool const &sign, int const gradeSign, int const gradeEx);
+			~form(void);
+			form(const form &src);
+			form &operator=(const form &src);
 
 			std::string	getName(void)const;
 			bool		getSigned(void)const;
@@ -52,5 +52,5 @@ class From
 			int const			_gradeExecute;
 };
 
-std::ostream operator<<(std::ostream o, From const &src);
+std::ostream operator<<(std::ostream o, form const &src);
 #endif

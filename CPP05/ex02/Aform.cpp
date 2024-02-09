@@ -1,83 +1,83 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   From.cpp                                           :+:    :+:            */
+/*   Aform.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/31 09:41:34 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/06 10:18:52 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/09 17:28:16 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FROM.hpp"
+#include "Aform.hpp"
 
-From::From(std::string const &name, bool const &sign, int grade1, int grade2):_name(name),_signed(sign),_gradeSign(grade1),_gradeExecute(grade2)
+Aform::Aform(std::string const &name, bool const &sign, int grade1, int grade2):_name(name),_signed(sign),_gradeSign(grade1),_gradeExecute(grade2)
 {
     if (_gradeExecute < 1 || _gradeSign < 1)
-        throw From::GradeTooHighException();
+        throw Aform::GradeTooHighException();
     else if (_gradeExecute > 150 || _gradeSign > 150)
-        throw (From::GradeTooLowException());
+        throw (Aform::GradeTooLowException());
     std::cout<<"constructor called"<<std::endl;
 }
 
-From::From(void):_name("name"),_signed(false),_gradeSign(150),_gradeExecute(150)
+Aform::Aform(void):_name("name"),_signed(false),_gradeSign(150),_gradeExecute(150)
 {
     std::cout<<"constructor called"<<std::endl;
 }
 
-From::~From(void)
+Aform::~Aform(void)
 {
     std::cout<<"descructor called"<<std::endl;
 }
 
-From::From(const From &src):_name(src._name),_signed(_signed),_gradeSign(src._gradeSign),_gradeExecute(src._gradeExecute)
+Aform::Aform(const Aform &src):_name(src._name),_signed(_signed),_gradeSign(src._gradeSign),_gradeExecute(src._gradeExecute)
 {
     if (src._gradeExecute < 1 || src._gradeSign < 1)
-        throw From::GradeTooHighException();
+        throw Aform::GradeTooHighException();
     else if (src._gradeExecute > 150 || src._gradeSign > 150)
-        throw (From::GradeTooLowException());
+        throw (Aform::GradeTooLowException());
     std::cout<<"copy conscructor called"<<std::endl;
 }
 
-From &From::operator=(const From &src)
+Aform &Aform::operator=(const Aform &src)
 {
     if (src._gradeExecute < 1 || src._gradeSign < 1)
-        throw From::GradeTooHighException();
+        throw Aform::GradeTooHighException();
     else if (src._gradeExecute > 150 || src._gradeSign > 150)
-        throw (From::GradeTooLowException());
+        throw (Aform::GradeTooLowException());
     if (this != &src)
         _signed = src._signed;
     return (*this);
 }
 
-std::string	From::getName(void) const
+std::string	Aform::getName(void) const
 {
     return (_name);
 }
 
-bool		From::getSigned(void) const
+bool		Aform::getSigned(void) const
 {
     return (_signed);
 }
 
-int			From::getGradeSign(void) const
+int			Aform::getGradeSign(void) const
 {
     return (_gradeSign);
 }
 
-int			From::getGradeExecute(void) const
+int			Aform::getGradeExecute(void) const
 {
     return (_gradeExecute);
 }
 
-void		From::beSigned(Bureaucrat &a)
+void		Aform::beSigned(Bureaucrat &a)
 {
     if (a.getGrade() < _gradeSign)
 	    this->_signed = true;
 }
 
-std::ostream &operator<<(std::ostream &o, From const &src)
+std::ostream &operator<<(std::ostream &o, Aform const &src)
 {
     o<< src.getName()<<": "<<src.getGradeExecute();
     return (o);

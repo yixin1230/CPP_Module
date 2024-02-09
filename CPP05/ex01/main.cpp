@@ -6,35 +6,35 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/06 10:20:31 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/08 09:49:53 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/09 17:47:59 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"From.hpp"
+#include"form.hpp"
 
 int main()
 {
-    //Test if high grade Bureaucrat can sign a low grade from
-    From a("A", false, 150 , 150);
+    //Test if high grade Bureaucrat can sign a low grade form
+    form a("A", false, 150 , 150);
     Bureaucrat jim("Jim",1);
     a.beSigned(jim);
-    jim.signFrom(a);
+    jim.signform(a);
     std::cout<<a.getSigned()<<std::endl;
 
-    //Test if a low grade Bureaucrat can not sign a high grade from
-    From b("B", false, 99 , 99);
+    //Test if a low grade Bureaucrat can not sign a high grade form
+    form b("B", false, 99 , 99);
     Bureaucrat bob("Bob",100);
     b.beSigned(bob);
-    bob.signFrom(b);
+    bob.signform(b);
     std::cout<<b.getSigned()<<std::endl;
 
     try
     {
-        //Test if From exception works with grade higher than 1
-        //From c("C", false, 0 , 0);
+        //Test if form exception works with grade higher than 1
+        //form c("C", false, 0 , 0);
         
-        //Test if From exception works with grade lower than 150
-        //From d("D", false, 151 , 151);
+        //Test if form exception works with grade lower than 150
+        //form d("D", false, 151 , 151);
 
         //Test if Bureaucrat exception work with grade higher than 1
         //Bureaucrat amy("Amy", 0);
@@ -47,11 +47,11 @@ int main()
     {
         std::cout<<RED<<e.what()<<RESET<<std::endl;
     }
-    catch(From::GradeTooHighException &e)
+    catch(form::GradeTooHighException &e)
     {
         std::cout<<RED<<e.what()<<RESET<<std::endl;
     }
-    catch(From::GradeTooLowException &e)
+    catch(form::GradeTooLowException &e)
     {
         std::cout<<RED<<e.what()<<RESET<<std::endl;
     }

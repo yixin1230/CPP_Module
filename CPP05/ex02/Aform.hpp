@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   From.hpp                                           :+:    :+:            */
+/*   Aform.hpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
@@ -10,19 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FROM_HPP
-#define FROM_HPP
+#ifndef Aform_HPP
+#define Aform_HPP
 
 #include <iostream>
 #include "Bureaucrat.hpp"
-class From
+class Aform
 {
 		public:
-			From(void);
-			From(std::string const &name, bool const &sign, int grade1, int grade2);
-			~From(void);
-			From(const From &src);
-			From &operator=(const From &src);
+			Aform(void);
+			Aform(std::string const &name, bool const &sign, int grade1, int grade2);
+			~Aform(void);
+			Aform(const Aform &src);
+			Aform &operator=(const Aform &src);
 
 			std::string	getName(void)const;
 			bool		getSigned(void)const;
@@ -48,5 +48,5 @@ class From
 			int const			_gradeExecute;
 };
 
-std::ostream operator<<(std::ostream o, From const &src);
+std::ostream operator<<(std::ostream o, Aform const &src);
 #endif

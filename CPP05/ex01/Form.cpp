@@ -1,83 +1,83 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   From.cpp                                           :+:    :+:            */
+/*   Form.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/31 09:41:34 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/08 09:30:37 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/09 17:47:52 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "From.hpp"
+#include "form.hpp"
 
-From::From(std::string const &name, bool const &sign, int const gradeSign, int const gradeEx):_name(name),_signed(sign),_gradeSign(gradeSign),_gradeExecute(gradeEx)
+form::form(std::string const &name, bool const &sign, int const gradeSign, int const gradeEx):_name(name),_signed(sign),_gradeSign(gradeSign),_gradeExecute(gradeEx)
 {
     if (_gradeExecute < 1 || _gradeSign < 1)
-        throw From::GradeTooHighException();
+        throw form::GradeTooHighException();
     else if (_gradeExecute > 150 || _gradeSign > 150)
-        throw (From::GradeTooLowException());
-    std::cout<<MAG<<"From constructor called"<<RESET<<std::endl;
+        throw (form::GradeTooLowException());
+    std::cout<<MAG<<"form constructor called"<<RESET<<std::endl;
 }
 
-From::From(void):_name("name"),_signed(false),_gradeSign(150),_gradeExecute(150)
+form::form(void):_name("name"),_signed(false),_gradeSign(150),_gradeExecute(150)
 {
-    std::cout<<MAG<<"From constructor called"<<RESET<<std::endl;
+    std::cout<<MAG<<"form constructor called"<<RESET<<std::endl;
 }
 
-From::~From(void)
+form::~form(void)
 {
-    std::cout<<MAG<<"From descructor called"<<RESET<<std::endl;
+    std::cout<<MAG<<"form descructor called"<<RESET<<std::endl;
 }
 
-From::From(const From &src):_name(src._name),_gradeSign(src._gradeSign),_gradeExecute(src._gradeExecute)
+form::form(const form &src):_name(src._name),_gradeSign(src._gradeSign),_gradeExecute(src._gradeExecute)
 {
     if (src._gradeExecute < 1 || src._gradeSign < 1)
-        throw From::GradeTooHighException();
+        throw form::GradeTooHighException();
     else if (src._gradeExecute > 150 || src._gradeSign > 150)
-        throw (From::GradeTooLowException());
+        throw (form::GradeTooLowException());
     std::cout<<MAG<<"Form copy conscructor called"<<RESET<<std::endl;
 }
 
-From &From::operator=(const From &src)
+form &form::operator=(const form &src)
 {
     if (src._gradeExecute < 1 || src._gradeSign < 1)
-        throw From::GradeTooHighException();
+        throw form::GradeTooHighException();
     else if (src._gradeExecute > 150 || src._gradeSign > 150)
-        throw (From::GradeTooLowException());
+        throw (form::GradeTooLowException());
     if (this != &src)
         _signed = src._signed;
     return (*this);
 }
 
-std::string	From::getName(void) const
+std::string	form::getName(void) const
 {
     return (_name);
 }
 
-bool		From::getSigned(void) const
+bool		form::getSigned(void) const
 {
     return (_signed);
 }
 
-int			From::getGradeSign(void) const
+int			form::getGradeSign(void) const
 {
     return (_gradeSign);
 }
 
-int			From::getGradeExecute(void) const
+int			form::getGradeExecute(void) const
 {
     return (_gradeExecute);
 }
 
-void		From::beSigned(Bureaucrat &a)
+void		form::beSigned(Bureaucrat &a)
 {
     if (a.getGrade() < _gradeSign)
 	    this->_signed = true;
 }
 
-std::ostream &operator<<(std::ostream &o, From const &src)
+std::ostream &operator<<(std::ostream &o, form const &src)
 {
     o<< src.getName()<<": "<<src.getGradeExecute();
     return (o);
