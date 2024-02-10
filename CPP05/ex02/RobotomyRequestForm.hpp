@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   RobotomyRequestFrom.hpp                            :+:    :+:            */
+/*   RobotomyRequestForm.hpp                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/09 17:35:55 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/09 17:56:38 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/10 18:59:24 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 #define ROBOTOMYREQUESTform_HPP
 
 #include "Aform.hpp"
-class RobotomyRequestform:Aform
+class RobotomyRequestForm:public Aform
 {
-    
+    public:
+        RobotomyRequestForm(std::string target);
+    private:
+        std::string _target;
 };
 
 #endif
