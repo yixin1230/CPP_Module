@@ -6,78 +6,77 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/31 09:41:34 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/09 17:47:52 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/10 19:40:21 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "form.hpp"
+#include "Form.hpp"
 
-form::form(std::string const &name, bool const &sign, int const gradeSign, int const gradeEx):_name(name),_signed(sign),_gradeSign(gradeSign),_gradeExecute(gradeEx)
+Form::Form(std::string const &name, bool const &sign, int const gradeSign, int const gradeEx):_name(name),_signed(sign),_gradeSign(gradeSign),_gradeExecute(gradeEx)
 {
     if (_gradeExecute < 1 || _gradeSign < 1)
-        throw form::GradeTooHighException();
+        throw Form::GradeTooHighException();
     else if (_gradeExecute > 150 || _gradeSign > 150)
-        throw (form::GradeTooLowException());
-    std::cout<<MAG<<"form constructor called"<<RESET<<std::endl;
-}
+        throw (Form::GradeTooLowException());
+    std::cout<<MAG<<"From constructor called"<<RESET<<std::endl;or
 
-form::form(void):_name("name"),_signed(false),_gradeSign(150),_gradeExecute(150)
+Form::Form(void):_name("name"),_signed(false),_gradeSign(150),_gradeExecute(150)
 {
-    std::cout<<MAG<<"form constructor called"<<RESET<<std::endl;
+    std::cout<<MAG<<"From constructor called"<<RESET<<std::endl;
 }
 
-form::~form(void)
+Form::~Form(void)
 {
-    std::cout<<MAG<<"form descructor called"<<RESET<<std::endl;
+    std::cout<<MAG<<"From descructor called"<<RESET<<std::endl;
 }
 
-form::form(const form &src):_name(src._name),_gradeSign(src._gradeSign),_gradeExecute(src._gradeExecute)
+Form::Form(const Form &src):_name(src._name),_gradeSign(src._gradeSign),_gradeExecute(src._gradeExecute)
 {
     if (src._gradeExecute < 1 || src._gradeSign < 1)
-        throw form::GradeTooHighException();
+        throw Form::GradeTooHighException();
     else if (src._gradeExecute > 150 || src._gradeSign > 150)
-        throw (form::GradeTooLowException());
+        throw (Form::GradeTooLowException());
     std::cout<<MAG<<"Form copy conscructor called"<<RESET<<std::endl;
 }
 
-form &form::operator=(const form &src)
+Form &Form::operator=(const From &src)
 {
     if (src._gradeExecute < 1 || src._gradeSign < 1)
-        throw form::GradeTooHighException();
+        throw From::GradeTooHighException();
     else if (src._gradeExecute > 150 || src._gradeSign > 150)
-        throw (form::GradeTooLowException());
+        throw (From::GradeTooLowException());
     if (this != &src)
         _signed = src._signed;
     return (*this);
 }
 
-std::string	form::getName(void) const
+std::string	Form::getName(void) const
 {
     return (_name);
 }
 
-bool		form::getSigned(void) const
+bool		Form::getSigned(void) const
 {
     return (_signed);
 }
 
-int			form::getGradeSign(void) const
+int			Form::getGradeSign(void) const
 {
     return (_gradeSign);
 }
 
-int			form::getGradeExecute(void) const
+int			Form::getGradeExecute(void) const
 {
     return (_gradeExecute);
 }
 
-void		form::beSigned(Bureaucrat &a)
+void		Form::beSigned(Bureaucrat &a)
 {
     if (a.getGrade() < _gradeSign)
 	    this->_signed = true;
 }
 
-std::ostream &operator<<(std::ostream &o, form const &src)
+std::ostream &operator<<(std::ostream &o, Form const &src)
 {
     o<< src.getName()<<": "<<src.getGradeExecute();
     return (o);

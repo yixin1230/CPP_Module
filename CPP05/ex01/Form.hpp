@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/31 09:41:45 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/09 17:50:05 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/10 19:37:45 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
-class form
+class Form
 {
 		public:
-			form(void);
-			form(std::string const &name, bool const &sign, int const gradeSign, int const gradeEx);
-			~form(void);
-			form(const form &src);
-			form &operator=(const form &src);
+			Form(void);
+			Form(std::string const &name, bool const &sign, int const gradeSign, int const gradeEx);
+			~Form(void);
+			Form(const form &src);
+			Form &operator=(const Form &src);
 
 			std::string	getName(void)const;
 			bool		getSigned(void)const;

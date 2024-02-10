@@ -18,9 +18,8 @@
 class Aform
 {
 		public:
-			Aform(void);
-			Aform(std::string const &name, bool const &sign, int grade1, int grade2);
-			~Aform(void);
+			Aform(std::string const &name, bool const &sign, int const gradeSign, int const gradeEx);
+			virtual ~Aform(void);
 			Aform(const Aform &src);
 			Aform &operator=(const Aform &src);
 
@@ -44,6 +43,7 @@ class Aform
 			};
 			
 		private:
+			Aform(void);
 			const std::string	_name;
 			bool				_signed;
 			int const			_gradeSign;

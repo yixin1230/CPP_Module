@@ -12,7 +12,7 @@
 
 #include "Aform.hpp"
 
-Aform::Aform(std::string const &name, bool const &sign, int grade1, int grade2):_name(name),_signed(sign),_gradeSign(grade1),_gradeExecute(grade2)
+Aform::Aform(std::string const &name, bool const &sign, int gradeSign, int gradeEx):_name(name),_signed(sign),_gradeSign(gradeSign),_gradeExecute(gradeEx)
 {
     if (_gradeExecute < 1 || _gradeSign < 1)
         throw Aform::GradeTooHighException();
