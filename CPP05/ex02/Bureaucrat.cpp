@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/18 13:26:29 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/09 17:52:32 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/10 19:47:23 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,4 +87,9 @@ void		Bureaucrat::signform(Aform &a)
         else
             std::cout<<_name<<" grate is not high enough"<<std::endl;
     }
+}
+
+void	Bureaucrat::executeForm(Aform const &form)
+{
+    
 }

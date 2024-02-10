@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/31 09:41:34 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/10 19:40:21 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/10 23:13:16 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ Form::Form(std::string const &name, bool const &sign, int const gradeSign, int c
         throw Form::GradeTooHighException();
     else if (_gradeExecute > 150 || _gradeSign > 150)
         throw (Form::GradeTooLowException());
-    std::cout<<MAG<<"From constructor called"<<RESET<<std::endl;or
+    std::cout<<MAG<<"From constructor called"<<RESET<<std::endl;
+}
 
 Form::Form(void):_name("name"),_signed(false),_gradeSign(150),_gradeExecute(150)
 {
@@ -33,13 +34,13 @@ Form::~Form(void)
 Form::Form(const Form &src):_name(src._name),_gradeSign(src._gradeSign),_gradeExecute(src._gradeExecute)
 {
     if (src._gradeExecute < 1 || src._gradeSign < 1)
-        throw Form::GradeTooHighException();
+        throw From::GradeTooHighException();
     else if (src._gradeExecute > 150 || src._gradeSign > 150)
-        throw (Form::GradeTooLowException());
+        throw (From::GradeTooLowException());
     std::cout<<MAG<<"Form copy conscructor called"<<RESET<<std::endl;
 }
 
-Form &Form::operator=(const From &src)
+Form &Form::operator=(const Form &src)
 {
     if (src._gradeExecute < 1 || src._gradeSign < 1)
         throw From::GradeTooHighException();

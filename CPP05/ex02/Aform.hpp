@@ -29,7 +29,7 @@ class Aform
 			int			getGradeExecute(void)const;
 
 			void		beSigned(Bureaucrat &a);
-			void		excute(Bureaucrat const &executor);
+			virtual void		excute(Bureaucrat const &executor)const = 0;
 
 			class	GradeTooLowException:public std::exception
 			{

@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/10 18:32:45 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/10 19:28:14 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/10 23:06:34 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,3 +17,22 @@ PresidentialPardonForm::PresidentialPardonForm(std::string target):Aform("Presid
     std::cout<<"PresidentialPardonForm constructor called"<<std::endl;
 }
 
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm &src): Aform(src), _target(src._target)
+{
+    std::cout<<"PresidentialPardonForm copy constructor called"<<std::endl;
+}
+
+PresidentialPardonForm::~PresidentialPardonForm()
+{
+    std::cout<<"PresidentialPardonForm destructor called"<<std::endl;
+}
+
+PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &src)
+{
+    return *this;//test
+}
+
+void excute(const Bureaucrat &executor)
+{
+    
+}
