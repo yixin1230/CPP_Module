@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/09 17:32:30 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/10 19:01:53 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/10 23:40:38 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,14 @@ class ShrubberyCreationForm:public Aform
 {
     public:
         ShrubberyCreationForm(std::string target);
+        ShrubberyCreationForm(ShrubberyCreationForm &src);
+        ~ShrubberyCreationForm();
+        
+        ShrubberyCreationForm &operator=(ShrubberyCreationForm const &src);
+
+        void execute(const Bureaucrat &executor) const;
     private:
+        ShrubberyCreationForm();
         std::string _target;
 };
 #endif

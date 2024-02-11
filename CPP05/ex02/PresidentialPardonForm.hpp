@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/09 17:40:44 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/10 19:58:29 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/10 23:30:52 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class PresidentialPardonForm:public Aform
 
         PresidentialPardonForm &operator=(const PresidentialPardonForm &src);
 
-        void excute(const Bureaucrat &executor) ;
+        void execute(const Bureaucrat &executor) const;
     private:
         PresidentialPardonForm();
         std::string _target;

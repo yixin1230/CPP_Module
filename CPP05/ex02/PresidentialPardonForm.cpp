@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/10 18:32:45 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/10 23:06:34 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/10 23:30:59 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,19 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
     return *this;//test
 }
 
-void excute(const Bureaucrat &executor)
+void PresidentialPardonForm::execute(const Bureaucrat &executor) const
 {
-    
+    if (executor.getGrade() > this->getGradeExecute())
+        throw (Aform::GradeTooLowException());
+    else
+    {
+        if (this->getSigned())
+        {
+            std::cout<<executor.getName()<<" execute "<<this->getName()<<std::endl;
+        }
+        else
+        {
+             std::cout<<executor.getName()<<" can not execute "<<this->getName()<<", because the form should signed first"<<std::endl;
+        }
+    }
 }
