@@ -50,5 +50,5 @@ class Aform
 			int const			_gradeExecute;
 };
 
-std::ostream operator<<(std::ostream o, Aform const &src);
+std::ostream &operator<<(std::ostream &o, Aform const &src);
 #endif

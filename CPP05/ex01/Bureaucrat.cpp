@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/18 13:26:29 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/09 17:48:27 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/12 12:34:44 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ std::ostream &operator<<(std::ostream &o, const Bureaucrat &src)
     return o;
 }
 
-void		Bureaucrat::signform(form &a)
+void		Bureaucrat::signform(Form &a)
 {
 	if (a.getSigned())
 		std::cout<<_name<<" signed "<< a.getName()<<std::endl;
