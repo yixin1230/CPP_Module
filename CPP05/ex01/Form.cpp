@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/31 09:41:34 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/10 23:13:16 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/12 12:25:15 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,18 @@ Form::~Form(void)
 Form::Form(const Form &src):_name(src._name),_gradeSign(src._gradeSign),_gradeExecute(src._gradeExecute)
 {
     if (src._gradeExecute < 1 || src._gradeSign < 1)
-        throw From::GradeTooHighException();
+        throw Form::GradeTooHighException();
     else if (src._gradeExecute > 150 || src._gradeSign > 150)
-        throw (From::GradeTooLowException());
+        throw (Form::GradeTooLowException());
     std::cout<<MAG<<"Form copy conscructor called"<<RESET<<std::endl;
 }
 
 Form &Form::operator=(const Form &src)
 {
     if (src._gradeExecute < 1 || src._gradeSign < 1)
-        throw From::GradeTooHighException();
+        throw Form::GradeTooHighException();
     else if (src._gradeExecute > 150 || src._gradeSign > 150)
-        throw (From::GradeTooLowException());
+        throw (Form::GradeTooLowException());
     if (this != &src)
         _signed = src._signed;
     return (*this);

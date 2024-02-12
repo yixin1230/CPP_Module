@@ -6,23 +6,23 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/06 10:20:31 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/09 17:47:59 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/12 12:27:34 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"form.hpp"
+#include"Form.hpp"
 
 int main()
 {
     //Test if high grade Bureaucrat can sign a low grade form
-    form a("A", false, 150 , 150);
+    Form a("A", false, 150 , 150);
     Bureaucrat jim("Jim",1);
     a.beSigned(jim);
     jim.signform(a);
     std::cout<<a.getSigned()<<std::endl;
 
     //Test if a low grade Bureaucrat can not sign a high grade form
-    form b("B", false, 99 , 99);
+    Form b("B", false, 99 , 99);
     Bureaucrat bob("Bob",100);
     b.beSigned(bob);
     bob.signform(b);
@@ -47,11 +47,11 @@ int main()
     {
         std::cout<<RED<<e.what()<<RESET<<std::endl;
     }
-    catch(form::GradeTooHighException &e)
+    catch(Form::GradeTooHighException &e)
     {
         std::cout<<RED<<e.what()<<RESET<<std::endl;
     }
-    catch(form::GradeTooLowException &e)
+    catch(Form::GradeTooLowException &e)
     {
         std::cout<<RED<<e.what()<<RESET<<std::endl;
     }

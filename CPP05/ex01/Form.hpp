@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/31 09:41:45 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/10 23:12:22 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/12 12:27:17 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,5 @@ class Form
 			int const			_gradeExecute;
 };
 
-std::ostream operator<<(std::ostream o, form const &src);
+std::ostream operator<<(std::ostream o, Form const &src);
 #endif

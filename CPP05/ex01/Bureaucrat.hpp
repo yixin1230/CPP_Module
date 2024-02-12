@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/18 13:15:18 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/09 17:48:20 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/12 12:26:40 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define BUREAUCRAT_HPP
 
 #include <iostream>
-#include "form.hpp"
+#include "Form.hpp"
 
 #define RESET "\033[0m"
 #define RED "\033[1;31m"
@@ -23,7 +23,7 @@
 #define BLUE "\033[1;34m"
 #define MAG "\033[1;35m"
 
-class form;
+class Form;
 class Bureaucrat
 {
 	public:
@@ -39,7 +39,7 @@ class Bureaucrat
 		void	increment(void);
 		void	decrement(void);
 
-		void	signform(form &form);
+		void	signform(Form &form);
 
 		
 		class GradeTooHighException:public std::exception
