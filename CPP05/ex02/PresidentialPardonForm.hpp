@@ -6,12 +6,12 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/09 17:40:44 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/10 23:30:52 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/12 15:48:57 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRESIDENTIALPARDONFORM_HPP
-#define PRESIDENTIALPARDONFROM_HPP
+#define PRESIDENTIALPARDONFORM_HPP
 
 #include "Aform.hpp"
 

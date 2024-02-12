@@ -6,14 +6,14 @@
 #    By: yizhang <yizhang@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2024/01/18 13:13:37 by yizhang       #+#    #+#                  #
-#    Updated: 2024/02/10 23:32:10 by yizhang       ########   odam.nl          #
+#    Updated: 2024/02/12 15:46:47 by yizhang       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex02
 CC = c++
 FLAG = -Wall -Werror -Wextra #-fsanitize=address
-SRC = main.cpp Afrom.cpp Bureaucrat.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
+SRC = main.cpp Aform.cpp Bureaucrat.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 
 all: $(NAME)
 

@@ -31,7 +31,7 @@ Aform::~Aform(void)
     std::cout<<"descructor called"<<std::endl;
 }
 
-Aform::Aform(const Aform &src):_name(src._name),_signed(_signed),_gradeSign(src._gradeSign),_gradeExecute(src._gradeExecute)
+Aform::Aform(const Aform &src):_name(src._name),_signed(src._signed),_gradeSign(src._gradeSign),_gradeExecute(src._gradeExecute)
 {
     if (src._gradeExecute < 1 || src._gradeSign < 1)
         throw Aform::GradeTooHighException();
