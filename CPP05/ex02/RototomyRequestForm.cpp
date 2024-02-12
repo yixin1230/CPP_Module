@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/10 18:44:04 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/10 23:39:52 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/12 15:17:23 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,12 @@ void RobotomyRequestForm::execute(const Bureaucrat &executor) const
     {
         if (this->getSigned())
         {
-            std::cout<<executor.getName()<<" execute "<<this->getName()<<std::endl;
+            std::cout<<"Bzzzz Zzzzz....."<<std::endl;
+            std::cout<<_target<<" has been roboyomized sucessfully 50%% of the time."<<std::endl;
         }
         else
         {
-             std::cout<<executor.getName()<<" can not execute "<<this->getName()<<", because the form should signed first"<<std::endl;
+             std::cout<<executor.getName()<<" robotomy failed"<<this->getName()<<", because the form should signed first"<<std::endl;
         }
     }
 }

@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/10 18:45:14 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/10 23:43:27 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/12 15:20:54 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,16 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
     {
         if (this->getSigned())
         {
-            std::cout<<executor.getName()<<" execute "<<this->getName()<<std::endl;
+            std::cout<<"               ,@@@@@@@,"<<std::endl;
+            std::cout<<"       ,,,.   ,@@@@@@/@@,  .oo8888o."<<std::endl;
+            std::cout<<"    ,&%%&%&&%,@@@@@/@@@@@@,8888\88/8o"<<std::endl;
+            std::cout<<"   ,%&\%&&%&&%,@@@\@@@/@@@88\88888/88'"<<std::endl;
+            std::cout<<"   %&&%&%&/%&&%@@\@@/ /@@@88888\88888'"<<std::endl;
+            std::cout<<"   %&&%/ %&%%&&@@\ V /@@' `88\8 `/88'"<<std::endl;
+            std::cout<<"   `&%\ ` /%&'    |.|        \ '|8'"<<std::endl;
+            std::cout<<"       |o|        | |         | |"<<std::endl;
+            std::cout<<"       |.|        | |         | |"<<std::endl;
+            std::cout<<"jgs \\/ ._\//_/__/  ,\_//__\\/.  \_//__/_"<<std::endl;
         }
         else
         {

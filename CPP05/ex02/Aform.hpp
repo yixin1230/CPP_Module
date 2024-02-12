@@ -21,15 +21,15 @@ class Aform
 			Aform(std::string const &name, bool const &sign, int const gradeSign, int const gradeEx);
 			virtual ~Aform(void);
 			Aform(const Aform &src);
-			Aform &operator=(const Aform &src);
+			Aform 				&operator=(const Aform &src);
 
-			std::string	getName(void)const;
-			bool		getSigned(void)const;
-			int			getGradeSign(void)const;
-			int			getGradeExecute(void)const;
+			std::string			getName(void)const;
+			bool				getSigned(void)const;
+			int					getGradeSign(void)const;
+			int					getGradeExecute(void)const;
 
-			void		beSigned(Bureaucrat &a);
-			virtual void		excute(Bureaucrat const &executor)const = 0;
+			void				beSigned(Bureaucrat &a);
+			virtual void		execute(Bureaucrat const &executor)const = 0;
 
 			class	GradeTooLowException:public std::exception
 			{

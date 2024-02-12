@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/18 13:26:29 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/10 19:47:23 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/12 15:44:50 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,5 +91,12 @@ void		Bureaucrat::signform(Aform &a)
 
 void	Bureaucrat::executeForm(Aform const &form)
 {
-    
+    try
+    {
+        form.execute(*this);
+    }
+    catch(std::exception &e)
+    {
+        std::cout<<_name<<" couldn't execute "<< form.getName()<<" because "<<e.what()<<std::endl;
+    }
 }

@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/10 18:32:45 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/10 23:30:59 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/12 15:12:27 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void PresidentialPardonForm::execute(const Bureaucrat &executor) const
     {
         if (this->getSigned())
         {
-            std::cout<<executor.getName()<<" execute "<<this->getName()<<std::endl;
+            std::cout<<_target<<" has been pardoned by Zaphod Beedlebrox."<<std::endl;
         }
         else
         {
