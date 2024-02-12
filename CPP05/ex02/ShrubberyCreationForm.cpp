@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/10 18:45:14 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/12 15:58:26 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/12 17:59:05 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &src)
 {
-    (void)src;
-    return *this;//test
+    this->_target = src._target;
+    return *this;
 }
 
 void ShrubberyCreationForm::execute(const Bureaucrat &executor) const

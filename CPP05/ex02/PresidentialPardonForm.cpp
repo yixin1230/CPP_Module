@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/10 18:32:45 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/12 15:57:49 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/12 17:58:40 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ PresidentialPardonForm::~PresidentialPardonForm()
 
 PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &src)
 {
-    (void)src;
+    this->_target = src._target;
     return *this;
 }
 
