@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/10 18:44:04 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/13 21:57:02 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/13 22:38:07 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +37,11 @@ void RobotomyRequestForm::execute(const Bureaucrat &executor) const
 {
     if (executor.getGrade() > this->getGradeExecute())
         throw (Aform::GradeTooLowException());
+    else if (!this->getSigned())
+        throw (Aform::NotSignedException());
     else
     {
-        if (this->getSigned())
-        {
-            std::cout<<BLUE<<"Bzzzz Zzzzz....."<<std::endl;
-            std::cout<<_target<<" has been roboyomized sucessfully 50% of the time."<<RESET<<std::endl;
-        }
-        else
-        {
-             std::cout<<executor.getName()<<" robotomy failed"<<this->getName()<<", because the form should signed first"<<std::endl;
-        }
+        std::cout<<BLUE<<"Bzzzz Zzzzz....."<<std::endl;
+        std::cout<<_target<<" has been roboyomized sucessfully 50% of the time."<<RESET<<std::endl;
     }
 }

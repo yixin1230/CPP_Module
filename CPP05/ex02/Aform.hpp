@@ -30,7 +30,7 @@ class Aform
 			int					getGradeSign(void)const;
 			int					getGradeExecute(void)const;
 
-			void				beSigned(Bureaucrat &a);
+			void				beSigned(Bureaucrat const &a);
 			virtual void		execute(Bureaucrat const &executor)const = 0;
 
 			class	GradeTooLowException:public std::exception
@@ -43,7 +43,11 @@ class Aform
 				public:
 					const char*what() const throw(){return ("Grade too high");}
 			};
-			
+			class	NotSignedException:public std::exception
+			{
+				public:
+					const char*what()const throw(){return ("Form not signed");}
+			};
 		private:
 			Aform(void);
 			const std::string	_name;

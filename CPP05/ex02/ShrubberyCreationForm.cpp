@@ -6,13 +6,13 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/10 18:45:14 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/13 22:00:22 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/13 22:37:01 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target):Aform("ShrubberyCreationForm", false, 25, 5),_target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target):Aform("ShrubberyCreationForm", false, 145, 137),_target(target)
 {
     std::cout<<"ShrubberyCreationForm constructor called"<<std::endl;
 }
@@ -37,9 +37,9 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 {
     if (executor.getGrade() > this->getGradeExecute())
         throw (Aform::GradeTooLowException());
+    else if (!this->getSigned())
+        throw (Aform::NotSignedException());
     else
-    {
-        if (this->getSigned())
         {
             std::cout<<GREEN<<"               ,@@@@@@@,"<<std::endl;
             std::cout<<"       ,,,.   ,@@@@@@/@@,  .oo8888o."<<std::endl;
@@ -52,9 +52,4 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
             std::cout<<"       |.|        | |         | |"<<std::endl;
             std::cout<<",.. \\/ ._\\//_/__/  ,\\_//__\\/.  \\_//__/_"<<RESET<<std::endl;
         }
-        else
-        {
-             std::cout<<executor.getName()<<" can not execute "<<this->getName()<<", because the form should signed first"<<std::endl;
-        }
-    }
 }

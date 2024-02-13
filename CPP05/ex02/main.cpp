@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/12 12:31:35 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/13 21:56:05 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/13 22:50:38 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,26 +19,28 @@
 
 int main()
 {
+    
     try
     {
         Bureaucrat bob("Bob", 1);
+        Bureaucrat jim("Jim", 20);
+        Bureaucrat sam("Sam", 146);
+        
+        //sign 25, execute 5
         PresidentialPardonForm pardon("Turkeys");
-        pardon.beSigned(bob);
-        bob.signform(pardon);
+        bob.signForm(pardon);
         bob.executeForm(pardon);
         std::cout<<std::endl;
 
-        Bureaucrat jim("Jim", 1);
+        //sign 72, execute 45
         RobotomyRequestForm human("human");
-        human.beSigned(jim);
-        jim.signform(human);
+        jim.signForm(human);
         jim.executeForm(human);
         std::cout<<std::endl;
 
-        Bureaucrat sam("Sam", 1);
+        //sign 145, execute 137
         ShrubberyCreationForm mars("Mars");
-        mars.beSigned(sam);
-        sam.signform(mars);
+        sam.signForm(mars);
         sam.executeForm(mars);
         std::cout<<std::endl;
     }

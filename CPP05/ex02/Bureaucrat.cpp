@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/18 13:26:29 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/12 15:44:50 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/13 22:50:58 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,19 +73,15 @@ std::ostream &operator<<(std::ostream &o, const Bureaucrat &src)
     return o;
 }
 
-void		Bureaucrat::signform(Aform &a)
+void		Bureaucrat::signForm(Aform &form)
 {
-	if (a.getSigned())
-		std::cout<<_name<<" signed "<< a.getName()<<std::endl;
-	else
+	try
     {
-		std::cout<<_name<<" couldn't sign "<<a.getName()<<" beacuse ";
-        if (_grade > 150)
-            throw Bureaucrat::GradeTooLowException();
-        else if (_grade < 1)
-            throw Bureaucrat::GradeTooHighException();
-        else
-            std::cout<<_name<<" grate is not high enough"<<std::endl;
+        form.beSigned(*this);
+    }
+    catch(const std::exception& e)
+    {
+        std::cout<<_name<<" couldn't sign "<< form.getName()<<" because "<<e.what()<<std::endl;
     }
 }
 

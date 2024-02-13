@@ -18,7 +18,7 @@ Aform::Aform(std::string const &name, bool const &sign, int gradeSign, int grade
         throw Aform::GradeTooHighException();
     else if (_gradeExecute > 150 || _gradeSign > 150)
         throw (Aform::GradeTooLowException());
-    std::cout<<"constructor called"<<std::endl;
+    std::cout<<"Aform constructor called"<<std::endl;
 }
 
 Aform::Aform(void):_name("name"),_signed(false),_gradeSign(150),_gradeExecute(150)
@@ -71,9 +71,11 @@ int			Aform::getGradeExecute(void) const
     return (_gradeExecute);
 }
 
-void		Aform::beSigned(Bureaucrat &a)
+void		Aform::beSigned(Bureaucrat const &a)
 {
-    if (a.getGrade() < _gradeSign)
+    if (a.getGrade() > _gradeSign)
+        throw Aform::GradeTooLowException();
+    else
 	    this->_signed = true;
 }
 

@@ -6,13 +6,13 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/10 18:32:45 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/13 21:57:41 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/13 22:38:45 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target):Aform("PresidentialPardonForm", false, 145, 137),_target(target)
+PresidentialPardonForm::PresidentialPardonForm(std::string target):Aform("PresidentialPardonForm", false, 25, 5),_target(target)
 {
     std::cout<<"PresidentialPardonForm constructor called"<<std::endl;
 }
@@ -37,15 +37,10 @@ void PresidentialPardonForm::execute(const Bureaucrat &executor) const
 {
     if (executor.getGrade() > this->getGradeExecute())
         throw (Aform::GradeTooLowException());
+    else if (!this->getSigned())
+        throw (Aform::NotSignedException());
     else
     {
-        if (this->getSigned())
-        {
-            std::cout<<MAG<<_target<<" has been pardoned by Zaphod Beedlebrox."<<RESET<<std::endl;
-        }
-        else
-        {
-             std::cout<<executor.getName()<<" can not execute "<<this->getName()<<", because the form should signed first"<<std::endl;
-        }
+        std::cout<<MAG<<_target<<" has been pardoned by Zaphod Beedlebrox."<<RESET<<std::endl;
     }
 }
