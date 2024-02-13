@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/18 13:15:18 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/12 12:26:40 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/13 22:52:33 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ class Bureaucrat
 		void	increment(void);
 		void	decrement(void);
 
-		void	signform(Form &form);
+		void	signForm(Form &form);
 
 		
 		class GradeTooHighException:public std::exception
