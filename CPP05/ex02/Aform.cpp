@@ -23,12 +23,12 @@ Aform::Aform(std::string const &name, bool const &sign, int gradeSign, int grade
 
 Aform::Aform(void):_name("name"),_signed(false),_gradeSign(150),_gradeExecute(150)
 {
-    std::cout<<"constructor called"<<std::endl;
+    std::cout<<"Aform constructor called"<<std::endl;
 }
 
 Aform::~Aform(void)
 {
-    std::cout<<"descructor called"<<std::endl;
+    std::cout<<"Aform descructor called"<<std::endl;
 }
 
 Aform::Aform(const Aform &src):_name(src._name),_signed(src._signed),_gradeSign(src._gradeSign),_gradeExecute(src._gradeExecute)
@@ -37,7 +37,7 @@ Aform::Aform(const Aform &src):_name(src._name),_signed(src._signed),_gradeSign(
         throw Aform::GradeTooHighException();
     else if (src._gradeExecute > 150 || src._gradeSign > 150)
         throw (Aform::GradeTooLowException());
-    std::cout<<"copy conscructor called"<<std::endl;
+    std::cout<<"Aform copy conscructor called"<<std::endl;
 }
 
 Aform &Aform::operator=(const Aform &src)

@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/10 18:45:14 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/12 17:59:05 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/13 22:00:22 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
     {
         if (this->getSigned())
         {
-            std::cout<<"               ,@@@@@@@,"<<std::endl;
+            std::cout<<GREEN<<"               ,@@@@@@@,"<<std::endl;
             std::cout<<"       ,,,.   ,@@@@@@/@@,  .oo8888o."<<std::endl;
             std::cout<<"    ,&%%&%&&%,@@@@@/@@@@@@,8888\\88/8o"<<std::endl;
             std::cout<<"   ,%&\\%&&%&&%,@@@\\@@@/@@@88\\88888/88'"<<std::endl;
@@ -50,7 +50,7 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
             std::cout<<"   `&%\\ ` /%&'    |.|        \\ '|8'"<<std::endl;
             std::cout<<"       |o|        | |         | |"<<std::endl;
             std::cout<<"       |.|        | |         | |"<<std::endl;
-            std::cout<<"jgs \\/ ._\\//_/__/  ,\\_//__\\/.  \\_//__/_"<<std::endl;
+            std::cout<<",.. \\/ ._\\//_/__/  ,\\_//__\\/.  \\_//__/_"<<RESET<<std::endl;
         }
         else
         {

@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/10 18:44:04 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/12 17:59:00 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/13 21:57:02 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ void RobotomyRequestForm::execute(const Bureaucrat &executor) const
     {
         if (this->getSigned())
         {
-            std::cout<<"Bzzzz Zzzzz....."<<std::endl;
-            std::cout<<_target<<" has been roboyomized sucessfully 50%% of the time."<<std::endl;
+            std::cout<<BLUE<<"Bzzzz Zzzzz....."<<std::endl;
+            std::cout<<_target<<" has been roboyomized sucessfully 50% of the time."<<RESET<<std::endl;
         }
         else
         {
