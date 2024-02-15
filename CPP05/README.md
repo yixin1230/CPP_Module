@@ -47,3 +47,4 @@ The ```catch``` block in the ```main()``` function catches the ```invalid_argume
 
 - The throw statement can be used to throw an C++ exception and exit the constructor code.
 
+#### Member Functions vs Non-Menber Functions
