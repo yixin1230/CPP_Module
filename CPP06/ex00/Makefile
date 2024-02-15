@@ -5,15 +5,15 @@
 #                                                      +:+                     #
 #    By: yizhang <yizhang@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
-#    Created: 2024/01/18 13:13:37 by yizhang       #+#    #+#                  #
-#    Updated: 2024/02/13 21:59:55 by yizhang       ########   odam.nl          #
+#    Created: 2024/02/13 23:11:20 by yizhang       #+#    #+#                  #
+#    Updated: 2024/02/13 23:11:45 by yizhang       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex02
+NAME = ex03
 CC = c++
-FLAG = -Wall -Werror -Wextra -fsanitize=address
-SRC = main.cpp Aform.cpp Bureaucrat.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
+FLAG = -Wall -Werror -Wextra #-fsanitize=address
+SRC = main.cpp
 
 all: $(NAME)
 
