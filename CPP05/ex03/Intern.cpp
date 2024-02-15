@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/14 14:08:11 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/15 23:06:57 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/15 23:27:09 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ Intern::Intern()
 
 Intern::Intern(Intern const &src)
 {
+    (void)src;
     std::cout<<"Intern copy constructor called"<<std::endl;
 }
 
@@ -74,4 +75,9 @@ Aform *Intern::makeShrubberyCreationForm(std::string target)
 {
     ShrubberyCreationForm *form = new ShrubberyCreationForm(target);
     return (form);
+}
+
+const char* Intern::InternExeception::what() const throw()
+{
+    return ("Intern does not recognize thr form");
 }

@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/14 13:48:39 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/14 14:07:50 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/15 23:21:44 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 
+class Aform;
 class Intern
 {
     public:
@@ -35,7 +36,7 @@ class Intern
         class   InternExeception: public std::exception
         {
             public:
-                virtual const char *what() const throw();
+               virtual const char*what() const throw();
         };
 };
 #endif
