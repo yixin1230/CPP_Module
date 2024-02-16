@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/11 00:25:27 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/16 16:06:04 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/16 16:24:52 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main()
     //test robotomy request
     try
     {
-        robotomyRequestForm = yixin.makeForm("robotomy request", "something");
+        robotomyRequestForm = yixin.makeForm("robotomy request", "Bender");
         std::cout<<robotomyRequestForm->getName()<<std::endl;
         robotomyRequestForm->beSigned(bob);
         robotomyRequestForm->execute(bob);
