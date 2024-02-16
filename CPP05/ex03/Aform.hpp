@@ -49,7 +49,7 @@ class Aform
 					const char*what()const throw(){return ("Form not signed");}
 			};
 		private:
-			Aform(void);
+			Aform();
 			const std::string	_name;
 			bool				_signed;
 			int const			_gradeSign;
