@@ -46,5 +46,3 @@ The ```catch``` block in the ```main()``` function catches the ```invalid_argume
 - Since C++ constructors do not have a return type, it is not possible to use return codes. Therefore, the best practice is for constructors to throw an exception to signal failure.
 
 - The throw statement can be used to throw an C++ exception and exit the constructor code.
-
-#### Member Functions vs Non-Menber Functions
