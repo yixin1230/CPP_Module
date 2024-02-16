@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/11 00:25:27 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/16 14:53:04 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/16 16:06:04 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,11 @@ int main()
     //test robotomy request
     try
     {
-        someForm = yixin.makeForm("some", "something");
         robotomyRequestForm = yixin.makeForm("robotomy request", "something");
-        shrubberyCreationForm = yixin.makeForm("shrubbery creation", "something");
-        presidentialPardonForm = yixin.makeForm("presidential pardon", "something");
-        std::cout<<someForm->getName()<<std::endl;
         std::cout<<robotomyRequestForm->getName()<<std::endl;
+        robotomyRequestForm->beSigned(bob);
+        robotomyRequestForm->execute(bob);
+        std::cout<<BLUE<<"---------------------------------------------------------------------------"<<RESET<<std::endl;
     }
     catch(const std::exception& e)
     {
@@ -43,34 +42,46 @@ int main()
     //test presifential pardon
     try
     {
+        presidentialPardonForm = yixin.makeForm("presidential pardon", "something");
+        std::cout<<presidentialPardonForm->getName()<<std::endl;
+        presidentialPardonForm->beSigned(bob);
+        presidentialPardonForm->execute(bob);
+        std::cout<<BLUE<<"---------------------------------------------------------------------------"<<RESET<<std::endl;
+
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr <<RED<< e.what() << RESET<<std::endl;
     }
     
-
     
     //test shrubbery creation
     try
     {
-        /* code */
+        shrubberyCreationForm = yixin.makeForm("shrubbery creation", "something");
+        std::cout<<shrubberyCreationForm->getName()<<std::endl;
+        shrubberyCreationForm->beSigned(bob);
+        shrubberyCreationForm->execute(bob);
+        std::cout<<BLUE<<"---------------------------------------------------------------------------"<<RESET<<std::endl;
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr <<RED<< e.what() << RESET<<std::endl;
     }
     
-
     
     //test random form
     try
     {
-        /* code */
+        someForm = yixin.makeForm("some", "something");
+        std::cout<<someForm->getName()<<std::endl;
+        someForm->beSigned(bob);
+        someForm->execute(bob);
+        std::cout<<BLUE<<"---------------------------------------------------------------------------"<<RESET<<std::endl;
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr <<RED<< e.what() << RESET<<std::endl;
     }
     
     
