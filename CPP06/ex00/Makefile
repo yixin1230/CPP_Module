@@ -6,14 +6,14 @@
 #    By: yizhang <yizhang@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2024/02/13 23:11:20 by yizhang       #+#    #+#                  #
-#    Updated: 2024/02/13 23:11:45 by yizhang       ########   odam.nl          #
+#    Updated: 2024/02/18 15:17:21 by yizhang       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex03
 CC = c++
 FLAG = -Wall -Werror -Wextra #-fsanitize=address
-SRC = main.cpp
+SRC = main.cpp ScalarConverter.cpp
 
 all: $(NAME)
 
