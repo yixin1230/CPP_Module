@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ScalarConverter.cpp                                :+:    :+:            */
+/*   main.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/02/18 15:16:52 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/18 17:40:25 by yizhang       ########   odam.nl         */
+/*   Created: 2024/02/16 16:26:02 by yizhang       #+#    #+#                 */
+/*   Updated: 2024/02/16 16:26:12 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
-
-void ScalarConverter::convert(std::string input)
+int main()
 {
-
+    return 0;
 }
