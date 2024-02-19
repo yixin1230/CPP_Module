@@ -1,6 +1,6 @@
 # Notes for this project
 
-## Casting
+## Type Casting
 
 ### Implicit conversion
 - Done by compiler on its own
@@ -13,8 +13,6 @@
 double value = 5.25;
 int a = value; // a = 5
 ```
-<br>
-
 ### explicit conversion
 #### C-Style type casting
 ```
@@ -22,15 +20,38 @@ int a = value; // a = 5
 double value = 5.25;
 int a = (int)value;
 ```
-<br>
-
 
 #### Using casting operator
-##### static_cast<>
+
+##### static_cast<type>
+
+- Simplest type of cast
+- Compile time cast
+- static_cast<type>(Expression)
 ```
 //examle
 double s = static_cast<int>(value);
 ```
-##### dynamic_cast<>
-##### const_cast<>
-##### reinterpret_cast<>
+
+##### dynamic_cast<type>
+- Involves a run-time type check
+- Base class has to be polymorphic
+- On success returns a value of new_type 
+- On failure:<br>
+If type is pointer-> null pointer<br>
+If type is reference-> bad_cast exception<br>
+
+######```RTTI```:<br>
+- Run Time Type Identification
+- provide a standard way for a program to determine the type of object during runtime
+- Has run-time overhead
+- Use static_cast when you are sure that you will not wrongly cast
+- RTTI is provided through two operators:
+1. ```typeid``` operator, returns the actual type of object referred to by pointer (or reference).
+2. ```dynamic_cast``` operator,safely converts from pointer (or reference) to base type to pointer (or reference) to a derived type.
+
+
+##### const_cast<type>
+- used to cast away the constness of variables
+
+##### reinterpret_cast<type>
