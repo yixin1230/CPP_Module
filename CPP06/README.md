@@ -55,3 +55,4 @@ If type is reference-> bad_cast exception<br>
 - used to cast away the constness of variables
 
 ##### reinterpret_cast<type>
+- 

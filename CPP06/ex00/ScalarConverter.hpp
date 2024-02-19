@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/18 14:26:31 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/19 19:14:44 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/19 23:07:44 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define SCALARCONVERTER_HPP
 
 #include <iostream>
+#include <sstream>
 
 class ScalarConverter
 {
