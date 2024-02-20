@@ -6,7 +6,7 @@
 #    By: yizhang <yizhang@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2024/02/13 23:11:20 by yizhang       #+#    #+#                  #
-#    Updated: 2024/02/13 23:11:45 by yizhang       ########   odam.nl          #
+#    Updated: 2024/02/19 23:28:56 by yizhang       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,8 @@ $(NAME): $(SRC)
 
 clean:
 	rm -rf $(NAME)
+
+fclean:clean
 
 re: clean all
 

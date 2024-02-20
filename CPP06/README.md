@@ -55,4 +55,9 @@ If type is reference-> bad_cast exception<br>
 - used to cast away the constness of variables
 
 ##### reinterpret_cast<type>
-- 
+- It can perform dangerous conversion because it can typecast any pointer to any other pointer.
+- It is used when you want to work with bits.
+- The result of a reomterpret_cast cannot saftyly be used for anything other than being cast back to its original type 
+- We should be very carful when using this cast
+- if we use this type of cast then it becomes non-portable product
+
