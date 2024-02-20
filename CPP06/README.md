@@ -41,7 +41,7 @@ double s = static_cast<int>(value);
 If type is pointer-> null pointer<br>
 If type is reference-> bad_cast exception<br>
 
-######```RTTI```:<br>
+###### ```RTTI```:<br>
 - Run Time Type Identification
 - provide a standard way for a program to determine the type of object during runtime
 - Has run-time overhead
