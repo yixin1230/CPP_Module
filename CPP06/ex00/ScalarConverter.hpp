@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/18 14:26:31 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/19 23:07:44 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/21 23:17:56 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,18 @@
 
 #include <iostream>
 #include <sstream>
+
+enum
+{
+    NANF,
+    P_INF,
+    N_INF,
+    WHOLE_NB,
+    DOUBLE,
+    FLOAT,
+    SYMBOL,
+    NOTSYMBOL,
+};
 
 class ScalarConverter
 {
