@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/18 14:26:31 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/21 23:17:56 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/22 16:02:59 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,25 @@
 #include <iostream>
 #include <sstream>
 
+#define RESET "\033[0m"
+#define RED "\033[1;31m"
+#define GREEN "\033[1;32m"
+#define YELLOW "\033[1;33m"
+#define BLUE "\033[1;34m"
+#define MAG "\033[1;35m"
+
 enum
 {
     NANF,
     P_INF,
     N_INF,
     WHOLE_NB,
+    CHAR,
     DOUBLE,
     FLOAT,
     SYMBOL,
     NOTSYMBOL,
+    ERROR,
 };
 
 class ScalarConverter

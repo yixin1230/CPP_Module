@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/18 15:16:52 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/22 00:42:45 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/22 16:10:15 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,12 +72,10 @@ static void toFloat(long double value, int type)
         std::cout<<"-inff";
     else if (type == P_INF)
         std::cout<<"+inff";
-    else if (type == WHOLE_NB)
-        std::cout<<static_cast<float>(value)<<".0f";
     else if (type == DOUBLE)
         std::cout<<static_cast<float>(value)<<"f";
-    else if (type == FLOAT)
-        std::cout<<"value";
+    else if (type == WHOLE_NB || type == CHAR)
+        std::cout<<static_cast<float>(value)<<".0f";
     else
         std::cout<<static_cast<float>(value);
     std::cout<<std::endl;
@@ -92,6 +90,8 @@ static void toDouble(long double value, int type)
         std::cout<<"-inf";
     else if (type == P_INF)
         std::cout<<"+inf";
+    else if (type == WHOLE_NB || type == CHAR)
+        std::cout<<static_cast<double>(value)<<".0";
     else
         std::cout<<static_cast<double>(value);
     std::cout<<std::endl;
@@ -99,19 +99,23 @@ static void toDouble(long double value, int type)
 
 static int typeChecker(std::string input)
 {
+    if (input[input.size() - 1] == '.')
+        return ERROR;
+    if (input.size() == 1 && (input[0] >= 0 || input[0] <= 127 ))
+        return CHAR;
     if (input == "nan" || input == "nanf")
         return NANF;
     if (input == "-inff" || input == "-inf")
         return N_INF;
     if (input == "+inff" || input == "+inf")
         return P_INF;
-    if (input.find(".") == std::string::npos)
-       return WHOLE_NB;
-    if (input.find("f") != std::string::npos)
+    if (input[input.size() - 1] == 'f' && input.find(".") != std::string::npos)
         return FLOAT;
-    if (input.find(".")!= std::string::npos && input.find("f") == std::string::npos)
+    if ((input[input.size() - 1] == '0' && input[input.size() - 2] == '.') || input.find(".") == std::string::npos)
+        return WHOLE_NB;
+    if (input.find(".") != std::string::npos && input.find("f") == std::string::npos)
         return DOUBLE;
-    return 6;
+    return ERROR;
 }
 
 void ScalarConverter::convert(std::string input)
@@ -119,14 +123,30 @@ void ScalarConverter::convert(std::string input)
     //nan standing for not a number
     //nan a not a number value of type float
     std::stringstream sso;
-    sso<<input;
-    std::string rm_f;
+    std::string newInput;
     long double value;
     int type;
 
     type = typeChecker(input);
+    newInput = input;
+    if (type == ERROR)
+    {
+        std::cout<<RED<<"input error"<<RESET<<std::endl;
+        return ;
+    }
+    if (type == FLOAT)
+    {
+        newInput = input.substr(0, input.length() - 1);
+        type = typeChecker(newInput);
+    }
+    sso << newInput;
     sso >> value;
-
+    if (type == CHAR)
+    {
+        int tmp = input[0];
+        value = static_cast<long double>(tmp);
+        type = typeChecker(newInput);
+    }
     toChar(value, type);
     toInt(value, type);
     toFloat(value, type);
