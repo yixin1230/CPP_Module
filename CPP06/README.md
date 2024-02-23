@@ -45,13 +45,32 @@ double s = static_cast<int>(value);
 - On failure:<br>
 If type is pointer-> null pointer<br>
 If type is reference-> bad_cast exception<br>
+- If the cast is successful, dynamic_cast returns value of type new_type.
+- If the cast fails and new_type is a pointer type, it returns a null pointer of that type.
+- If the cast fails and new_type is reference type, it throws an exception that matches a handler of type std::bad_cast
+- Downcast may fail.
+<br>
+```
+        BaseClass
+       /         \
+      V           V
+   Left          Right
+       \        /
+        V      V
+       MostDerived
+```
 
 ##### Downcasting
+- Downcast is casting from a Right* to a MostDerived*
 - Casting a base class pointer (or reference) to a derived class pointer (or reference) is known as downcasting.
 - casting from the base class pointer/reference to the derived class
 
 ##### Upcasting
 - Casting a derived class pointer (or reference) to a base class pointer (or reference) is known as upcasting.
+
+##### sidecast or crosscast
+- is when ```dynamic_cast<Left>(pRight)``` returns a Left* that properly behaves as a Left*. This happens when pRight points to a MostDerived object. Crosscasts only work with dynamic_cast, not reinterpret_cast or static_cast.
+<br>
 
 ###### ```RTTI```:<br>
 - Run Time Type Identification
