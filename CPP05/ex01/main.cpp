@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/06 10:20:31 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/12 12:27:34 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/23 17:50:52 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ int main()
     Form a("A", false, 150 , 150);
     Bureaucrat jim("Jim",1);
     a.beSigned(jim);
-    jim.signform(a);
+    jim.signForm(a);
     std::cout<<a.getSigned()<<std::endl;
 
     //Test if a low grade Bureaucrat can not sign a high grade form
     Form b("B", false, 99 , 99);
     Bureaucrat bob("Bob",100);
     b.beSigned(bob);
-    bob.signform(b);
+    bob.signForm(b);
     std::cout<<b.getSigned()<<std::endl;
 
     try

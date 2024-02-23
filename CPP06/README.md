@@ -55,9 +55,17 @@ If type is reference-> bad_cast exception<br>
 - used to cast away the constness of variables
 
 ##### reinterpret_cast<type>
+- It is used to convert a pointer of some data type into a pointer of another data type, even if the data types before and after conversion are different.
+- It does not check if the pointer type and data pointed by the pointer is same or not.
+- Syntax:
+```
+data_type *var_name = reinterpret_cast <data_type *>(pointer_variable);
+```
 - It can perform dangerous conversion because it can typecast any pointer to any other pointer.
 - It is used when you want to work with bits.
-- The result of a reomterpret_cast cannot saftyly be used for anything other than being cast back to its original type 
+- The result of a reomterpret_cast cannot safely be used for anything other than being cast back to its original type 
 - We should be very carful when using this cast
 - if we use this type of cast then it becomes non-portable product
 
+#### ```uintptr_t```
+- is an unsigned integer type that is capable of storing a data pointer (whether it can hold a function pointer is unspecified). Which typically means that it's the same as a pointer.

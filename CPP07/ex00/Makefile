@@ -6,14 +6,14 @@
 #    By: yizhang <yizhang@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2024/02/13 23:11:20 by yizhang       #+#    #+#                  #
-#    Updated: 2024/02/22 17:19:16 by yizhang       ########   odam.nl          #
+#    Updated: 2024/02/22 16:56:55 by yizhang       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex01
+NAME = ex00
 CC = c++
-FLAG = -Wall -Werror -Wextra -fsanitize=address
-SRC = main.cpp Serializer.cpp
+FLAG = -Wall -Werror -Wextra #-fsanitize=address
+SRC = main.cpp
 
 all: $(NAME)
 
