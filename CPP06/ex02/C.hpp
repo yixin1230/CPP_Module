@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   C.hpp                                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/02/16 16:26:02 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/23 20:08:42 by yizhang       ########   odam.nl         */
+/*   Created: 2024/02/23 18:43:29 by yizhang       #+#    #+#                 */
+/*   Updated: 2024/02/23 21:19:09 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Base.hpp"
+#ifndef C_HPP
+#define C_HPP
 
-int main()
+#include "Base.hpp"
+class Base;
+
+class C: public Base
 {
-    return 0;
-}
+    
+};
+#endif

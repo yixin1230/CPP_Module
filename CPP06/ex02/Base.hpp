@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   Base.hpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/02/16 16:26:02 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/23 20:08:42 by yizhang       ########   odam.nl         */
+/*   Created: 2024/02/23 18:22:14 by yizhang       #+#    #+#                 */
+/*   Updated: 2024/02/23 21:17:16 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Base.hpp"
+# ifndef BASE_HPP
+# define BASE_HPP
 
-int main()
+#include <iostream>
+
+class Base
 {
-    return 0;
-}
+    public:
+        virtual ~Base();
+};
+
+Base *generate(void);
+void identify(Base *p);
+void identify(Base &p);
+#endif

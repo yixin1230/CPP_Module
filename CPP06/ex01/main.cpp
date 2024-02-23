@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/16 16:26:02 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/23 13:32:42 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/23 18:21:30 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,25 @@
 
 int main()
 {
-    Data src;
-    src.nb = 88;
-    src.someThing = "Hello";
-    Data *data = &src;
-    uintptr_t p = 9;
+    Data data;
+    data.nb = 88;
+    data.someThing = "Hello";
 
-    std::cout<<GREEN<<"before type cast:"<<RESET<<std::endl;
-    std::cout<<"value:"<<std::endl;
-    std::cout<<"data: "<<data<<std::endl;
-    std::cout<<"data nb: "<<data->nb<<std::endl;
-    std::cout<<"data string: "<<data->someThing<<std::endl;
-    std::cout<<"p: "<<p<<std::endl;
-    std::cout<<std::endl;
-    
-    std::cout<<"address:"<<std::endl;
-    std::cout<<"data: "<<&data<<std::endl;
-    std::cout<<"p: "<<p<<std::endl;
-    std::cout<<std::endl;
-
-    //after
-    data = Serializer::deserialize(p);
-    //p = Serializer::serialize(data);
+    //Use serialize() on the address of the Data object and pass it return value to deserialize().
+    uintptr_t p = Serializer::serialize(&data);
+    Data *data2 = Serializer::deserialize(p);
     
     std::cout<<GREEN<<"after type cast:"<<RESET<<std::endl;
     std::cout<<"value:"<<std::endl;
-    std::cout<<"data: "<<data<<std::endl;
     std::cout<<"p: "<<p<<std::endl;
-    std::cout<<"data nb: "<<data->nb<<std::endl;
-    std::cout<<"data string: "<<data->someThing<<std::endl;
+    std::cout<<"data2 nb: "<<data2->nb<<std::endl;
+    std::cout<<"data2 string: "<<data2->someThing<<std::endl;
     std::cout<<std::endl;
-    
+
+    //Then, ensure the retrun value of deserialize() compares equal to the original pointer.
     std::cout<<"address:"<<std::endl;
-    std::cout<<"data: "<<&data<<std::endl;
-    std::cout<<"p: "<<&p<<std::endl;
-    free(data);
+    std::cout<<"data2: "<<data2<<std::endl;
+    std::cout<<"data:  "<<&data<<std::endl;
+    std::cout<<"p:     "<<p<<std::endl;
     return 0;
 }

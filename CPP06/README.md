@@ -1,6 +1,9 @@
 # Notes for this project
 
 ## Type Casting
+- Casting is a techique by switch one data type to another data type. 
+- The operator used for this purpose is known as the cast operator. It is a unary operator which forces one data type to be converted into another data type.
+<br>
 
 ### Implicit conversion
 - Done by compiler on its own
@@ -28,6 +31,7 @@ int a = (int)value;
 - Simplest type of cast
 - Compile time cast
 - static_cast<type>(Expression)
+- It does thing like implicit conversions between types (such as int to float, or pointer to void*), and it can also call explicit conversion functions (or implicit ones)
 ```
 //examle
 double s = static_cast<int>(value);
@@ -35,11 +39,19 @@ double s = static_cast<int>(value);
 
 ##### dynamic_cast<type>
 - Involves a run-time type check
-- Base class has to be polymorphic
+- Base class has to be polymorphic base class because it uses this information to decide safe downcasting.
+- To work on dynamic_cast there must be one virtual function in the base class.
 - On success returns a value of new_type 
 - On failure:<br>
 If type is pointer-> null pointer<br>
 If type is reference-> bad_cast exception<br>
+
+##### Downcasting
+- Casting a base class pointer (or reference) to a derived class pointer (or reference) is known as downcasting.
+- casting from the base class pointer/reference to the derived class
+
+##### Upcasting
+- Casting a derived class pointer (or reference) to a base class pointer (or reference) is known as upcasting.
 
 ###### ```RTTI```:<br>
 - Run Time Type Identification
@@ -69,3 +81,7 @@ data_type *var_name = reinterpret_cast <data_type *>(pointer_variable);
 
 #### ```uintptr_t```
 - is an unsigned integer type that is capable of storing a data pointer (whether it can hold a function pointer is unspecified). Which typically means that it's the same as a pointer.
+
+### rand()
+- not take any parameters
+- return a pseudo-random number in the range of [0, RAND_MAX]
