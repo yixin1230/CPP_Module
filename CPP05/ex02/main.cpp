@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/12 12:31:35 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/13 22:50:38 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/26 12:16:45 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main()
     {
         Bureaucrat bob("Bob", 1);
         Bureaucrat jim("Jim", 20);
-        Bureaucrat sam("Sam", 146);
+        Bureaucrat sam("Sam", 136);
         
         //sign 25, execute 5
         PresidentialPardonForm pardon("Turkeys");

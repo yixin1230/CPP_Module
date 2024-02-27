@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/06 10:20:31 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/23 17:50:52 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/26 12:14:45 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ int main()
     try
     {
         //Test if form exception works with grade higher than 1
-        //form c("C", false, 0 , 0);
+        //Form c("C", false, 0 , 0);
         
         //Test if form exception works with grade lower than 150
-        //form d("D", false, 151 , 151);
+        //Form d("D", false, 151 , 151);
 
         //Test if Bureaucrat exception work with grade higher than 1
         //Bureaucrat amy("Amy", 0);
