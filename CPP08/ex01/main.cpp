@@ -6,9 +6,12 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/27 21:33:22 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/27 21:33:32 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/28 21:54:11 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "Span.hpp"
+
 
 int main()
 {
