@@ -17,6 +17,17 @@
 - container adapters
 - stack, queue, priority queue
 
+### set
+- In C++, a set is a container that stores unique elements following a specific order. It's part of the Standard Template Library (STL) and is defined in the <set> header. The elements in a set are stored in a tree structure (typically a balanced binary tree, like a Red-Black tree), which allows for efficient searching, insertion, and deletion operations. The unique property ensures that no two elements in the set are the same, and the ordering ensures that the elements are always sorted according to a specific criterion, usually using the < operator or a custom comparator.
+- Unique Elements: Each element in a set must be unique. The set automatically removes duplicates, so only one instance of a particular value exists in the container at any time.
+- Ordered: The elements in a set are stored in a sorted order. By default, this order is ascending, determined by the < operator. However, you can define a custom order by providing a comparator function or functor when declaring the set.
+- Efficient Operations: Because of its underlying tree structure, a set provides efficient lookup, insertion, and deletion operations. These operations generally have logarithmic complexity, O(log n), where n is the number of elements in the set.
+- Dynamic Size: Like other containers in the STL, a set can grow and shrink at runtime as elements are added or removed.
+
+### When to use std::set
+- When you need to store a collection of unique items
+- When the order of elements is important and you want them to be automatically sorted
+- When you need efficient search, insertion, and deletion of elements
 
 ## Algorithms
 - Functions for processing sequences of elements from containers

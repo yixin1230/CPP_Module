@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/28 20:42:05 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/28 22:36:55 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/28 23:17:54 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ class Span
     private:
         unsigned int    _n;
         std::set<int>   _mySet;
+        std::vector<int>_myVec;
 };
 
 #endif
