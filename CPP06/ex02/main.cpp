@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/16 16:26:02 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/23 23:28:05 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/29 12:41:42 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,21 @@ int main()
     Base *base4 = generate();
     identify(base4);
     identify(*base4);
-
+    
+    Base *base5 = generate();
+    identify(base5);
+    identify(*base5);
 
     delete base;
     delete base2;
     delete base3;
     delete base4;
+    delete base5;
 
-    // The reason is that I can have a null pointer, but not a null reference
+    //The reason is that I can have a null pointer, but not a null reference
     //any reference has to be bound to an object
     //when dynamic_cast for a pointer type fails it return a null pointer and the caller can check for that,
     //but when it fails for a reference type it can't return a null reference, an exception is the only reasonable way to signal a problem
-    // prints the actual type of the object
+    //prints the actual type of the object
     return 0;
 }
