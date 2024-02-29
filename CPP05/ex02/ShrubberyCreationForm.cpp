@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/10 18:45:14 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/13 22:37:01 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/29 14:39:03 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,16 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
         throw (Aform::NotSignedException());
     else
         {
-            std::cout<<GREEN<<"               ,@@@@@@@,"<<std::endl;
-            std::cout<<"       ,,,.   ,@@@@@@/@@,  .oo8888o."<<std::endl;
-            std::cout<<"    ,&%%&%&&%,@@@@@/@@@@@@,8888\\88/8o"<<std::endl;
-            std::cout<<"   ,%&\\%&&%&&%,@@@\\@@@/@@@88\\88888/88'"<<std::endl;
-            std::cout<<"   %&&%&%&/%&&%@@\\@@/ /@@@88888\\88888'"<<std::endl;
-            std::cout<<"   %&&%/ %&%%&&@@\\ V /@@' `88\\8 `/88'"<<std::endl;
-            std::cout<<"   `&%\\ ` /%&'    |.|        \\ '|8'"<<std::endl;
-            std::cout<<"       |o|        | |         | |"<<std::endl;
-            std::cout<<"       |.|        | |         | |"<<std::endl;
-            std::cout<<",.. \\/ ._\\//_/__/  ,\\_//__\\/.  \\_//__/_"<<RESET<<std::endl;
+            std::ofstream file(_target + "_shrubbery");
+            file<<GREEN<<"               ,@@@@@@@,\n";
+            file<<"       ,,,.   ,@@@@@@/@@,  .oo8888o.\n";
+            file<<"    ,&%%&%&&%,@@@@@/@@@@@@,8888\\88/8o\n";
+            file<<"   ,%&\\%&&%&&%,@@@\\@@@/@@@88\\88888/88'\n";
+            file<<"   %&&%&%&/%&&%@@\\@@/ /@@@88888\\88888'\n";
+            file<<"   %&&%/ %&%%&&@@\\ V /@@' `88\\8 `/88'\n";
+            file<<"   `&%\\ ` /%&'    |.|        \\ '|8'\n";
+            file<<"       |o|        | |         | |\n";
+            file<<"       |.|        | |         | |\n";
+            file<<",.. \\/ ._\\//_/__/  ,\\_//__\\/.  \\_//__/_\n";
         }
 }

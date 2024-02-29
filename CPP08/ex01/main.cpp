@@ -6,14 +6,13 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/27 21:33:22 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/28 23:04:22 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/29 14:00:06 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
-
 int main()
 {
-
+    
 }
