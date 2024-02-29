@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/28 20:42:05 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/28 23:17:54 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/29 12:51:17 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include <set>
+#include <vector>
+#include <algorithm>
 
 class Span
 {

@@ -1,6 +1,6 @@
 # Notes for this project
 
-# Elements of the STL (Containers, Algorithms, Iterator)
+## Elements of the STL (Containers, Algorithms, Iterator)
 ## Containers
 - Collections of objects or primitive types
 - (array, vector, deque, stack, set, map, etc.)

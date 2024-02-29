@@ -6,12 +6,13 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/27 13:36:59 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/28 20:39:20 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/29 12:52:07 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "easyfind.hpp"
 #include <list>
+#include <vector>
 
 int main()
 {
