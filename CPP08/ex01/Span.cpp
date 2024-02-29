@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/28 20:44:43 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/29 13:59:16 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/29 14:49:33 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ void Span::addNumber(int nb)
 {
     if (_myVec.size() + 1 <= _n)
     {
-        std::set<int>::iterator it = std::find(_mySet.begin(),_mySet.end(),nb);
         _mySet.insert(nb);
         _myVec.push_back(nb); // add nb to the end of the vector
     }
@@ -86,5 +85,6 @@ int Span::longestSpan()
         throw std::logic_error("Not enough numbers to find a span");
     if (_mySet.size() == 1)
         return (0);
-    return (*_mySet.end() - *_mySet.begin());
+    auto it = _mySet.end();
+    return (*(--it) - *_mySet.begin());
 }

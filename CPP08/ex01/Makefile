@@ -6,14 +6,14 @@
 #    By: yizhang <yizhang@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2024/02/13 23:11:20 by yizhang       #+#    #+#                  #
-#    Updated: 2024/02/25 21:44:08 by yizhang       ########   odam.nl          #
+#    Updated: 2024/02/29 14:46:11 by yizhang       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex01
 CC = c++
 FLAG = -Wall -Werror -Wextra #-fsanitize=address
-SRC = main.cpp
+SRC = main.cpp Span.cpp
 
 all: $(NAME)
 
