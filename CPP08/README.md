@@ -110,3 +110,48 @@ int main()
 }
 ```
 
+### What is a .tpp file
+- It's used when you don't want the file that contains the interface of a module to contain all the gory implementation details. But you cannot write the implementation in a .cpp file because it's a template. So you do the best you can (not considering explicit instantiations and the like).
+
+### Why can templates only be implemented in the header file?
+- t is not necessary to put the implementation in the header file, see the alternative solution at the end of this answer.
+
+Anyway, the reason your code is failing is that, when instantiating a template, the compiler creates a new class with the given template argument. For example:
+
+```
+template<typename T>
+struct Foo
+{
+    T bar;
+    void doSomething(T param) {/* do stuff using T */}
+};
+
+// somewhere in a .cpp
+Foo<int> f; 
+```
+
+When reading this line, the compiler will create a new class (let's call it FooInt), which is equivalent to the following:
+
+```
+struct FooInt
+{
+    int bar;
+    void doSomething(int param) {/* do stuff using int */}
+};
+```
+- Consequently, the compiler needs to have access to the implementation of the methods, to instantiate them with the template argument (in this case int). If these implementations were not in the header, they wouldn't be accessible, and therefore the compiler wouldn't be able to instantiate the template.
+
+- A common solution to this is to write the template declaration in a header file, then implement the class in an implementation file (for example .tpp), and include this implementation file at the end of the header.
+
+### Dose it matter if it's .tpp or any other extansion? And why not use a .cpp?
+- use .cpp will against conventions (it will still work, but don't do it; .cpp files are generally source files).
+
+### Stack
+- stacks are a type of container adaptors with LIFO(Last In Fritst Out)
+
+#### The functiona associated with stack are:
+- ```empty()``` return wether the stacks is empty.
+- ```size()``` return the size of the stack.
+- ```top()``` return a reference to the top most element of the stack.
+- ```push(g)``` adds the element 'g' at the top of the stack.
+- ```pop()``` delete the most recent entered element of the stack.
