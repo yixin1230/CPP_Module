@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/27 21:33:22 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/29 16:19:20 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/29 16:27:41 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,17 @@
 
 int main()
 {
+    //test on subject
+    Span sp = Span(5);
+    sp.addNumber(6);
+    sp.addNumber(3);
+    sp.addNumber(17);
+    sp.addNumber(9);
+    sp.addNumber(11);
+    std::cout << sp.shortestSpan() << std::endl;// should be 2
+    std::cout << sp.longestSpan() << std::endl;// should be 4
+    std::cout<<std::endl;
+    
     //some random number
     Span span(10000);
     for (int i = 0; i < 10000; i++)
