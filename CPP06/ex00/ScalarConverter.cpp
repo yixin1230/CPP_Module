@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/18 15:16:52 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/22 16:10:15 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/02/29 12:29:07 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ static int typeChecker(std::string input)
 {
     if (input[input.size() - 1] == '.')
         return ERROR;
-    if (input.size() == 1 && (input[0] >= 0 || input[0] <= 127 ))
+    if (input.size() == 1 && !(input[0] >= '0' && input[0] <= '9') && (input[0] >= 0 || input[0] <= 127 ))
         return CHAR;
     if (input == "nan" || input == "nanf")
         return NANF;
@@ -109,10 +109,10 @@ static int typeChecker(std::string input)
         return N_INF;
     if (input == "+inff" || input == "+inf")
         return P_INF;
-    if (input[input.size() - 1] == 'f' && input.find(".") != std::string::npos)
-        return FLOAT;
     if ((input[input.size() - 1] == '0' && input[input.size() - 2] == '.') || input.find(".") == std::string::npos)
         return WHOLE_NB;
+    if (input[input.size() - 1] == 'f' && input.find(".") != std::string::npos)
+        return FLOAT;
     if (input.find(".") != std::string::npos && input.find("f") == std::string::npos)
         return DOUBLE;
     return ERROR;
