@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/27 13:36:59 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/29 12:52:07 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/07/05 15:37:44 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,11 @@ int main()
 
     try
     {
+        //it will try to find value 0 inside array, but no value will be find
         std::vector<int>::iterator it2 = easyfind(array, 0);
         std::cout<<*it2<<std::endl;
 
+        //it will try to find value 5 inside alist, but no.
         std::list<int>::iterator it4 = easyfind(alist, 5);
         std::cout<<*it4<<std::endl;
     }

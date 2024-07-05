@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/28 20:44:43 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/29 14:49:33 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/07/05 15:42:29 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ int Span::shortestSpan()
     if (_myVec.size() != _mySet.size())
         return (0);
     //subtract two by two
+    //auto type is a C++11 extansion
     auto it = _mySet.begin();
     auto itNext = std::next(it, 1);
     int  span = INT_MAX;

@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/27 21:33:22 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/02/29 16:27:41 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/07/05 16:08:03 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main()
     sp.addNumber(9);
     sp.addNumber(11);
     std::cout << sp.shortestSpan() << std::endl;// should be 2
-    std::cout << sp.longestSpan() << std::endl;// should be 4
+    std::cout << sp.longestSpan() << std::endl;// should be 14
     std::cout<<std::endl;
     
     //some random number
