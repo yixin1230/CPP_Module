@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/27 21:33:22 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/07/05 16:08:03 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/07/13 17:28:36 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,21 +57,34 @@ int main()
     std::cout<<std::endl;
     
     //error handling 
-    //add more than N value
+    //add more than N value, should throw an exception
     try
     {
-        Span span3(3);
-        span3.addNumber(1);
-        span3.addNumber(2);
-        span3.addNumber(3);
-        span3.addNumber(4);
-        std::cout<<"Shortest span: "<<span3.shortestSpan()<<std::endl;
-        std::cout<<"Longest span: "<<span3.longestSpan()<<std::endl;
-        std::cout<<std::endl;
+        // Span span3(3);
+        // span3.addNumber(1);
+        // span3.addNumber(2);
+        // span3.addNumber(3);
+        // span3.addNumber(4);
+        // std::cout<<"Shortest span: "<<span3.shortestSpan()<<std::endl;
+        // std::cout<<"Longest span: "<<span3.longestSpan()<<std::endl;
+        // std::cout<<std::endl;
+
+        //if there are no numbers stored, throw exceptionSpan span3(3);
+        // Span span5(3);
+        // std::cout<<"Shortest span: "<<span5.shortestSpan()<<std::endl;
+        // std::cout<<"Longest span: "<<span5.longestSpan()<<std::endl;
+        // std::cout<<std::endl;
+        
+        //if there are only one number stored, throw exception
+        // Span span6(3);
+        // span6.addNumber(1);
+        // std::cout<<"Shortest span: "<<span6.shortestSpan()<<std::endl;
+        // std::cout<<"Longest span: "<<span6.longestSpan()<<std::endl;
+        // std::cout<<std::endl;
 
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr <<RED<< e.what() <<RESET<< '\n';
     }
 }
