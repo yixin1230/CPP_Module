@@ -6,11 +6,15 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/27 21:33:41 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/03/28 12:48:24 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/08/28 13:55:17 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
+
+// create a MutantStack class
+// It will implemented in terms of a std::stack, offer all its member functions
+// plus an additional feature: iterators
 
 int main()
 {

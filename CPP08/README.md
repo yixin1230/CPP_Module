@@ -27,4 +27,6 @@ Template<typename T = float>
 // In this case compiler assume the T value is float
 ```
 
-##
+## associative container
+- assicitive container is a container that just stores sorted data
+- it's going to be slower to insert the data, but it is going to be much faster to search for the data
