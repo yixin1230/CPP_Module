@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/03/29 13:57:01 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/08/28 18:34:49 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/08/28 19:20:58 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,13 @@ class MutantStack: public std::stack<T, T2>
         {
             std::cout<<"Default destructor called"<<std::endl;
         }
+        
         // typedefs for iterator types
         typedef typename T2::iterator iterator;
         iterator begin(){return this->c.begin();}
         iterator end(){return this->c.end();}
-        iterator size(){return c.size();}
 
-        
-        
     private:
-    protected:
-        T2 c;
 };
 
 #endif
