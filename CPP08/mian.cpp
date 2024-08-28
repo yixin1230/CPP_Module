@@ -1,12 +1,13 @@
 // this main is for my own practice 
 // compile: c++ -std=c++11 main.cpp
-
+//
 #include <queue>
 #include <set>
 #include <iostream>
 
 int main()
 {
+    //set
     // size will be 5 not 7
     // because the set will get rid of the additional one
     std::set<int> set1 = {5,4,3,2,1,1,1};
@@ -25,5 +26,14 @@ int main()
         for(int i : set1)
             std::cout<< i << std::endl;
     }
+
+
+
+    //multi set
+    std::multiset<int> mset1{1,1,2,6,2,3,0};
+    mset1.insert(-9);
+    if (!mset1.empty())
+        for (int i : mset1)
+            std::cout<<i<<std::endl;
     return 0;
 }
