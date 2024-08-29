@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   BitcoinExchange.cpp                                :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/08/28 20:19:43 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/08/29 21:13:47 by yizhang       ########   odam.nl         */
+/*   Created: 2024/08/29 20:00:10 by yizhang       #+#    #+#                 */
+/*   Updated: 2024/08/29 21:14:52 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
-int main (int argc, char **argv)
+BitcoinExchange::BitcoinExchange(int argc, char **argv)
 {
+    std::cout<<"BitcoinExchange constructor called."<<std::endl;
+    if (argc != 2)
+        throw CouldNotOpenFile();
+    std::ofstream input(argv[1], std::ios::in);
+    if (input.is_open())
+    {
 
-	//read the csv file, price
-	//read the input file, amount
-	//calculate the value: price * amount
-	//output the results: the program prints out the calcuted value for each line in the input file
-	try{
-		BitcoinExchange btc(argc, argv);
-	}
-	catch (BitcoinExchange::CouldNotOpenFile &e)
-	{
-		std::cout<<e.what()<<std::endl;
-	}
-    return 0;
+    }
+    else
+        throw CouldNotOpenFile();
+}
+
+BitcoinExchange::~BitcoinExchange()
+{
+    std::cout<<"BitcoinExchange deconstructor called."<<std::endl;
 }
