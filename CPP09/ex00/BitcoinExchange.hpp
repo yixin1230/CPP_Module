@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/08/29 19:58:10 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/08/29 21:24:55 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/08/30 13:42:53 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdexcept>
 # include <iostream>
 # include <fstream>
+# include <map>
 
 #define RESET "\033[0m"
 #define RED "\033[1;31m"
@@ -28,9 +29,12 @@
 class BitcoinExchange
 {
     public:
-        BitcoinExchange(int argc, char **argv);
+        BitcoinExchange(int argc);
         ~BitcoinExchange();
-        void run();
+        void openCsvFile();
+        void openInputFile(char *str);
+        void printMessage();
+        void run(char **argv);
         
         class CouldNotOpenFile: public std::exception{
             public:
@@ -53,6 +57,7 @@ class BitcoinExchange
         };
     private:
         BitcoinExchange();
+        std::map<std::string, std::string> _data;
         // T   price;
         // T2  amount;
 };
