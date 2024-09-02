@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/08/29 20:00:10 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/09/02 12:17:40 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/09/02 16:07:10 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ bool BitcoinExchange::checkData(std::pair<std::string, std::string> p)
         std::cout<<"Error: not a positive number."<<std::endl;
         return false;
     }
-    if (std::stol(p.second) > 2147483647)
+    if (std::stol(p.second) > 1000)
     {
         std::cout<<"Error: too large a number."<<std::endl;
         return false;
@@ -86,6 +86,23 @@ bool BitcoinExchange::checkData(std::pair<std::string, std::string> p)
 }
 
 //template calulation
+void BitcoinExchange::doMulti(std::__1::string num1, std::__1::string num2)
+{
+    if (num1.find('.') || num2.find('.'))
+    {
+        float n1 = std::stof(num1);
+        float n2 = std::stof(num2);
+        float n = n1*n2;
+        std::cout<<n<<std::endl;
+    }
+    else
+    {
+        int n1 = std::stof(num1);
+        int n2 = std::stof(num2);
+        int n = n1*n2;
+        std::cout<<n<<std::endl;
+    }
+}
 
 void BitcoinExchange::doCalculation(std::pair<std::string, std::string> p)
 {
@@ -100,41 +117,17 @@ void BitcoinExchange::doCalculation(std::pair<std::string, std::string> p)
             token = tokenize(p.first, "-");
             token2 = tokenize(it->first, "-");
             if (token.first == token2.first && token.second.substr(0,2) == token2.second.substr(0,2) 
-                && std::stol(token.second.substr(3,2)) < std::stol(token2.second.substr(3,2)))
+                && std::stoi(token.second.substr(3,2)) < std::stoi(token2.second.substr(3,2)))
             {
-                std::map<std::string, std::string>::iterator it2 = _data.upper_bound(it->first);
-                int num1 = std::stol(it2->second);
-                int num2 = std::stol(p.second);
-                int num = num1 * num2;
-                std::cout<<num<<std::endl;
+                it--;
+                doMulti(it->second, p.second);
                 return ;
             }
-            // std::cout<<"p:  "<<p.first<<"    "<<p.second<<std::endl;
-            // std::cout<<"it:  "<<it->first<<"    "<<it->second<<std::endl;
-            
-            // std::string inDay = p.first.substr(8,2);
-            // std::string dataDay = it->first.substr(8,2);
-            
-            // if (inYear == dataYear && inMonth == dataMonth && inDay < dataDay)
-            // {
-            //     std::map<std::string, std::string>::iterator it2 = _data.upper_bound(it->first);
-            //     int num1 = std::stol(it2->second);
-            //     int num2 = std::stol(p.second);
-            //     int num = num1 * num2;
-            //     std::cout<<num<<std::endl;
-            //     return ;
-            // }
             ++it;
         }
     }
     else
-    {
-        int num1 = std::stol(match->second);
-        int num2 = std::stol(p.second);
-        int num = num1 * num2;
-        std::cout<<num<<std::endl;
-    }
-    std::cout<<"num"<<std::endl;
+        doMulti(match->second, p.second);
 }
 
 void BitcoinExchange::openCsvFile()
@@ -191,18 +184,7 @@ void BitcoinExchange::openInputFile(char *str)
         throw CouldNotOpenFile();
 }
 
-void BitcoinExchange::printMessage()
-{
-    std::map<std::string, std::string>::iterator itr;
-    for (itr = _data.begin(); itr != _data.end(); ++itr)
-    {
-        std::cout<<itr->first<<" => "<<" = "<<itr->second<<std::endl;
-    }
-}
-
-
 void BitcoinExchange::run(char **argv)
 {
     openInputFile(argv[1]);
-    // printMessage();
 }

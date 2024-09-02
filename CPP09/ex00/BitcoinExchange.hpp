@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/08/29 19:58:10 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/09/02 12:22:26 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/09/02 16:08:19 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,40 +32,22 @@ class BitcoinExchange
     public:
         BitcoinExchange(int argc);
         ~BitcoinExchange();
-        void openCsvFile();
-        void openInputFile(char *str);
-        void printMessage();
         void run(char **argv);
         
         class CouldNotOpenFile: public std::exception{
             public:
                 const char*what() const throw(){return ("Error: could not open file.");}
         };
-
-        class NotPositiveNumber:public std::exception{
-            public:
-                const char*what() const throw(){return ("Error: not a positive number.");}
-        };
-
-        class BadInput:public std::exception{
-            public:
-                const char*what() const throw(){return ("Error: bad input => ");}
-        };
-
-        class TooLarge:public std::exception{
-            public:
-                const char*what() const throw(){return ("Error: too large a number.");}
-        };
     private:
         BitcoinExchange();
+        void                                openCsvFile();
+        void                                openInputFile(char *str);
         bool                                checkData(std::pair<std::string, std::string> p);
         bool                                checkDate(std::string line);
         void                                doCalculation(std::pair<std::string, std::string> p);
-        
+        void                                doMulti(std::__1::string num1, std::__1::string num2);
         std::pair<std::string, std::string> tokenize(std::string line, std::string del);
         std::map<std::string, std::string> _data;
-        // T   price;
-        // T2  amount;
 };
 
 #endif
