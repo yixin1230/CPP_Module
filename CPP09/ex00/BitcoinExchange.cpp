@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/08/29 20:00:10 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/09/01 20:13:08 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/09/02 12:17:40 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 BitcoinExchange::BitcoinExchange(int argc)
 {
-    std::cout<<"BitcoinExchange constructor called."<<std::endl;
     if (argc != 2)
         throw CouldNotOpenFile();
     openCsvFile();
@@ -22,7 +21,7 @@ BitcoinExchange::BitcoinExchange(int argc)
 
 BitcoinExchange::~BitcoinExchange()
 {
-    std::cout<<"BitcoinExchange deconstructor called."<<std::endl;
+
 }
 
 std::pair<std::string, std::string> BitcoinExchange::tokenize(std::string line, std::string del)
@@ -86,13 +85,55 @@ bool BitcoinExchange::checkData(std::pair<std::string, std::string> p)
     return true;
 }
 
+//template calulation
+
 void BitcoinExchange::doCalculation(std::pair<std::string, std::string> p)
 {
-    (void)p;
-    // find right date, than multiple
-    
-    //save it to data
-    //print out the data
+    auto match = _data.find(p.first);
+    if(match == _data.end())
+    {
+        std::map<std::string, std::string>::iterator it = _data.begin();
+        while (it != _data.end())
+        {
+            std::pair <std::string, std::string> token;
+            std::pair <std::string, std::string> token2;
+            token = tokenize(p.first, "-");
+            token2 = tokenize(it->first, "-");
+            if (token.first == token2.first && token.second.substr(0,2) == token2.second.substr(0,2) 
+                && std::stol(token.second.substr(3,2)) < std::stol(token2.second.substr(3,2)))
+            {
+                std::map<std::string, std::string>::iterator it2 = _data.upper_bound(it->first);
+                int num1 = std::stol(it2->second);
+                int num2 = std::stol(p.second);
+                int num = num1 * num2;
+                std::cout<<num<<std::endl;
+                return ;
+            }
+            // std::cout<<"p:  "<<p.first<<"    "<<p.second<<std::endl;
+            // std::cout<<"it:  "<<it->first<<"    "<<it->second<<std::endl;
+            
+            // std::string inDay = p.first.substr(8,2);
+            // std::string dataDay = it->first.substr(8,2);
+            
+            // if (inYear == dataYear && inMonth == dataMonth && inDay < dataDay)
+            // {
+            //     std::map<std::string, std::string>::iterator it2 = _data.upper_bound(it->first);
+            //     int num1 = std::stol(it2->second);
+            //     int num2 = std::stol(p.second);
+            //     int num = num1 * num2;
+            //     std::cout<<num<<std::endl;
+            //     return ;
+            // }
+            ++it;
+        }
+    }
+    else
+    {
+        int num1 = std::stol(match->second);
+        int num2 = std::stol(p.second);
+        int num = num1 * num2;
+        std::cout<<num<<std::endl;
+    }
     std::cout<<"num"<<std::endl;
 }
 
@@ -138,6 +179,7 @@ void BitcoinExchange::openInputFile(char *str)
                 if (checkData(p))
                 {
                     std::cout<<p.first<< " => "<<p.second<<" = ";
+                    // std::cout<<"p:  "<<p.first<<"    "<<p.second<<std::endl;
                     doCalculation(p);
                 }
             }

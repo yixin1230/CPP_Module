@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/08/29 19:58:10 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/09/01 19:34:28 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/09/02 12:22:26 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ class BitcoinExchange
         bool                                checkData(std::pair<std::string, std::string> p);
         bool                                checkDate(std::string line);
         void                                doCalculation(std::pair<std::string, std::string> p);
+        
         std::pair<std::string, std::string> tokenize(std::string line, std::string del);
         std::map<std::string, std::string> _data;
         // T   price;
