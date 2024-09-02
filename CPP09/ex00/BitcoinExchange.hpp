@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/08/29 19:58:10 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/09/02 16:08:19 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/09/02 19:50:28 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ class BitcoinExchange
                 const char*what() const throw(){return ("Error: could not open file.");}
         };
     private:
-        BitcoinExchange();
+                                            BitcoinExchange();
         void                                openCsvFile();
         void                                openInputFile(char *str);
         bool                                checkData(std::pair<std::string, std::string> p);
