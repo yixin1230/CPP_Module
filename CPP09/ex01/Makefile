@@ -6,14 +6,14 @@
 #    By: yizhang <yizhang@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2024/02/13 23:11:20 by yizhang       #+#    #+#                  #
-#    Updated: 2024/08/28 20:11:43 by yizhang       ########   odam.nl          #
+#    Updated: 2024/09/02 19:11:55 by yizhang       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex01
+NAME = RPN
 CC = c++
-FLAG = -Wall -Werror -Wextra -std=c++11#-fsanitize=address
-SRC = main.cpp
+FLAG = -Wall -Werror -Wextra -std=c++11 -fsanitize=address
+SRC = main.cpp RPN.cpp
 
 all: $(NAME)
 

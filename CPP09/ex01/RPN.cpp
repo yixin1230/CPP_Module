@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   RPN.cpp                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/08/28 23:59:12 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/09/02 20:01:23 by yizhang       ########   odam.nl         */
+/*   Created: 2024/09/02 18:59:29 by yizhang       #+#    #+#                 */
+/*   Updated: 2024/09/02 20:00:17 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RPN.hpp"
+# include"RPN.hpp"
 
-int main(int argc, char **argv)
+RPN::RPN()
 {
-    try
+    
+}
+
+RPN::~RPN()
+{
+    
+}
+
+RPN::RPN(std::string str)
+{
+    std::string::iterator it = str.begin();
+    while(it != str.end())
     {
-        if (argc != 2)
-            throw RPN::ErrorInput();
-        RPN program(argv[1]);
-        program.run();
+        std::cout<<*it<<std::endl;
+        ++it;
     }
-    catch(RPN::ErrorInput &e)
-    {
-        std::cout <<e.what()<<std::endl;
-    }
-    return 0;
+}
+
+void RPN::run()
+{
+    
 }
