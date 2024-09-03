@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/09/02 18:59:29 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/09/02 20:00:17 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/09/02 20:09:25 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,14 @@ RPN::~RPN()
 
 RPN::RPN(std::string str)
 {
+    std::string operations = "+-*/";
     std::string::iterator it = str.begin();
     while(it != str.end())
     {
-        std::cout<<*it<<std::endl;
+        if (isdigit(*it))
+            std::cout<<"digit: "<<*it;
+        else if (operations.find(*it))
+            std::cout<<"operations: "<<*it;
         ++it;
     }
 }
