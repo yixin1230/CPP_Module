@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/27 13:37:36 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/07/13 17:05:54 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/09/03 16:12:06 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define EASYFIND_HPP
 
 #include <iostream>
+#include <algorithm>
 
 template<typename T>
 // T is a container of integers
