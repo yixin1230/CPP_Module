@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/03/29 13:57:01 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/08/28 19:20:58 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/09/03 18:26:57 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,13 @@ class MutantStack: public std::stack<T, T2>
         
         // typedefs for iterator types
         typedef typename T2::iterator iterator;
+        // This creates a typedef named 'iterator' that refers to the iterator type of the underlying container 'T2'.
+        // This allows the user to easily use the container's iterators without needing to know the exact type of the underlying container.
         iterator begin(){return this->c.begin();}
         iterator end(){return this->c.end();}
+        // In 'std::stack' the underlying container is usually a private or protected member named 'c'
+        //This name is not standardized by the C++ standard itself but is commonly used in most implementations of the C++ standard library.
+        //the functions begin() and end() use this->c to access the underlying container's iterators
 
     private:
 };
