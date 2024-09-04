@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/08/29 20:00:10 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/09/02 16:07:10 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/09/03 20:09:58 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,19 @@ BitcoinExchange::BitcoinExchange(int argc)
 BitcoinExchange::~BitcoinExchange()
 {
 
+}
+
+BitcoinExchange::BitcoinExchange(const BitcoinExchange &src):_data(src._data)
+{
+    std::cout<<"copy constructor called"<<std::endl;
+}
+
+BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &src)
+{
+    std::cout<<"copy operator called"<<std::endl;
+    if (this != &src)
+        _data = src._data;
+    return *this;
 }
 
 std::pair<std::string, std::string> BitcoinExchange::tokenize(std::string line, std::string del)

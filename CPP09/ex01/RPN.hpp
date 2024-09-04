@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/09/02 16:10:12 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/09/02 19:58:34 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/09/03 20:49:40 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,11 @@ class RPN
         RPN(std::string str);
         ~RPN();
         void run();
+
+        RPN(const RPN &src); // not finished
+        RPN &operator=(const RPN &src);//not finished
+        int doCalculation(int num1, int num2, std::string ope);
+
         class ErrorInput: public std::exception
         {
             public:

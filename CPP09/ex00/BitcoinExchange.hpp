@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/08/29 19:58:10 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/09/02 19:50:28 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/09/03 20:05:02 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@ class BitcoinExchange
         BitcoinExchange(int argc);
         ~BitcoinExchange();
         void run(char **argv);
+        
+        BitcoinExchange(const BitcoinExchange &src);
+        BitcoinExchange &operator=(const BitcoinExchange &src);
         
         class CouldNotOpenFile: public std::exception{
             public:
