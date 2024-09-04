@@ -106,6 +106,27 @@ do {
 while (condition);
 ```
 
+# insertion sort
+- in insertion sort we virtually split the given array into sorted and unsorted part. After that, we insert each element from the unsorted part to its correct position in the sorted part.
+## Time complexity
+- the worst case time complexity for sorting an array using insertion sort algorithm will be O(n^2), where n is total number of elements in the given array.
+- the worst case time complexity of insertion sort is maximum among all sorting algorithm but it takes least time if the array is already sorted. its best case time complexity is minimum which is O(n).
+<br>
+
+# merge sort
+- in merge sort we split the given array in two parts and sort them individually and then we merges the both sorted halves. It is based on divide and conquer algorithm.
+- we divide the given array into two equal halves until only single element is left. the array cannot be divide further.
+## Time complexity
+- the worst case, best case, and the average case time complexity of merge sort is O(N*log(N)). The worst case time complexity of merge sort is minumim among all sprting algothims.
+<br>
+
+# combined algorithm
+1. First of all we will divide the given N elements of array into (N/K)groups of each group of size K.
+2. Now we will sort each sub-arry of size k like we used to do in Insertion sort.
+3. Now after sorting each sub-arry we will merge(N/K) sorted sub-arrays like we used to do in merge sort.
+
 
 # resource
 * [Reverse Polish Notation](https://medium.com/@tech.interview.buddies/reverse-polish-notation-b88524252960)
+* [Ford-Johnson merge-insertion sort](https://codereview.stackexchange.com/questions/116367/ford-johnson-merge-insertion-sort)
+* [Merge Insertion Sort](https://iq.opengenus.org/merge-insertion-sort/)
