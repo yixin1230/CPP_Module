@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/08/29 20:00:10 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/12/12 23:33:05 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/12/12 23:38:28 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,13 @@ std::pair<std::string, std::string> BitcoinExchange::tokenize(std::string line, 
 
 bool isValidDate(const std::string& dateStr) {
     // Define a date format: YYYY-MM-DD
+    //creates a special stream (dateStream) to read the date string
     std::istringstream dateStream(dateStr);
+    //tries to parse the date into a time structure (tm) using the format "YYYY-MM-DD
     std::tm tm = {};
     dateStream >> std::get_time(&tm, "%Y-%m-%d");
 
-    // Check if parsing failed
+    //checks if the parsing worked correctly
     if (dateStream.fail()) {
         return false;
     }
@@ -83,7 +85,8 @@ bool isValidDate(const std::string& dateStr) {
     std::strftime(buffer, sizeof(buffer), "%Y-%m-%d", &tm);
     return dateStr == buffer;
 }
-
+//std::find_if() will return s.end() (the position after the last character) only if it couldn't find any non-digit characters.
+// So if find_if() reaches the end without finding non-digits, we know the string contains only numbers.
 bool is_number(const std::string& s)
 {
     return !s.empty() && std::find_if(s.begin(), 
