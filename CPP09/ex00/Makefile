@@ -6,13 +6,13 @@
 #    By: yizhang <yizhang@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2024/02/13 23:11:20 by yizhang       #+#    #+#                  #
-#    Updated: 2024/09/01 20:14:09 by yizhang       ########   odam.nl          #
+#    Updated: 2024/12/12 23:04:08 by yizhang       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = btc
 CC = c++
-FLAG = -Wall -Werror -Wextra -std=c++11 -fsanitize=address
+FLAG = -Wall -Werror -Wextra -std=c++20 -fsanitize=address
 SRC = main.cpp BitcoinExchange.cpp
 
 all: $(NAME)

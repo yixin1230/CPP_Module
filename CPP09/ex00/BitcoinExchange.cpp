@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/08/29 20:00:10 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/09/03 20:09:58 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/12/12 23:15:06 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,32 +57,55 @@ std::pair<std::string, std::string> BitcoinExchange::tokenize(std::string line, 
     return p;
 }
 
-bool BitcoinExchange::checkDate(std::string line)
-{
+#include <sstream>
+#include <iomanip>
+#include <ctime>
 
-    std::pair<std::string, std::string> p;
-    p = tokenize(line, "-");
-    if (p.first.size() != 4)
-    {
-        std::cout<<"Error: bad input =>"<<line<<std::endl;
+bool isValidDate(const std::string& dateStr) {
+    // Define a date format: YYYY-MM-DD
+    std::istringstream dateStream(dateStr);
+    std::tm tm = {};
+    dateStream >> std::get_time(&tm, "%Y-%m-%d");
+
+    // Check if parsing failed
+    if (dateStream.fail()) {
         return false;
     }
-    p = tokenize(p.second, "-");
-    if (p.first.size() != 2 || std::stoi(p.first) > 12 || p.second.size() != 2 || std::stoi(p.second) > 31)
-    {
-        std::cout<<"Error: bad input => "<<line<<std::endl;
-        return false;
+
+    // Check if the date is valid in the calendar
+    tm.tm_isdst = -1; // Disable daylight saving time
+    std::time_t time = std::mktime(&tm);
+
+    if (time == -1) {
+        return false; // Invalid date
     }
-    return true;
+
+    // Check if the reconstructed date matches the original
+    char buffer[11];
+    std::strftime(buffer, sizeof(buffer), "%Y-%m-%d", &tm);
+    return dateStr == buffer;
 }
 
+bool is_number(const std::string& s)
+{
+    return !s.empty() && std::find_if(s.begin(), 
+        s.end(), [](unsigned char c) { return !std::isdigit(c); }) == s.end();
+}
 bool BitcoinExchange::checkData(std::pair<std::string, std::string> p)
 {
-    if (!checkDate(p.first))
+    if (!isValidDate(p.first))
+    {
+        std::cout<<"Error: Invalid Date."<<std::endl;
         return false;
+    }
     if (p.second == "\0")
     {
         std::cout<<"Error: no number in here"<<std::endl;
+        return false;
+    }
+    if ((!is_number(p.second) && p.second.find(".") != std::string::npos) || (std::count(p.second.begin(), p.second.end(), '_') > 1))
+    {
+        std::cout<<"Error: bad input."<<std::endl;
         return false;
     }
     if (std::stol(p.second) < 0)
@@ -97,7 +120,6 @@ bool BitcoinExchange::checkData(std::pair<std::string, std::string> p)
     }
     return true;
 }
-
 //template calulation
 void BitcoinExchange::doMulti(std::__1::string num1, std::__1::string num2)
 {
@@ -185,7 +207,6 @@ void BitcoinExchange::openInputFile(char *str)
                 if (checkData(p))
                 {
                     std::cout<<p.first<< " => "<<p.second<<" = ";
-                    // std::cout<<"p:  "<<p.first<<"    "<<p.second<<std::endl;
                     doCalculation(p);
                 }
             }
