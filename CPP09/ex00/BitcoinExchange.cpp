@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/08/29 20:00:10 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/12/12 23:15:06 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/12/12 23:33:05 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,11 @@ std::pair<std::string, std::string> BitcoinExchange::tokenize(std::string line, 
     start = end + del.size();
     end = line.size();
     value = line.substr(start, end - start);
+    key.erase(std::remove(key.begin(), key.end(), ' '), key.end());
+    value.erase(std::remove(value.begin(), value.end(), ' '), value.end());
     p =  {key, value};
     return p;
 }
-
-#include <sstream>
-#include <iomanip>
-#include <ctime>
 
 bool isValidDate(const std::string& dateStr) {
     // Define a date format: YYYY-MM-DD
@@ -192,7 +190,7 @@ void BitcoinExchange::openInputFile(char *str)
         while (!input.eof())
         {
             getline(input, line);
-            std::pair<std::string, std::string> p = tokenize(line, " | ");
+            std::pair<std::string, std::string> p = tokenize(line, "|");
             if (i == 0)
             {
                 if (p.first != "date" && p.second != "value")
