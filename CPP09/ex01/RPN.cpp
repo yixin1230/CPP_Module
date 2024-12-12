@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/09/02 18:59:29 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/09/04 13:52:45 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/12/13 00:26:00 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ RPN &RPN::operator=(const RPN &src)
     return *this;
 }
 
-int RPN::doCalculation(int num1, int num2, int ope)
+int RPN::doCalculation(int num1, int num2, size_t ope)
 {
     switch(ope)
     {
@@ -61,24 +61,20 @@ RPN::RPN(std::string str)
         {
             std::string tmp(1, *it);
             _stack.push(std::stoi(tmp));
-            // std::cout<<"digit: "<<*it<<std::endl;
         }
-        else if (operations.find(*it) != std::string::npos)
+        else if (operations.find(*it) != std::string::npos && operations.find(*it) < 4)
         {
-            int ope = operations.find(*it);
+            size_t ope = operations.find(*it);
             int num1 = _stack.top();
             _stack.pop();
             int num2 = _stack.top();
             _stack.pop();
             num = doCalculation(num1, num2, ope);
             _stack.push(num);
-            // std::cout<<"total: "<<num<<std::endl;
         }
-        else if (isspace(*it))
-            ++it;
-        else
+        else if (!isspace(*it))
             throw ErrorInput();
-        ++it;
+        it++;
     }
     std::cout<<num<<std::endl;
 }
