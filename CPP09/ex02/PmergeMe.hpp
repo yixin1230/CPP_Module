@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/09/02 20:02:58 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/12/13 00:36:42 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/12/13 01:29:59 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ public:
     PmergeMe(); // Constructor
     ~PmergeMe(); // Destructor
 
+	PmergeMe(const PmergeMe &src);
+	PmergeMe &operator=(const PmergeMe &src);
     void processInput(int argc, char** argv);
     void sortAndMeasure();
     void displayResults() const;

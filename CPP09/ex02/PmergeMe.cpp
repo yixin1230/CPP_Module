@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/09/02 20:03:55 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/12/13 01:18:18 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/12/13 01:27:49 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,17 @@ PmergeMe::PmergeMe() {}
 
 PmergeMe::~PmergeMe() {}
 
+PmergeMe::PmergeMe(const PmergeMe &src)
+{
+    (void)src;
+}
+
+
+PmergeMe &PmergeMe::operator=(const PmergeMe &src)
+{
+    (void)src;
+    return (*this);
+}
 void PmergeMe::processInput(int argc, char** argv) {
 	std::cout << "Before: ";
     for (int i = 1; i < argc; ++i) {
