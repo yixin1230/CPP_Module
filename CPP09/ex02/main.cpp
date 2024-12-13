@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/08/28 23:59:12 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/12/13 00:31:13 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/12/13 01:14:14 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,5 @@ int main(int argc, char** argv) {
         std::cerr << e.what() << std::endl;
         return 1;
     }
-
     return 0;
 }

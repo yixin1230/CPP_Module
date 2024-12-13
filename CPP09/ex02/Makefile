@@ -6,11 +6,11 @@
 #    By: yizhang <yizhang@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2024/02/13 23:11:20 by yizhang       #+#    #+#                  #
-#    Updated: 2024/12/09 23:02:19 by yizhang       ########   odam.nl          #
+#    Updated: 2024/12/13 00:32:50 by yizhang       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex02
+NAME = PmergeMe
 CC = c++
 FLAG = -Wall -Werror -Wextra -std=c++11 -fsanitize=address
 SRC = main.cpp PmergeMe.cpp
