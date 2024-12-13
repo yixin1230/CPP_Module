@@ -106,25 +106,34 @@ do {
 while (condition);
 ```
 
-# insertion sort
-- in insertion sort we virtually split the given array into sorted and unsorted part. After that, we insert each element from the unsorted part to its correct position in the sorted part.
-## Time complexity
-- the worst case time complexity for sorting an array using insertion sort algorithm will be O(n^2), where n is total number of elements in the given array.
-- the worst case time complexity of insertion sort is maximum among all sorting algorithm but it takes least time if the array is already sorted. its best case time complexity is minimum which is O(n).
-<br>
+## The Frod-Johnson Merge-Insertion Sort
+- Merge-insertion sort is a hybrid sorting algorithm that combines the efficiency of merge sort with the stability of insertion sort. It is a stable, in-place sorting algorithm that has an average time complexity of O(n log n) and a worst-case time complexity of O(n^2).
 
-# merge sort
-- in merge sort we split the given array in two parts and sort them individually and then we merges the both sorted halves. It is based on divide and conquer algorithm.
-- we divide the given array into two equal halves until only single element is left. the array cannot be divide further.
-## Time complexity
-- the worst case, best case, and the average case time complexity of merge sort is O(N*log(N)). The worst case time complexity of merge sort is minumim among all sprting algothims.
-<br>
+### How it works
+1. The algorithm starts by dividing the input array into two halves.
+2. It then recursively sorts the two halves using merge-insertion sort.
+3. Once the two halves are sorted, the algorithm merges them together using a merge operation.
+4. The merge operation involves comparing the first element of each half and selecting the smaller one to be added to the output array.
+5. This process is repeated until all elements have been merged into the output array.
 
-# combined algorithm
-1. First of all we will divide the given N elements of array into (N/K)groups of each group of size K.
-2. Now we will sort each sub-arry of size k like we used to do in Insertion sort.
-3. Now after sorting each sub-arry we will merge(N/K) sorted sub-arrays like we used to do in merge sort.
+### Steps of the algorithm
+1. Divide into Pairs
+-```Example: [5, 3, 9, 1, 7, 2]```  ```becomes: [(5, 3), (9, 1), (7, 2)]```
 
+
+2. Compare Each Pair
+```Small: [3, 1, 2]```<br>
+```Large: [5, 9, 7]```
+
+3. Recursively Sort Both Groups
+```Small: [1, 2, 3]```<br>
+```Large: [5, 7, 9]```
+
+4. Merge the Sorted Groups
+- Merge the small group and the large group:<br>
+Start with the smallest element in the small group and the smallest element in the large group.<br>
+Insert elements from the large group into their correct positions in the final array:<br>
+```[1, 2, 3, 5, 7, 9]```
 
 # resource
 * [Reverse Polish Notation](https://medium.com/@tech.interview.buddies/reverse-polish-notation-b88524252960)

@@ -6,7 +6,7 @@
 /*   By: yizhang <yizhang@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/09/02 20:03:55 by yizhang       #+#    #+#                 */
-/*   Updated: 2024/12/13 01:27:49 by yizhang       ########   odam.nl         */
+/*   Updated: 2024/12/13 05:53:28 by yizhang       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ void PmergeMe::processInput(int argc, char** argv) {
     for (int i = 1; i < argc; ++i) {
         try {
             int num = std::stoi(argv[i]);
-            if (num < 0) throw std::invalid_argument("Negative number");
+            if (num < 0) 
+				throw std::invalid_argument("Negative number");
             vecContainer.push_back(num);
             dequeContainer.push_back(num);
         } catch (...) {
@@ -42,8 +43,8 @@ void PmergeMe::processInput(int argc, char** argv) {
 }
 
 void PmergeMe::mergeInsertSort(std::vector<int>& container) {
-    if (container.size() <= 1) return;
-
+    if (container.size() <= 1)
+		return;
     std::vector<int> left(container.begin(), container.begin() + container.size() / 2);
     std::vector<int> right(container.begin() + container.size() / 2, container.end());
 
@@ -54,8 +55,8 @@ void PmergeMe::mergeInsertSort(std::vector<int>& container) {
 }
 
 void PmergeMe::mergeInsertSort(std::deque<int>& container) {
-    if (container.size() <= 1) return;
-
+    if (container.size() <= 1)
+		return;
     std::deque<int> left(container.begin(), container.begin() + container.size() / 2);
     std::deque<int> right(container.begin() + container.size() / 2, container.end());
 
